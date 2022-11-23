@@ -1,0 +1,27 @@
+{
+  "name": "peace-of-mind_v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js --ignore client",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreaRene/Peace-Of-Mind_V2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreaRene/Peace-Of-Mind_V2/issues"
+  },
+  "homepage": "https://github.com/AndreaRene/Peace-Of-Mind_V2#readme",
+  "dependencies": {
+    "gitignore": "^0.7.0"
+  }
+}
