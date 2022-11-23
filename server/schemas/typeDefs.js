@@ -22,6 +22,7 @@ type Comment {
     commentID: ID!
     commentText: Text
     dateTime:
+    username: [User]
 }
 type Query {
 
