@@ -13,11 +13,22 @@ const LandingPage = () => {
     //   </Col>
     // </Row>
     <div className="wrapper landingImage">
-      <img src={forest} alt="Green Logo of a head with a peace sign" />
-      <h1>Peace of Mind</h1>
-      <span>
-        <Button>Sign Up / Log In</Button>
-        <Button>Donate</Button>
+      <h1>
+        <img
+          className="peaceHead"
+          src={forest}
+          alt="Green Logo of a head with a peace sign"
+        />
+        Peace of Mind
+        <img
+          className="peaceHead flip"
+          src={forest}
+          alt="Green Logo of a head with a peace sign"
+        />
+      </h1>
+      <span className="flex">
+        <Button className="button yellow">Sign Up / Log In</Button>
+        <Button className="button green">Donate</Button>
       </span>
     </div>
   );

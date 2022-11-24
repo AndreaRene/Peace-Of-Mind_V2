@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Chicle&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: 'Chicle', cursive;
@@ -11,9 +21,39 @@ body {
   
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+
+input,
+select,
+option,
+optgroup,
+textarea,
+button,
+pre,
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-size: 100%;
+  font-family: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+.pink {
+  font-weight: bolder;
+  color: var(--pink);
+}
+
+.mainSection {
+  padding: 3em .5em;
 }
 
 .wrapper {
