@@ -1,14 +1,8 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../../client/src/utils/dateFormat');
 
-const feelingSchema = new Schema({
-    feelingTitle: {
-        type: String,
-        required: true,
-        minlength: 1,
-        maxlength: 48,
-    },
-    feelingText: {
+const commentSchema = new Schema({
+    commentText: {
         type: String,
         required: true,
         minlength: 1,
@@ -24,12 +18,6 @@ const feelingSchema = new Schema({
     thankCount: {
         type: Number,
     },
-    comments: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'comment',
-        },
-    ],
     dateTime: {
         type: Date,
         default: Date.now,
@@ -38,20 +26,12 @@ const feelingSchema = new Schema({
     },
     {
         toJSON: {
-            virtuals: true,
             getters: true,
         },
         id: false,
     }
 );
 
-feelingSchema
-    .virtual('commentCount')
-    .get(function () {
-        return this.comments.length;
-    });
+const Comment = model('comment', commentSchema);
 
-
-const Feeling = model('feeling', feelingSchema);
-
-module.exports = Feeling;
+module.exports = Comment;
