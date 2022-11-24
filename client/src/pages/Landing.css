@@ -1,25 +1,9 @@
-  :root {
-    --midOrange: #F9A535;
-    --darkGreen: #167323;
-    --paleYellow: #EFDEB3; 
-  }
-  
-  h1 {
+#landingTitle {
     font-size: 10rem;
     margin: 3rem;
-  }
+}
 
-  .yellow {
-    background-color: var(--midOrange);
-    color: var(--darkGreen);
-  }
-
-  .green {
-    background-color: var(--darkGreen);
-    color: var(--paleYellow);
-  }
-
-  .landingImage {
+.landingImage {
     background-image: url('../assets/images/splash-page.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -35,26 +19,4 @@
     min-width: 125px;
 }
 
-.flip {
-    transform: scaleX(-1);
-}
 
-.button {
-    width: 200px;
-    margin: 1.5rem;
-    padding: 1.5rem;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
-    font-size: 1.5rem;
-    font-weight: bolder;
-}
-
-.flex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}

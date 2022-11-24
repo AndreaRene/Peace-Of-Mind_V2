@@ -13,7 +13,7 @@ const LandingPage = () => {
     //   </Col>
     // </Row>
     <div className="wrapper landingImage">
-      <h1>
+      <h1 id="landingTitle">
         <img
           className="peaceHead"
           src={forest}
