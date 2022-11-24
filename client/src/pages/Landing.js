@@ -1,18 +1,24 @@
 import React from 'react';
-import { Row, Col, Button } from 'antd';
+// import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Button, Row, Col, Space } from 'antd';
+import './Landing.css';
+import forest from '../assets/pom-logo/forest.png';
 
 const LandingPage = () => {
   return (
-    <div>
-      <Row>
-        <Col Align-Middle>
-          <div>PEACE OF MIND</div>
-        </Col>
-      </Row>
-      <Row Align-Middle>
-        <Button>Sign up / Log In</Button>
+    // <Row className="wrapper landingImage" align="middle" justify="center">
+    //   <Col lg="1">Hello There</Col>
+    //   <Col lg="1">
+    //     <Button>Sign up / Log In</Button>
+    //   </Col>
+    // </Row>
+    <div className="wrapper landingImage">
+      <img src={forest} alt="Green Logo of a head with a peace sign" />
+      <h1>Peace of Mind</h1>
+      <span>
+        <Button>Sign Up / Log In</Button>
         <Button>Donate</Button>
-      </Row>
+      </span>
     </div>
   );
 };
