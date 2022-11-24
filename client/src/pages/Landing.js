@@ -1,9 +1,20 @@
 import React from 'react';
-// import 'antd/dist/antd.css';
-// import { Row, Col } from 'antd';
+import { Row, Col, Button } from 'antd';
 
 const LandingPage = () => {
-  return <div>Hello</div>;
+  return (
+    <div>
+      <Row>
+        <Col Align-Middle>
+          <div>PEACE OF MIND</div>
+        </Col>
+      </Row>
+      <Row Align-Middle>
+        <Button>Sign up / Log In</Button>
+        <Button>Donate</Button>
+      </Row>
+    </div>
+  );
 };
 
 export default LandingPage;
