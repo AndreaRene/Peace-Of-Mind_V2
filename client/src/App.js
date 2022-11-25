@@ -1,11 +1,27 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import LandingPage from './pages/Landing';
-// import Feeling from './pages/Feeling';
+
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
-    <div>
-      <LandingPage />
-    </div>
+    <ApolloProvider client={client}>
+      <Router>
+        <div>
+          <Routes>
+            <Route
+              path="/"
+              element={<LandingPage />}
+            />
+          </Routes>
+        </div>
+      </Router>
+    </ApolloProvider>
   );
 }
 
