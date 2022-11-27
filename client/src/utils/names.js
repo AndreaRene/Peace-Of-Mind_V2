@@ -1,4 +1,4 @@
-const noun = [
+const nouns = [
   "ardvark",
   "Alpacca",
   "Albatross",
@@ -204,3 +204,13 @@ const descriptors = [
   "Plucky",
   "Polite",
 ];
+
+function random(list) {
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+const generateName = () => {
+  const descriptor = random(descriptors);
+  const noun = random(nouns);
+  return `${descriptor}``${noun}`;
+};
