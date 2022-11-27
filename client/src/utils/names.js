@@ -212,5 +212,6 @@ function random(list) {
 const generateName = () => {
   const descriptor = random(descriptors);
   const noun = random(nouns);
-  return `${descriptor}``${noun}`;
+  const randomName = descriptor + " " + noun;
+  return `${randomName}`;
 };
