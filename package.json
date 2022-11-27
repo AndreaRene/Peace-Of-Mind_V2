@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/AndreaRene/Peace-Of-Mind_V2#readme",
   "dependencies": {
+    "concurrently": "^7.6.0",
     "gitignore": "^0.7.0"
   }
 }
