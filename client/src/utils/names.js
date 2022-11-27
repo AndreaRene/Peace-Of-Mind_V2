@@ -215,3 +215,5 @@ function generateName() {
   const randomName = descriptor + " " + noun;
   return `${randomName}`;
 }
+
+export default Names;
