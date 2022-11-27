@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
 type User {
@@ -17,12 +17,16 @@ type Feeling {
     dateTime: 
     username: [User]
     comment: [User]
+    hugCount: Int
+    thankCount: Int
 }
 type Comment {
     commentID: ID!
     commentText: Text
     dateTime:
     username: [User]
+    hugCount: Int
+    thankCount: Int
 }
 type Query {
 
