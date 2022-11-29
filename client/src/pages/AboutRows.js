@@ -1,8 +1,8 @@
-import "./aboutRows.css";
+import './AboutRows.css';
 
 const AboutRows = ({ heading, text, whisper, image, sections }) => {
   return (
-    <section className={"aboutGroup section" + (sections + 1)}>
+    <section className={'aboutGroup section' + (sections + 1)}>
       <div className="aboutTexts">
         <h2>{heading}</h2>
         <p>{text}</p>

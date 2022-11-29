@@ -1,17 +1,11 @@
 import React from 'react';
-// import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Link } from 'react-router-dom';
 import { Button, Row, Col, Space } from 'antd';
 import './Landing.css';
 import forest from '../assets/pom-logo/forest.png';
 
 const LandingPage = () => {
   return (
-    // <Row className="wrapper landingImage" align="middle" justify="center">
-    //   <Col lg="1">Hello There</Col>
-    //   <Col lg="1">
-    //     <Button>Sign up / Log In</Button>
-    //   </Col>
-    // </Row>
     <div className="wrapper landingImage">
       <h1 id="landingTitle">
         <img
@@ -28,7 +22,9 @@ const LandingPage = () => {
       </h1>
       <span className="flex">
         <Button className="button yellow">Sign Up / Log In</Button>
-        <Button className="button green">Donate</Button>
+        <Link style={{ textDecoration: 'none' }} to="/aboutPage">
+          <Button className="button green"> About Page</Button>
+        </Link>
       </span>
     </div>
   );
