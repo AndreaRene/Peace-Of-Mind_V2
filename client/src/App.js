@@ -9,7 +9,6 @@ import Login from './pages/Login';
 // import Dashboard from './pages/Dashboard';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import { Switch } from 'antd';
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -20,28 +19,28 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <Switch>
+        {/* <Switch>
           <Route path="/about" element={<Navbar />} />
-          <Route path="/login" element={<Navbar />} />
-          {/* <Route path="/community" element={<Navbar />} /> */}
-          {/* <Route path="/comments" element={<Navbar />} /> */}
-          {/* <Route path="/dashboard" element={<Navbar />} /> */}
-        </Switch>
-        <Switch>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
-          {/* <Route path="/community" element={<Community />} /> */}
-          {/* <Route path="/comments" element={<Feeling />} /> */}
-          {/* <Route path="/dashboard" element={<Dashboard />} /> */}
-        </Switch>
-        <Switch>
+          <Route path="/login" element={<Navbar />} /> */}
+        {/* <Route path="/community" element={<Navbar />} /> */}
+        {/* <Route path="/comments" element={<Navbar />} /> */}
+        {/* <Route path="/dashboard" element={<Navbar />} /> */}
+        {/* </Switch> */}
+        {/* <Switch> */}
+        <Route exact path="/" component={LandingPage} />
+        {/* <Route path="/about" element={<About />} /> */}
+        {/* <Route path="/login" element={<Login />} /> */}
+        {/* <Route path="/community" element={<Community />} /> */}
+        {/* <Route path="/comments" element={<Feeling />} /> */}
+        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+        {/* </Switch> */}
+        {/* <Switch>
           <Route path="/about" element={<Footer />} />
-          <Route path="/login" element={<Footer />} />
-          {/* <Route path="/community" element={<Footer />} /> */}
-          {/* <Route path="/comments" element={<Footer />} /> */}
-          {/* <Route path="/dashboard" element={<Footer />} /> */}
-        </Switch>
+          <Route path="/login" element={<Footer />} /> */}
+        {/* <Route path="/community" element={<Footer />} /> */}
+        {/* <Route path="/comments" element={<Footer />} /> */}
+        {/* <Route path="/dashboard" element={<Footer />} /> */}
+        {/* </Switch> */}
       </Router>
 
     </ApolloProvider>
