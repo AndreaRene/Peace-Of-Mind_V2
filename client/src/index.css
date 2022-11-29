@@ -30,10 +30,6 @@
   font-weight: bolder;
 }
 
-Link {
-  text-decoration: none;
-}
-
 .flex {
   display: flex;
   align-items: center;
