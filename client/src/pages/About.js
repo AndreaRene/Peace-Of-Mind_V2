@@ -1,3 +1,4 @@
+import React from 'react';
 import AboutRow from './AboutRows';
 import './About.css';
 import heartHands from '../assets/images/heart-hands.jpg';

@@ -24,7 +24,7 @@ const LandingPage = () => {
         <Link style={{ textDecoration: 'none' }} to="/login">
           <Button className="button yellow">Sign Up / Log In</Button>
         </Link>
-        <Link style={{ textDecoration: 'none' }} to="/aboutPage">
+        <Link style={{ textDecoration: 'none' }} to="/about">
           <Button className="button green"> About Page</Button>
         </Link>
       </span>
