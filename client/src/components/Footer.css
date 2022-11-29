@@ -1,0 +1,13 @@
+#pageFooter {
+    background-color: var(--deepForest);
+    color: var(--sand);
+}
+
+.footerLinks {
+    color: var(--burnt);
+    margin-left: .5rem;
+}
+
+.footerLinks:hover {
+    color: var(--sand);
+}
