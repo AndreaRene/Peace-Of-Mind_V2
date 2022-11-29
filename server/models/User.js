@@ -4,7 +4,6 @@ const userSchema = new Schema({
     username: {
         type: String,
         required: true,
-        // get: Probably some random username generator
     },
     feelings: [
     {
@@ -22,7 +21,7 @@ const userSchema = new Schema({
     gThankCount: {
         type: Number,
     },
-    gCount: {
+    gHugCount: {
         type: Number,
     },
     rThankCount: {
@@ -34,6 +33,7 @@ const userSchema = new Schema({
     },
     {
         toJSON: {
+            virtuals: true,
             getters: true,
         },
         id: false,
