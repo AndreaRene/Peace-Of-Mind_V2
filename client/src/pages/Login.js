@@ -53,12 +53,12 @@ const signupFormHandler = async function (event) {
 
 const Login = () => {
   return (
-    <section className="" title="loginCards" id="login-card-section">
-      <div className="" id="login-card">
-        <h2 className="">Log In:</h2>
-        <form className="">
+    <section className="align-items-center" title="loginCards" id="login-card-section">
+      <div className="loginCard" id="login-card">
+        <h2 className="card-header">Log In:</h2>
+        <form className="postTexts">
           <div className="">
-            <label className="">Username:</label>
+            <label className="form-label">Username:</label>
             <input className="" type="text" id="username-input-login" />
           </div>
           <div className="">
@@ -66,7 +66,7 @@ const Login = () => {
             <input className="" type="password" id="password-input-login" />
           </div>
           <div className="">
-            <button className="" onClick={loginFormHandler} type="submit">
+            <button className="loginButtons" onClick={loginFormHandler} type="submit">
               Log In
             </button>
           </div>
@@ -75,19 +75,19 @@ const Login = () => {
 
       <span id="loginOr">OR</span>
 
-      <div className="">
-        <h2 className="">Sign Up:</h2>
-        <form className="">
+      <div className="loginCard">
+        <h2 className="card-header">Sign Up:</h2>
+        <form className="postTexts">
           <div className="">
-            <label className="">Username:</label>
+            <label className="form-label">Username:</label>
             <input className="" type="text" id="username-input-signup" />
           </div>
           <div className="">
-            <label className="">Password:</label>
+            <label className="form-label">Password:</label>
             <input className="" type="password" id="password-input-signup" />
           </div>
           <div className="">
-            <button className="" onClick={signupFormHandler} type="submit">
+            <button className="loginButtons" onClick={signupFormHandler} type="submit">
               Sign Up
             </button>
           </div>
