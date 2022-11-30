@@ -77,7 +77,7 @@ const Login = () => {
       </Card>
       {/* </Col> */}
 
-      <span id="loginOr">OR</span>
+      <div id="loginOr">OR</div>
 
       {/* <Col> */}
       <Card title="Sign Up:" bordered={false} id="signup-card">

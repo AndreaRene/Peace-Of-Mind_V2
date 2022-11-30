@@ -21,9 +21,3 @@
   min-height: 125px;
   min-width: 125px;
 }
-
-span:hover{
-  transform: translateX(2px) translateY(2px);
-  cursor: pointer;
-  color:white;
-}

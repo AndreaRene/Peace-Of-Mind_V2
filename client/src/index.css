@@ -6,9 +6,9 @@
   --midOrange: #F9A535;
   --darkGreen: #167323;
   --lightGreen: #249255;
-  --paleYellow: #EFDEB3; 
+  --paleYellow: #EFDEB3;
   --darkTeal: #43ADA1;
-  --lightTeal:#5dcec1;
+  --lightTeal: #5dcec1;
   --pink: #FFA59E;
   --darkGray: #343740;
 }
@@ -20,7 +20,7 @@
   min-height: 100vh;
 }
 
-.flexJustifyStart{
+.flexJustifyStart {
   display: flex;
   align-items: center;
   justify-content: start;
@@ -53,6 +53,19 @@
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
+span:hover {
+  color: white;
+}
+
+a:hover {
+  color: var(--darkGray);
+}
+
+.button:hover {
+  transform: translateX(2px) translateY(2px);
+  cursor: pointer;
+}
+
 .flex {
   display: flex;
   align-items: center;
@@ -67,7 +80,7 @@
   justify-content: center;
 }
 
-.flexAlignStart{
+.flexAlignStart {
   display: flex;
   align-items: center;
   justify-content: start;
