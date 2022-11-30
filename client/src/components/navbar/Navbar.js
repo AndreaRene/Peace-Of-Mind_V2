@@ -3,7 +3,7 @@ import { useState } from 'react';
 import forest from '../../assets/pom-logo/forest.png';
 import { Link } from 'react-router-dom';
 import question from '../../assets/icons/png/questionGreen.png';
-import community from '../../assets/icons/png/communityGreen.png';
+import communityIcon from '../../assets/icons/png/communityGreen.png';
 import dashboard from '../../assets/icons/png/dashboardGreen.png';
 // import auth from '../utils/auth';
 
@@ -44,6 +44,8 @@ const GenerateNavbar = (props) => {
             style={{ textDecoration: 'none' }}
             to="/about"
             className={`flex link ${activePage === 'about' ? 'active' : ''}`}
+            id="about"
+            onClick={clickHandler}
           >
             <img className="icon" src={question} alt="About Icon"></img>
             About
@@ -54,9 +56,11 @@ const GenerateNavbar = (props) => {
           <Link
             style={{ textDecoration: 'none' }}
             to="/community"
-            className={`flex link ${activePage === 'login' ? 'active' : ''}`}
+            className={`flex link ${activePage === 'community' ? 'active' : ''}`}
+            id='community'
+            onClick={clickHandler}
           >
-            <img className="icon" src={community} alt="Community Icon"></img>
+            <img className="icon" src={communityIcon} alt="Community Icon"></img>
             Community
           </Link>
         </li>
@@ -66,6 +70,8 @@ const GenerateNavbar = (props) => {
             style={{ textDecoration: 'none' }}
             to="/dashboard"
             className={`flex link ${activePage === 'dashboard' ? 'active' : ''}`}
+            id="dashboard"
+            onClick={clickHandler}
           >
             <img className="icon" src={dashboard} alt="Dashboard Icon"></img>
             Dashboard
