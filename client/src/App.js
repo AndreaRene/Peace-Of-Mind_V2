@@ -7,8 +7,8 @@ import Login from './pages/Login';
 // import Community from './pages/Community';
 // import Feeling from './pages/Feeling';
 // import Dashboard from './pages/Dashboard';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Navbar from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
 
 const client = new ApolloClient({
   uri: '/graphql',
