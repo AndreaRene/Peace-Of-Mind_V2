@@ -18,6 +18,10 @@ const feelingSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'user',
     },
+    randomUsername: {
+        type: String,
+        required: true,
+    },
     hugCount: {
         type: Number,
     },
