@@ -29,7 +29,7 @@ const GenerateNavbar = () => (
       <li>
         <Link
           style={{ textDecoration: 'none' }}
-          to="/login"
+          to="/about"
           className="flex link"
         >
           <img className="icon" src={question} alt="Question Icon"></img>
