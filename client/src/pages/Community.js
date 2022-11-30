@@ -7,7 +7,7 @@ import forest from '../assets/pom-logo/forest.png';
 const Community = () => {
     return (
         <div>
-            Div
+            Hellooooo
         </div>
     );
 };

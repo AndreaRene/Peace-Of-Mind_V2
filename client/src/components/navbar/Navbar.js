@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import forest from '../../assets/pom-logo/forest.png';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import question from '../../assets/icons/png/questionGreen.png';
 import communityIcon from '../../assets/icons/png/communityGreen.png';
 import dashboard from '../../assets/icons/png/dashboardGreen.png';
@@ -9,15 +9,7 @@ import dashboard from '../../assets/icons/png/dashboardGreen.png';
 
 import '../../utils/css/Navbar.css';
 
-const GenerateNavbar = (props) => {
-  const [activePage, setActivePage] = useState('')
-  const clickHandler = (event) => {
-    event.preventDefault();
-    const id = event.target.id;
-    props.setContent(id)
-    setActivePage(id);
-  }
-
+const GenerateNavbar = () => {
   return (
     <nav className="flexBox layout">
       <div className="flexAlignStart">
@@ -40,42 +32,37 @@ const GenerateNavbar = (props) => {
       <ul className="menuSettings flexJustifyStart">
 
         <li>
-          <Link
+          <NavLink
             style={{ textDecoration: 'none' }}
             to="/about"
-            className={`flex link ${activePage === 'about' ? 'active' : ''}`}
-            id="about"
-            onClick={clickHandler}
-          >
+            className={({ isActive }) => `flex link ${isActive ? 'active' : ''}`}>
             <img className="icon" src={question} alt="About Icon"></img>
             About
-          </Link>
+          </NavLink>
         </li>
 
         <li>
-          <Link
+          <NavLink
             style={{ textDecoration: 'none' }}
             to="/community"
-            className={`flex link ${activePage === 'community' ? 'active' : ''}`}
-            id='community'
-            onClick={clickHandler}
+            className={({ isActive }) => `flex link ${isActive ? 'active' : ''}`}
+
           >
             <img className="icon" src={communityIcon} alt="Community Icon"></img>
             Community
-          </Link>
+          </NavLink>
         </li>
 
         <li>
-          <Link
+          <NavLink
             style={{ textDecoration: 'none' }}
             to="/dashboard"
-            className={`flex link ${activePage === 'dashboard' ? 'active' : ''}`}
-            id="dashboard"
-            onClick={clickHandler}
+            className={({ isActive }) => `flex link ${isActive ? 'active' : ''}`}
+
           >
             <img className="icon" src={dashboard} alt="Dashboard Icon"></img>
             Dashboard
-          </Link>
+          </NavLink>
           {/* {auth.loggedIn() ? (
           <>
             <Link as={Link} to="/saved">
