@@ -9,11 +9,19 @@ import dashboard from '../../assets/icons/png/dashboardGreen.png';
 
 import '../../utils/css/Navbar.css';
 
-const GenerateNavbar = () => {
+const GenerateNavbar = (props) => {
+  const [activePage, setActivePage] = useState('about')
+  const clickHandler = (event) => {
+    event.preventDefault();
+    const id = event.target.id;
+    props.setContent(id)
+    setActivePage(id);
+  }
 
   return (
     <nav className="flexBox layout">
       <div className="flexAlignStart">
+
         <Link
           style={{ textDecoration: 'none' }}
           to="/about"
@@ -25,37 +33,41 @@ const GenerateNavbar = () => {
             alt="Green Logo of a head with a peace sign"
           ></img>
         </Link>
+
         <p className="navTitle">PEACE OF MIND</p>
       </div>
 
       <ul className="menuSettings flexJustifyStart">
+
         <li>
           <Link
             style={{ textDecoration: 'none' }}
-            to="/login"
-            className="flex link"
+            to="/about"
+            className={`flex link ${activePage === 'about' ? 'active' : ''}`}
           >
-            <img className="icon" src={question} alt="Question Icon"></img>
+            <img className="icon" src={question} alt="About Icon"></img>
             About
           </Link>
         </li>
+
         <li>
           <Link
             style={{ textDecoration: 'none' }}
-            to="/login"
-            className="flex link"
+            to="/community"
+            className={`flex link ${activePage === 'login' ? 'active' : ''}`}
           >
-            <img className="icon" src={community} alt="Question Icon"></img>
+            <img className="icon" src={community} alt="Community Icon"></img>
             Community
           </Link>
         </li>
+
         <li>
           <Link
             style={{ textDecoration: 'none' }}
-            to="/login"
-            className="flex link"
+            to="/dashboard"
+            className={`flex link ${activePage === 'dashboard' ? 'active' : ''}`}
           >
-            <img className="icon" src={dashboard} alt="Question Icon"></img>
+            <img className="icon" src={dashboard} alt="Dashboard Icon"></img>
             Dashboard
           </Link>
           {/* {auth.loggedIn() ? (
