@@ -19,7 +19,6 @@
     align-items: center;
     justify-content: space-evenly;
     font-size: 1.5rem;
-    font-family: 'Fredoka One', sans-serif;
 }
 
 .link {
@@ -38,6 +37,7 @@
 .navTitle {
     font-size: 2.25rem;
     color: var(--darkGreen);
+    font-family: 'Chicle', cursive;
 }
 
 .icon {

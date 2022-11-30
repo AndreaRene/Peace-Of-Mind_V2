@@ -3,17 +3,30 @@ section {
 
 }
 
+
 #login-card,
 #signup-card {
     background-color: #efdeb3;
+    width: 25vw;
+    height: 33vh;
+    box-shadow: 5px 10px #888;
 }
 
 #loginOr {
-    border: 1px solid #fff;
     background-color: #efdeb3;
     border-radius: 6px;
-    margin-left: 3rem;
-    margin-right: 3rem;
-    margin: 1rem;
-    padding: 10px 10px;
+    border: none;
+    margin: 1rem 4rem;
+    padding: 2rem;
+    font-size: 1.5rem;
+    color: var(--darkGreen);
+    box-shadow: 5px 10px #888;
 }
+
+.loginWrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

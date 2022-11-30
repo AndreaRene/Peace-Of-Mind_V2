@@ -20,12 +20,12 @@ const LandingPage = () => {
           alt="Green Logo of a head with a peace sign"
         />
       </h1>
-      <span className="flex">
+      <span className="flex landingButtons">
         <Link style={{ textDecoration: 'none' }} to="/login">
-          <Button className="button yellow">Sign Up / Log In</Button>
+          <Button className="button">Sign Up / Log In</Button>
         </Link>
         <Link style={{ textDecoration: 'none' }} to="/about">
-          <Button className="button green"> About Page</Button>
+          <Button className="button"> About Page</Button>
         </Link>
       </span>
     </div>

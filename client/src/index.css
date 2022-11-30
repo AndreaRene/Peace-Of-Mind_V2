@@ -5,11 +5,17 @@
 :root {
   --midOrange: #F9A535;
   --darkGreen: #167323;
+  --lightGreen: #249255;
   --paleYellow: #EFDEB3; 
+  --darkTeal: #43ADA1;
+  --lightTeal:#5dcec1;
+  --pink: #FFA59E;
+  --darkGray: #343740;
 }
 
 .mainContent {
   padding-top: 6rem;
+  padding-bottom: 6rem;
   position: relative;
   min-height: 100vh;
 }
@@ -32,28 +38,19 @@
 }
 
 
-.yellow {
-  background-color: var(--midOrange);
-  color: var(--darkGreen);
-}
-
-.green {
-  background-color: var(--darkGreen);
-  color: var(--paleYellow);
-}
-
-
 .button {
-  width: 200px;
+  width: 250px;
   margin: 1.5rem;
-  padding: 1.5rem;
+  padding: 2rem;
+  font-size: 1.8rem;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
-  font-size: 1.5rem;
   font-weight: bolder;
+  background-color: var(--lightTeal);
+  color: var(--darkGray);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .flex {
@@ -87,13 +84,13 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Chicle', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
-  
+  font-family: 'Fredoka One', sans-serif;
+  background-color: var(--darkTeal);
 }
 
 h1,

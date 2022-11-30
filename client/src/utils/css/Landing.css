@@ -1,6 +1,9 @@
 #landingTitle {
   font-size: 10rem;
   margin: 3rem;
+  color: var(--pink);
+  letter-spacing: 0.3rem;
+  text-shadow: rgb(19, 19, 19) 0.5rem 1rem;
 }
 
 .landingImage {
@@ -17,4 +20,10 @@
   margin: 0 3rem;
   min-height: 125px;
   min-width: 125px;
+}
+
+span:hover{
+  transform: translateX(2px) translateY(2px);
+  cursor: pointer;
+  color:white;
 }
