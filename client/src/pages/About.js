@@ -1,19 +1,9 @@
-<<<<<<< Updated upstream
-import React from 'react';
-import AboutRow from './AboutRows';
-import './About.css';
-import heartHands from '../assets/images/heart-hands.jpg';
-import weLikeYou from '../assets/images/we-like-you.jpg';
-import handsSupport from '../assets/images/hands-support.jpg';
-import AboutRows from './AboutRows';
-=======
 import AboutRow from '../components/about/AboutRows';
 import '../utils/css/About.css';
 import heartHands from '../assets/images/heart-hands.jpg';
 import weLikeYou from '../assets/images/we-like-you.jpg';
 import handsSupport from '../assets/images/hands-support.jpg';
 import AboutRows from '../components/about/AboutRows';
->>>>>>> Stashed changes
 
 const data = [
   {
