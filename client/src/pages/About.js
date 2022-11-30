@@ -1,5 +1,5 @@
 import React from 'react';
-import AboutRow from './AboutRows';
+import AboutRows from './AboutRows';
 import './About.css';
 import heartHands from '../assets/images/heart-hands.jpg';
 import weLikeYou from '../assets/images/we-like-you.jpg';
