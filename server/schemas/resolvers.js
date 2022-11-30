@@ -23,13 +23,13 @@ Its core fields are listed in the GraphQL.js source code, and it is extended wit
 
 const resolvers = {
     Query: {
-        user: async() => {
+        user(parent, args, context, info) {
             return;
         },
-        feeling: async() => {
+        feeling(parent, args, context, info) {
             return;
         },
-        comment: async() => {
+        comment(parent, args, context, info) {
             return;
         }
     }
