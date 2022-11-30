@@ -5,7 +5,8 @@
 :root {
   --midOrange: #F9A535;
   --darkGreen: #167323;
-  --paleYellow: #EFDEB3; 
+  --paleYellow: #EFDEB3;
+  --white: #f5f5f5;
 }
 
 .mainContent {
@@ -14,7 +15,7 @@
   min-height: 100vh;
 }
 
-.flexJustifyStart{
+.flexJustifyStart {
   display: flex;
   align-items: center;
   justify-content: start;
@@ -70,7 +71,7 @@
   justify-content: center;
 }
 
-.flexAlignStart{
+.flexAlignStart {
   display: flex;
   align-items: center;
   justify-content: start;
@@ -93,7 +94,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
-  
+
 }
 
 h1,
