@@ -10,7 +10,7 @@ import dashboard from '../../assets/icons/png/dashboardGreen.png';
 import '../../utils/css/Navbar.css';
 
 const GenerateNavbar = (props) => {
-  const [activePage, setActivePage] = useState('about')
+  const [activePage, setActivePage] = useState('')
   const clickHandler = (event) => {
     event.preventDefault();
     const id = event.target.id;
