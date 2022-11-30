@@ -1,0 +1,19 @@
+section {
+    background-color: #43ADA1;
+
+}
+
+#login-card,
+#signup-card {
+    background-color: #efdeb3;
+}
+
+#loginOr {
+    border: 1px solid #fff;
+    background-color: #efdeb3;
+    border-radius: 6px;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin: 1rem;
+    padding: 10px 10px;
+}
