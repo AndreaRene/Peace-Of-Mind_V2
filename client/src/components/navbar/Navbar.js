@@ -9,13 +9,13 @@ function Navbar(props) {
                 </div>
 
                 <ul id="navList">
-                    <li className=""><a className="" href="/api/about"><i
+                    <li className=""><a className="" href="/about"><i
                         className=""></i>
                         About</a></li>
                     <li className=""><a className="" href="/"><i
                         className=""></i>
                         Community</a></li>
-                    <li className=""><a className="" href="/api/dashboard"><i
+                    <li className=""><a className="" href="/dashboard"><i
                         className=""></i>
                         Dashboard</a></li>
                     <li className=""><a className="" href="#"

@@ -1,0 +1,116 @@
+body {
+    background-color: #58C3B7;
+}
+
+.ant-layout-content {
+    height: 100vh;
+}
+
+.D-Col {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #43ADA1;
+}
+
+.Sider-Row-Box {
+    height: 50%;
+    width: 75%;
+    background-color: #EFDEB3;
+    border-radius: 30px;
+
+}
+
+.Box-Top-Row {
+    height: 25%;
+    border-radius: 30px 30px 0 0;
+    background-color: #167323;
+    justify-content: center;
+    align-items: center;
+}
+
+.Box-Top-Row Button {
+    width: 50%;
+    height: 50%;
+    background-color: transparent;
+    border: none;
+    font-size: 50px;
+    color: lightgray;
+}
+
+.D-Content {
+    display: flex;
+    width: fill;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #43ADA1;
+}
+
+.D-Content-Row {
+    width: 50vw;
+    height: auto;
+    background-color: #EFDEB3;
+    padding: 20px 20px;
+    margin: 20px 20px;
+    border-radius: 25px;
+    box-shadow: 5px 10px #888;
+}
+
+.D-Content-Row-Post {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.D-Post-Row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.D-Post-Title h3 {
+    font-size: 22px;
+    padding: 15px;
+}
+
+.D-Post-Edit {
+    display: flex;
+    flex-direction: row;
+}
+
+.D-Post-Edit p {
+    font-size: 22px;
+    padding: 15px;
+}
+
+.D-Post-Edit-E {
+    color: green;
+}
+
+.D-Post-Edit-D {
+    color: red;
+}
+
+.D-Post-Edit-E:hover, .D-Post-Edit-D:hover {
+    Scale: 1.5;
+    cursor: pointer;
+}
+
+.D-Post-Text p {
+    font-size: 22px;
+    line-height: 160%;
+    letter-spacing: 3px;
+    padding: 10px;
+}
+
+.D-Post-Date {
+    display: flex;
+    justify-content: end;
+    padding: 5px 20px;
+}
+
+.D-Post-Date p {
+    font-size: 22px;
+}
