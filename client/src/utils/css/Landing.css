@@ -1,0 +1,20 @@
+#landingTitle {
+  font-size: 10rem;
+  margin: 3rem;
+}
+
+.landingImage {
+  background-image: url('../../assets/images/splash-page.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.logo {
+  image: url('../../assets/pom-logo/forest.png');
+}
+
+.peaceHead {
+  margin: 0 3rem;
+  min-height: 125px;
+  min-width: 125px;
+}

@@ -1,4 +1,7 @@
 import React from 'react';
+import { Card, Col, Row } from 'antd';
+import '../utils/css/Login.css';
+
 
 // login
 
@@ -53,47 +56,94 @@ const signupFormHandler = async function (event) {
 
 const Login = () => {
   return (
-    <section className="" title="loginCards" id="login-card-section">
-      <div className="" id="login-card">
-        <h2 className="">Log In:</h2>
-        <form className="">
-          <div className="">
-            <label className="">Username:</label>
-            <input className="" type="text" id="username-input-login" />
-          </div>
-          <div className="">
-            <label className="">Password:</label>
-            <input className="" type="password" id="password-input-login" />
-          </div>
-          <div className="">
-            <button className="" onClick={loginFormHandler} type="submit">
-              Log In
-            </button>
-          </div>
-        </form>
-      </div>
+    <div className="site-card-wrapper" >
+      <Row gutter={16}>
+        <Col span={8}>
+          <Card title="Log In:" bordered={false} id="login-card">
+            <form className="">
+              <div className="">
+                <label className="">Username:</label>
+                <input className="" type="text" id="username-input-login" />
+              </div>
+              <div className="">
+                <label className="">Password:</label>
+                <input className="" type="password" id="password-input-login" />
+              </div>
+              <div className="">
+                <button className="" onClick={loginFormHandler} type="submit">
+                  Log In
+                </button>
+              </div>
+            </form>
+          </Card>
+        </Col>
 
-      <span id="loginOr">OR</span>
+        <span id="loginOr">OR</span>
 
-      <div className="">
-        <h2 className="">Sign Up:</h2>
-        <form className="">
-          <div className="">
-            <label className="">Username:</label>
-            <input className="" type="text" id="username-input-signup" />
-          </div>
-          <div className="">
-            <label className="">Password:</label>
-            <input className="" type="password" id="password-input-signup" />
-          </div>
-          <div className="">
-            <button className="" onClick={signupFormHandler} type="submit">
-              Sign Up
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
+        <Col span={8}>
+          <Card title="Sign Up:" bordered={false} id="signup-card">
+            <form className="">
+              <div className="">
+                <label className="">Username:</label>
+                <input className="" type="text" id="username-input-signup" />
+              </div>
+              <div className="">
+                <label className="">Password:</label>
+                <input className="" type="password" id="password-input-signup" />
+              </div>
+              <div className="">
+                <button className="" onClick={signupFormHandler} type="submit">
+                  Sign Up
+                </button>
+              </div>
+            </form>
+          </Card>
+        </Col>
+      </Row>
+    </div>
+
+
+    // <section className="" title="loginCards" id="login-card-section">
+    //   <div className="" id="login-card">
+    //     <h2 className="">Log In:</h2>
+    //     <form className="">
+    //       <div className="">
+    //         <label className="">Username:</label>
+    //         <input className="" type="text" id="username-input-login" />
+    //       </div>
+    //       <div className="">
+    //         <label className="">Password:</label>
+    //         <input className="" type="password" id="password-input-login" />
+    //       </div>
+    //       <div className="">
+    //         <button className="" onClick={loginFormHandler} type="submit">
+    //           Log In
+    //         </button>
+    //       </div>
+    //     </form>
+    //   </div>
+
+    //   <span id="loginOr">OR</span>
+
+    //   <div className="">
+    //     <h2 className="">Sign Up:</h2>
+    //     <form className="">
+    //       <div className="">
+    //         <label className="">Username:</label>
+    //         <input className="" type="text" id="username-input-signup" />
+    //       </div>
+    //       <div className="">
+    //         <label className="">Password:</label>
+    //         <input className="" type="password" id="password-input-signup" />
+    //       </div>
+    //       <div className="">
+    //         <button className="" onClick={signupFormHandler} type="submit">
+    //           Sign Up
+    //         </button>
+    //       </div>
+    //     </form>
+    //   </div>
+    // </section>
   );
 };
 export default Login;

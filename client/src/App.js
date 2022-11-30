@@ -4,13 +4,6 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import LandingPage from './pages/Landing';
 import About from './pages/About';
 import Login from './pages/Login';
-import GenerateNavbar from './pages/Navbar';
-
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { far } from '@fortawesome/free-brands-svg-icons';
-// import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
-
-// library.add(far, faCheckSquare, faCoffee);
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -24,7 +17,7 @@ function App() {
         <div>
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/aboutPage" element={<GenerateNavbar />} />
+            <Route path="/aboutPage" element={<About />} />
             <Route path="/login" element={<Login />} />
           </Routes>
         </div>

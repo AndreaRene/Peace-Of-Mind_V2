@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
-import './Landing.css';
+import '../utils/css/Landing.css';
 import forest from '../assets/pom-logo/forest.png';
 
 const LandingPage = () => {
@@ -24,7 +24,7 @@ const LandingPage = () => {
         <Link style={{ textDecoration: 'none' }} to="/login">
           <Button className="button yellow">Sign Up / Log In</Button>
         </Link>
-        <Link style={{ textDecoration: 'none' }} to="/aboutPage">
+        <Link style={{ textDecoration: 'none' }} to="/about">
           <Button className="button green"> About Page</Button>
         </Link>
       </span>

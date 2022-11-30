@@ -1,0 +1,24 @@
+:root {
+    --deepForest: #167323;
+    --burnt: #F9A535;
+    --sand: #efdeb3;
+}
+
+#pageFooter {
+    background-color: var(--deepForest);
+    color: var(--sand);
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footerLinks {
+    color: var(--burnt);
+    margin-left: .5rem;
+}
+
+.footerLinks:hover {
+    color: var(--sand);
+}
