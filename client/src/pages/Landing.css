@@ -8,15 +8,11 @@
     background-size: cover;
     background-repeat: no-repeat;
   }
-  
-  .logo {
-    image: url('../assets/pom-logo/forest.png');
-  }
 
 .peaceHead {
-    margin: 0 3rem;
-    min-height: 125px;
-    min-width: 125px;
+  margin: 0 3rem;
+  min-height: 125px;
+  min-width: 125px;
 }
 
 
