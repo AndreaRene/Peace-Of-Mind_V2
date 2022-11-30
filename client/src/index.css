@@ -8,6 +8,12 @@
   --paleYellow: #EFDEB3; 
 }
 
+.mainContent {
+  padding-top: 6rem;
+  position: relative;
+  min-height: 100vh;
+}
+
 .flexJustifyStart{
   display: flex;
   align-items: center;
@@ -55,6 +61,13 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.flexNoWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .flexAlignStart{
