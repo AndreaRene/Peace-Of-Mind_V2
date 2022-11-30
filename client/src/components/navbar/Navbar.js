@@ -9,54 +9,56 @@ import dashboard from '../../assets/icons/png/dashboardGreen.png';
 
 import '../../utils/css/Navbar.css';
 
-const GenerateNavbar = () => (
-  <nav className="flexBox layout">
-    <div className="flexAlignStart">
-      <Link
-        style={{ textDecoration: 'none' }}
-        to="/about"
-        className="flex link"
-      >
-        <img
-          className="logoPeaceHead"
-          src={forest}
-          alt="Green Logo of a head with a peace sign"
-        ></img>
-      </Link>
-      <p className="navTitle">PEACE OF MIND</p>
-    </div>
+const GenerateNavbar = () => {
 
-    <ul className="menuSettings flexJustifyStart">
-      <li>
+  return (
+    <nav className="flexBox layout">
+      <div className="flexAlignStart">
         <Link
           style={{ textDecoration: 'none' }}
-          to="/login"
+          to="/about"
           className="flex link"
         >
-          <img className="icon" src={question} alt="Question Icon"></img>
-          About
+          <img
+            className="logoPeaceHead"
+            src={forest}
+            alt="Green Logo of a head with a peace sign"
+          ></img>
         </Link>
-      </li>
-      <li>
-        <Link
-          style={{ textDecoration: 'none' }}
-          to="/login"
-          className="flex link"
-        >
-          <img className="icon" src={community} alt="Question Icon"></img>
-          Community
-        </Link>
-      </li>
-      <li>
-        <Link
-          style={{ textDecoration: 'none' }}
-          to="/login"
-          className="flex link"
-        >
-          <img className="icon" src={dashboard} alt="Question Icon"></img>
-          Dashboard
-        </Link>
-        {/* {auth.loggedIn() ? (
+        <p className="navTitle">PEACE OF MIND</p>
+      </div>
+
+      <ul className="menuSettings flexJustifyStart">
+        <li>
+          <Link
+            style={{ textDecoration: 'none' }}
+            to="/login"
+            className="flex link"
+          >
+            <img className="icon" src={question} alt="Question Icon"></img>
+            About
+          </Link>
+        </li>
+        <li>
+          <Link
+            style={{ textDecoration: 'none' }}
+            to="/login"
+            className="flex link"
+          >
+            <img className="icon" src={community} alt="Question Icon"></img>
+            Community
+          </Link>
+        </li>
+        <li>
+          <Link
+            style={{ textDecoration: 'none' }}
+            to="/login"
+            className="flex link"
+          >
+            <img className="icon" src={dashboard} alt="Question Icon"></img>
+            Dashboard
+          </Link>
+          {/* {auth.loggedIn() ? (
           <>
             <Link as={Link} to="/saved">
               See Your Books
@@ -78,8 +80,9 @@ const GenerateNavbar = () => (
             Login/Sign Up
           </Link>
         )} */}
-      </li>
-    </ul>
-  </nav>
-);
+        </li>
+      </ul>
+    </nav>
+  )
+};
 export default GenerateNavbar;
