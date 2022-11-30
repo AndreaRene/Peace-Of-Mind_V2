@@ -1,4 +1,3 @@
-import AboutRow from '../components/about/AboutRows';
 import '../utils/css/About.css';
 import heartHands from '../assets/images/heart-hands.jpg';
 import weLikeYou from '../assets/images/we-like-you.jpg';
@@ -28,7 +27,7 @@ const data = [
 
 const About = () => {
   return (
-    <main>
+    <main className="mainContent">
       {data.map((item, i) => {
         return (
           <AboutRows

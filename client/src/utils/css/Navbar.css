@@ -4,9 +4,11 @@
 }
 
 .layout {
+    z-index: 1;
     background-color: #fac032;
     padding: 1.438rem;
     position: fixed;
+    top: 0;
 }
 
 .menuSettings {
