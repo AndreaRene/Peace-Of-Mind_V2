@@ -1,5 +1,5 @@
 import React from 'react';
-import './AboutRows.css';
+import '../../utils/css/AboutRows.css';
 
 const AboutRows = ({ heading, text, whisper, image, sections }) => {
   return (
