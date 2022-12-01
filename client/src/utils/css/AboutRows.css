@@ -1,0 +1,46 @@
+.aboutGroup {
+  display: flex;
+  justify-content: center;
+  margin: 0rem auto;
+  width: 75%;
+}
+
+.aboutTexts {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 10rem;
+  text-align: center;
+}
+
+.section2 {
+  flex-direction: row-reverse;
+}
+
+.headingText {
+  font-size: 4rem;
+  color: var(--darkGreen);
+}
+
+.bodyText {
+  font-size: 2rem;
+  padding: 1.25rem;
+  color: var(--darkGray);
+}
+
+.whisperText {
+  /* color: #ddcda4; */
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--paleYellow);
+  text-shadow: #ddcda4 0px 0px 30px, #ddcda4 0px 0px 40px, #ddcda4 0px 0px 50px,
+    #ddcda4 0px 0px 75px, 29px 7px 20px rgba(239, 222, 179, 0.15);
+}
+
+.aboutImage {
+  width: 50%;
+  height: 50%;
+}

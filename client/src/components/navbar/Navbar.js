@@ -9,6 +9,7 @@ import {
   QuestionCircleOutlined,
   TeamOutlined,
   DashboardOutlined,
+  LoginOutlined,
 } from '@ant-design/icons'; // import auth from '../utils/auth';
 
 import '../../utils/css/Navbar.css';
@@ -41,8 +42,7 @@ const GenerateNavbar = () => {
               `flex link ${isActive ? 'active' : ''}`
             }
           >
-            {/* <img className="icon" src={question} alt="About Icon"></img> */}
-            <QuestionCircleOutlined />
+            <QuestionCircleOutlined className="navIconSettings" />
             About
           </NavLink>
         </li>
@@ -55,7 +55,7 @@ const GenerateNavbar = () => {
               `flex link ${isActive ? 'active' : ''}`
             }
           >
-            <TeamOutlined />
+            <TeamOutlined className="navIconSettings" />
             Community
           </NavLink>
         </li>
@@ -68,8 +68,10 @@ const GenerateNavbar = () => {
               `flex link ${isActive ? 'active' : ''}`
             }
           >
-            <DashboardOutlined /> Dashboard
+            <DashboardOutlined className="navIconSettings" />
+            Dashboard
           </NavLink>
+
           {/* {auth.loggedIn() ? (
           <>
             <Link as={Link} to="/saved">
@@ -92,6 +94,18 @@ const GenerateNavbar = () => {
             Login/Sign Up
           </Link>
         )} */}
+        </li>
+        <li>
+          <NavLink
+            style={{ textDecoration: 'none' }}
+            to="/login"
+            className={({ isActive }) =>
+              `flex link ${isActive ? 'active' : ''}`
+            }
+          >
+            <LoginOutlined className="navIconSettings" />
+            Login/SignUp
+          </NavLink>
         </li>
       </ul>
     </nav>
