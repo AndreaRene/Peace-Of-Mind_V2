@@ -28,7 +28,7 @@ const Community = () => {
 
     return (
         <main className='mainContent'>
-          <div id="list-container">    {/* <--- maybe unnecessary div */}
+          <div id="list-container">
             <div id="feelings">
               {/* {loading ? (
                 <div>Loading...</div> */}

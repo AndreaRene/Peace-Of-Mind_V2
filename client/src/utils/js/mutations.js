@@ -25,7 +25,7 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_FEELING = gql`
-    mutation addFeeling($feelingTitle: String!, feelingText: String!, $username: String!) {
+    mutation addFeeling($feelingTitle: String!, $feelingText: String!, $username: String!) {
         addFeeling(feelingTitle: $feelingTitle, feelingText: $feelingText, username: $username) {
             _id
             feelingTitle
@@ -65,7 +65,7 @@ export const ADD_FEELING_THANK = gql`
 `;
 
 export const REMOVE_FEELING = gql`
-    mutation removeFeeling($feelingTitle: String!, feelingText: String!, $username: String!) {
+    mutation removeFeeling($feelingTitle: String!, $feelingText: String!, $username: String!) {
         removeFeeling(feelingTitle: $feelingTitle, feelingText: $feelingText, username: $username) {
             _id
             feelingTitle
