@@ -1,38 +1,69 @@
 @import url("https://fonts.googleapis.com/css2?family=Chicle&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
   --midOrange: #F9A535;
   --darkGreen: #167323;
-  --paleYellow: #EFDEB3; 
+  --lightGreen: #249255;
+  --paleYellow: #EFDEB3;
+  --darkTeal: #43ADA1;
+  --lightTeal: #5dcec1;
+  --pink: #FFA59E;
+  --darkGray: #343740;
 }
 
-h1 {
-  font-size: 10rem;
-  margin: 3rem;
+.mainContent {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  position: relative;
+  min-height: 100vh;
 }
 
-.yellow {
-  background-color: var(--midOrange);
-  color: var(--darkGreen);
+.flexJustifyStart {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: wrap;
 }
 
-.green {
-  background-color: var(--darkGreen);
-  color: var(--paleYellow);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logo {
+  image: url('./assets/pom-logo/forest.png');
 }
 
 
 .button {
-  width: 200px;
+  width: 250px;
   margin: 1.5rem;
-  padding: 1.5rem;
+  padding: 2rem;
+  font-size: 1.8rem;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
-  font-size: 1.5rem;
   font-weight: bolder;
+  background-color: var(--lightTeal);
+  color: var(--darkGray);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+span:hover {
+  color: white;
+}
+
+a:hover {
+  color: var(--darkGray);
+}
+
+.button:hover {
+  transform: translateX(2px) translateY(2px);
+  cursor: pointer;
 }
 
 .flex {
@@ -42,30 +73,38 @@ h1 {
   flex-wrap: wrap;
 }
 
+.flexNoWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexAlignStart {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: wrap;
+}
 
 .flip {
   transform: scaleX(-1);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html {
   height: 100%;
+  background-color: var(--teal);
 }
 
 body {
   margin: 0;
-  font-family: 'Chicle', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
-  
+  font-family: 'Fredoka One', sans-serif;
+  background-color: var(--darkTeal);
 }
 
 h1,
