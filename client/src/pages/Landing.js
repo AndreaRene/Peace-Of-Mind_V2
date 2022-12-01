@@ -3,7 +3,6 @@ import React from 'react';
 import { Button, Row, Col, Space } from 'antd';
 import './Landing.css';
 import forest from '../assets/pom-logo/forest.png';
-import { generateName } from '../utils/names';
 
 const LandingPage = () => {
   return (
