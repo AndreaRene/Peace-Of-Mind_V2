@@ -22,10 +22,10 @@ const LandingPage = () => {
       </h1>
       <span className="flex landingButtons">
         <Link style={{ textDecoration: 'none' }} to="/login">
-          <Button className="button">Sign Up / Log In</Button>
+          <Button className="button landBtn" id='loginBtn'>Sign Up / Log In</Button>
         </Link>
         <Link style={{ textDecoration: 'none' }} to="/about">
-          <Button className="button"> About Page</Button>
+          <Button className="button landBtn" id='aboutBtn'> About Us</Button>
         </Link>
       </span>
     </div>
