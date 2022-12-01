@@ -1,17 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Chicle&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Chicle&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-  --midOrange: #F9A535;
+  --midOrange: #f9a535;
   --darkGreen: #167323;
   --lightGreen: #249255;
-  --paleYellow: #EFDEB3;
-  --darkTeal: #43ADA1;
+  --paleYellow: #efdeb3;
+  --darkTeal: #43ada1;
   --lightTeal: #5dcec1;
-  --pink: #FFA59E;
+  --pink: #ffa59e;
   --darkGray: #343740;
-  --white: #F5F5F5;
+  --white: #f5f5f5;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 .mainContent {
@@ -34,11 +41,6 @@
   box-sizing: border-box;
 }
 
-.logo {
-  image: url('./assets/pom-logo/forest.png');
-}
-
-
 .button {
   width: 250px;
   margin: 1.5rem;
@@ -51,7 +53,8 @@
   font-weight: bolder;
   background-color: var(--lightTeal);
   color: var(--darkGray);
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 span:hover {
@@ -140,7 +143,7 @@ ul {
 }
 
 .mainSection {
-  padding: 3em .5em;
+  padding: 3em 0.5em;
 }
 
 .wrapper {
