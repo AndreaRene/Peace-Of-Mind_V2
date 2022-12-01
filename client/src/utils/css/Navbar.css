@@ -26,10 +26,6 @@
 }
 
 .active {
-    /* font-weight: bolder; */
-    /* text-decoration: underline;
-    text-underline-position: under;
-    text-decoration-thickness: .2rem; */
     text-transform: uppercase;
     color: var(--white);
 }

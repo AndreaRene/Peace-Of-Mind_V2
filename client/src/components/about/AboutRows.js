@@ -9,7 +9,7 @@ const AboutRows = ({ heading, text, whisper, image, sections }) => {
         <p>{text}</p>
         <p>{whisper}</p>
       </div>
-      <img src={image} />
+      <img src={image} alt="images" />
     </section>
   );
 };
