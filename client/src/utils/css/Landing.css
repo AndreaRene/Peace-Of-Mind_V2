@@ -21,3 +21,17 @@
   min-height: 125px;
   min-width: 125px;
 }
+
+@media (min-width: 1450px) {}
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 768px) {}
+
+@media (min-width: 560px) and (max-width: 768px) {}
+
+@media (max-width: 480px) {}
+
+@media (max-width: 380px) {}
