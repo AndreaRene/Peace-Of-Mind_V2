@@ -4,13 +4,13 @@
 }
 
 .landingImage {
-    background-image: url('../assets/images/splash-page.jpg');
+    background-image: url('../../assets/images/splash-page.jpg');
     background-size: cover;
     background-repeat: no-repeat;
   }
   
   .logo {
-    image: url('../assets/pom-logo/forest.png');
+    image: url('../../assets/pom-logo/forest.png');
   }
 
 .peaceHead {
