@@ -5,7 +5,11 @@ import { Link, NavLink } from 'react-router-dom';
 import question from '../../assets/icons/png/questionGreen.png';
 import communityIcon from '../../assets/icons/png/communityGreen.png';
 import dashboard from '../../assets/icons/png/dashboardGreen.png';
-// import auth from '../utils/auth';
+import {
+  QuestionCircleOutlined,
+  TeamOutlined,
+  DashboardOutlined,
+} from '@ant-design/icons'; // import auth from '../utils/auth';
 
 import '../../utils/css/Navbar.css';
 
@@ -13,7 +17,6 @@ const GenerateNavbar = () => {
   return (
     <nav className="flexBox layout">
       <div className="flexAlignStart">
-
         <Link
           style={{ textDecoration: 'none' }}
           to="/about"
@@ -30,13 +33,16 @@ const GenerateNavbar = () => {
       </div>
 
       <ul className="menuSettings flexJustifyStart">
-
         <li>
           <NavLink
             style={{ textDecoration: 'none' }}
             to="/about"
-            className={({ isActive }) => `flex link ${isActive ? 'active' : ''}`}>
-            <img className="icon" src={question} alt="About Icon"></img>
+            className={({ isActive }) =>
+              `flex link ${isActive ? 'active' : ''}`
+            }
+          >
+            {/* <img className="icon" src={question} alt="About Icon"></img> */}
+            <QuestionCircleOutlined />
             About
           </NavLink>
         </li>
@@ -45,10 +51,11 @@ const GenerateNavbar = () => {
           <NavLink
             style={{ textDecoration: 'none' }}
             to="/community"
-            className={({ isActive }) => `flex link ${isActive ? 'active' : ''}`}
-
+            className={({ isActive }) =>
+              `flex link ${isActive ? 'active' : ''}`
+            }
           >
-            <img className="icon" src={communityIcon} alt="Community Icon"></img>
+            <TeamOutlined />
             Community
           </NavLink>
         </li>
@@ -57,11 +64,11 @@ const GenerateNavbar = () => {
           <NavLink
             style={{ textDecoration: 'none' }}
             to="/dashboard"
-            className={({ isActive }) => `flex link ${isActive ? 'active' : ''}`}
-
+            className={({ isActive }) =>
+              `flex link ${isActive ? 'active' : ''}`
+            }
           >
-            <img className="icon" src={dashboard} alt="Dashboard Icon"></img>
-            Dashboard
+            <DashboardOutlined /> Dashboard
           </NavLink>
           {/* {auth.loggedIn() ? (
           <>
@@ -88,6 +95,6 @@ const GenerateNavbar = () => {
         </li>
       </ul>
     </nav>
-  )
+  );
 };
 export default GenerateNavbar;

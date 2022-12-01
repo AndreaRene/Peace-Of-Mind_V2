@@ -11,6 +11,7 @@
   --lightTeal: #5dcec1;
   --pink: #FFA59E;
   --darkGray: #343740;
+  --white: #F5F5F5;
 }
 
 .mainContent {
@@ -58,7 +59,7 @@ span:hover {
 }
 
 a:hover {
-  color: var(--darkGray);
+  color: var(--white);
 }
 
 .button:hover {
