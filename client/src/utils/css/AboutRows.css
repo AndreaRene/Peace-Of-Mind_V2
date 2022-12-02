@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   margin: 0rem auto;
-  width: 75%;
+  width: 100%;
 }
 
 .aboutTexts {
@@ -20,7 +20,7 @@
 }
 
 .headingText {
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: var(--darkGreen);
 }
 

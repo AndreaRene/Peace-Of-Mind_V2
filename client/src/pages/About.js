@@ -8,7 +8,7 @@ import AboutRows from '../components/about/AboutRows';
 const data = [
   {
     heading: 'Have a truely safe space.',
-    text: "A place where, everything is kept anonymous. No personal information, including usernames, is displayed in public areas.",
+    text: "A place where, everything is kept anonymous. No personal information, including usernames, will be displayed in public areas.",
     whisper: 'Smile, you are enough',
     image: mountain,
   },
