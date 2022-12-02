@@ -4,7 +4,7 @@
 
   [![Bugs](https://img.shields.io/github/issues/Lawhornmatt/RecipeIO/bug.svg)](https://github.com/AndreaRene/Peace-Of-Mind_V2/issues)
 
-<p style="color:blue">Peace of Mind is a website that will allow anyone with a need to connect to others regarding mental health and support. We provide a safe space for everyone to discuss their feelings without fear of retaliation.*</p>
+<p style="color:green;background:orange;font-weight:bold">Peace of Mind is a website that will allow anyone with a need to connect to others regarding mental health and support. We provide a safe space for everyone to discuss their feelings without fear of retaliation.</p>
 
 ## Table of Contents
 
