@@ -33,9 +33,6 @@ const Dashboard = ({ open, onOK, onCancel }) => {
     <main className="mainContent" id="dashboardMain">
       {createPost && <CreateModal />}
       {editPost && <EditModal />}
-      {/* <Layout> */}
-      {/* <Sider> */}
-      {/* <Col className=""> */}
       <Col className="Sider-Row-Box">
         <Row className="Box-Top-Row">
           <Button onClick={newPostClick}>
@@ -43,10 +40,6 @@ const Dashboard = ({ open, onOK, onCancel }) => {
           </Button>
         </Row>
       </Col>
-      {/* </Col> */}
-      {/* </Sider> */}
-      {/* <Layout> */}
-      {/* <Content className="D-Content"> */}
       <Row className="D-Content-Row" wrap={true}>
         <Row className="D-Content-Row-Post">
           <Row className="D-Post-Row">
@@ -122,9 +115,6 @@ const Dashboard = ({ open, onOK, onCancel }) => {
           </Row>
         </Row>
       </Row>
-      {/* </Content> */}
-      {/* </Layout> */}
-      {/* </Layout> */}
     </main>
   );
 };
