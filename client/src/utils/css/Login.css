@@ -9,8 +9,6 @@
 }
 
 #loginOr {
-    /* background-color: #efdeb3;
-    border-radius: 6px; */
     border: none;
     margin: 1rem 4rem;
     padding: 2rem;
@@ -18,7 +16,6 @@
     color: var(--darkGreen);
     text-shadow: #ddcda4 0px 0px 30px, #ddcda4 0px 0px 40px, #ddcda4 0px 0px 50px,
         #ddcda4 0px 0px 75px, 29px 7px 20px rgba(239, 222, 179, 0.15);
-    /* box-shadow: 5px 10px #888; */
 }
 
 .loginWrapper {
@@ -39,13 +36,6 @@
     flex-direction: column;
     align-items: center;
 }
-
-/* .usernameInput,
-.passwordInput {
-    display: block;
-    justify-content: center;
-    margin: 2vh 0;
-} */
 
 .loginText {
     width: 100%;
