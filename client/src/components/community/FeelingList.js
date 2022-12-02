@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Icon from '@ant-design/icons'
 import '../../assets/icons/svg/hug-heart-1.svg';
 import { HugSvg, ThankSvg, CommentSvg } from '../../assets/icons/community-svgs.js';
-import { ADD_FEELING_HUG } from '../../utils/js/mutations';
+// import { ADD_FEELING_HUG } from '../../utils/js/mutations';
 
 const FeelingList = ({
     feelings,
@@ -19,22 +19,22 @@ const FeelingList = ({
             dateTime: feeling.dateTime,
         }))
 
-const [addFeelingHug, { error }] = useMutation(ADD_FEELING_HUG);
+// const [addFeelingHug, { error }] = useMutation(ADD_FEELING_HUG);
 
 console.log(feelingData)
 
-  const handleAddHug = async (feelingId, hugCount) => {
-        try {
-            const { data } = await addFeelingHug({
-                variables: {
-                    feelingId,
-                    hugCount
-                }
-            })
-        } catch (err) {
-            console.log(err);
-        }
-  };
+//   const handleAddHug = async (feelingId, hugCount) => {
+//         try {
+//             const { data } = await addFeelingHug({
+//                 variables: {
+//                     feelingId,
+//                     hugCount
+//                 }
+//             })
+//         } catch (err) {
+//             console.log(err);
+//         }
+//   };
 
 
 
@@ -56,9 +56,9 @@ const ThankIcon = (props) => <Icon component={ThankSvg} {...props} />
                   <Link className="" to={`/feeling/${feeling.feelingId}`}>
                         <CommentIcon />
                   </Link>
-                      <HugIcon
-                    //    disabled={}
-                       onClick={() => handleAddHug(feeling.feelingId, feeling.hugCount)}/>
+                      <HugIcon />
+                    {/* //    disabled={} */}
+                    {/* //    onClick={() => handleAddHug(feeling.feelingId, feeling.hugCount)}/> */}
                       <ThankIcon />
                </div> 
               ))}

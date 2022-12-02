@@ -209,11 +209,10 @@ function random(list) {
   return list[Math.floor(Math.random() * list.length)];
 }
 
-function generateName() {
+export function generateName() {
   const descriptor = random(descriptors);
   const noun = random(nouns);
   const randomName = descriptor + " " + noun;
   return `${randomName}`;
 }
 
-export default Names;
