@@ -1,24 +1,36 @@
-![Peace of Mind logo](./assets/pom-logo/forest.png)
-
 # Peace of Mind
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Peace of Mind logo](./assets/pom-logo/forest.png)
 
   [![Bugs](https://img.shields.io/github/issues/Lawhornmatt/RecipeIO/bug.svg)](https://github.com/AndreaRene/Peace-Of-Mind_V2/issues)
 
 <p style="color:blue">Peace of Mind is a website that will allow anyone with a need to connect to others regarding mental health and support. We provide a safe space for everyone to discuss their feelings without fear of retaliation.*</p>
 
+## Table of Contents
+
+1. [Peace of Mind Purpose](#sign-up-for-peace-of-mind-so-you-can)
+
+2. [Collaborators](#collaborators)
+
+3. [Message from Creators](#message-from-creators)
+
+4. [Technologies Used](#technologies-used-to-create-peace-of-mind)
+
+5. [Copyright Information](#copyright-information)
+
 ## Sign up for Peace of Mind so you can...
 
-- Make new posts called **Feelings** that others can read.  But don't worry! All posts are made using a randomly generated name so you can post with **true** freedom to express yourself.
-- Comment on other user's **Feelings** so that you can provide support and emotion comfort to others who may need it.
-- Provide **Hugs** to other people on their **Feelings** and comments. Think of **Hugs** as a "Like" on Facebook, but **Hugs** are more meaningful and feel better!
-- Keep track of how many **Hugs** your **Feelings** have received and see a running total on your own personal Dashboard!
-- Use Peace of Mind on all of your internet connected devices. Peace of Mind has been created and maintained using a fully responsive framework. We encourage you to use Peace of Mind on the stay, on the go, and everywhere life takes you.
+Make new posts called **Feelings** that others can read.  But don't worry! All posts are made using a randomly generated name so you can post with **true** freedom to express yourself.
 
-## Installation
+Comment on other user's **Feelings** so that you can provide support and emotion comfort to others who may need it.
 
-While Peace of mind was developed to use on a deployed website, you can certainly clone the repo. You will need to install the npm packages (npm i) and source the database in mysql(SOURCE db/schema.sql). Then you'll want to exit mysql(exit) run the seeds(npm run seed) before starting the server.
+Provide **Hugs** to other people on their **Feelings** and comments. Think of **Hugs** as a "Like" on Facebook, but **Hugs** are more meaningful and feel better!
+
+Keep track of how many **Hugs** your **Feelings** have received and see a running total on your own personal Dashboard!
+
+Use Peace of Mind on all of your internet connected devices. Peace of Mind has been created and maintained using a fully responsive framework. We encourage you to use Peace of Mind on the stay, on the go, and everywhere life takes you.
+
+[Back to Top](#peace-of-mind)
 
 ## Technologies used to Create Peace of Mind
 
@@ -61,6 +73,8 @@ While Peace of mind was developed to use on a deployed website, you can certainl
 [Miro](https://miro.com/)
 : A visual colaboration and whiteboard platform for planning/wireframing.
 
+[Back to Top](#peace-of-mind)
+
 ## Collaborators
 
 ![GitHub Logo](./assets/pom-logo/GitHub-Mark-32px.png)
@@ -72,12 +86,19 @@ While Peace of mind was developed to use on a deployed website, you can certainl
 - [Nick](https://github.com/RelentlessNC)
 - [Valeria](https://github.com/ValPal1320)
 
-A look at our app
-Mobile
-App at moblie size
+[Back to Top](#peace-of-mind)
 
-Desktop
-App on desktop
+## Message from Creators
 
-A Message From The Creators
 We hope here you find not only comfort in being able to speak freely, but comfort in others to help you get through hard times not alone!
+
+[Back to Top](#peace-of-mind)
+
+## Copyright Information
+
+Copyright &#xA9; Peace of Mind - All Rights Reserved
+Unauthorized copying of this file, via any medium is strictly prohibited
+Proprietary and confidential.
+Written by those listed in the [Collaborators](#collaborators) section of this README file, December 2022.
+
+[Back to Top](#peace-of-mind)
