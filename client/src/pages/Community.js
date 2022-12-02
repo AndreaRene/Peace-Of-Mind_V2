@@ -1,15 +1,56 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from 'antd';
-import '../utils/css/Landing.css';
-import forest from '../assets/pom-logo/forest.png';
+// import { useQuery } from '@apollo/client';
+// import { GET_FEELINGS } from '../utils/js/queries';
+import FeelingList from '../components/community/FeelingList';
+
+const feelings = [
+  {
+    _id: 234,
+    feelingTitle: 'Man this stinks',
+    feelingText:
+      "I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee.",
+    randomUsername: 'Celtic Butterfly',
+    hugCount: 3,
+    thankCount: 6,
+    dateTime: '11/30/22',
+    hugUsers: [667, 343, 565],
+    thankUsers: [667, 343, 565],
+  },
+  {
+    _id: 667,
+    feelingTitle: "It actually isn't as bad now",
+    feelingText: 'At least the modal worked yay :)',
+    randomUsername: 'George Foreman',
+    hugCount: 7,
+    thankCount: 2,
+    dateTime: '11/29/22',
+    hugUsers: [234, 454, 757],
+    thankUsers: [234, 454, 757],
+  },
+];
+
+const user = {
+  _id: 667,
+};
 
 const Community = () => {
-    return (
-        <div>
-            Hellooooo
+  // const { loading, data } = useQuery(GET_FEELINGS);
+  // const { loading, data } = useQuery(GET_ME)
+  // const feelings = data?.feelings || [];
+
+  return (
+    <main className="mainContent">
+      <div id="list-container">
+        <div id="feelings">
+          {/* {loading ? (
+                <div>Loading...</div> */}
+          {/* ) : (  */}
+          <FeelingList feelings={feelings} user={user} />
+          {/* )} */}
         </div>
-    );
+      </div>
+    </main>
+  );
 };
 
 export default Community;
