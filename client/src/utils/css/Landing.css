@@ -1,6 +1,10 @@
 #landingTitle {
-  font-size: 10rem;
+  font-size: 8rem;
   margin: 3rem;
+  color: var(--pink);
+  letter-spacing: 0.3rem;
+  text-shadow: rgb(19, 19, 19) 0.5rem 1rem;
+  text-align: center;
 }
 
 .landingImage {
@@ -15,6 +19,110 @@
 
 .peaceHead {
   margin: 0 3rem;
-  min-height: 125px;
-  min-width: 125px;
+  width: 6rem;
+  height: auto;
 }
+
+@media (max-width: 1399px) {
+
+  #landingTitle {
+    font-size: 6rem;
+  }
+
+  .peaceHead {
+    margin: 0 2rem;
+    width: 5rem;
+    height: auto;
+  }
+}
+
+@media (max-width: 1199px) {
+
+  #landingTitle {
+    font-size: 5rem;
+    text-shadow: rgb(19, 19, 19) 0.4rem .6rem;
+  }
+
+  .peaceHead {
+    width: 4rem;
+    height: auto;
+  }
+}
+
+@media (max-width: 1023px) {
+  #landingTitle {
+    font-size: 4rem;
+    text-shadow: rgb(19, 19, 19) 0.3rem .5rem;
+  }
+
+  #loginBtn,
+  #aboutBtn {
+    width: 180px;
+    height: auto;
+    padding: .5rem;
+    font-size: 1.3rem;
+  }
+
+  .peaceHead {
+    margin: 0 1rem;
+    width: 3rem;
+    height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  #landingTitle {
+    font-size: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .peaceHead {
+    width: 6rem;
+  }
+
+  .peaceHead:last-of-type {
+    display: none;
+  }
+
+  .landBtn {
+    width: 190px;
+    font-size: 1.4rem;
+  }
+
+  #loginBtn,
+  #aboutBtn {
+    width: 170px;
+    height: auto;
+    padding: .4rem;
+    font-size: 1.2rem;
+  }
+
+}
+
+@media (max-width: 559px) {
+  #landingTitle {
+    margin: 2rem;
+    font-size: 3rem;
+  }
+
+  .peaceHead {
+    width: 5rem;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+}
+
+@media (max-width: 479px) {
+  #landingTitle {
+    font-size: 4rem;
+  }
+
+  .landBtn {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 379px) {}
