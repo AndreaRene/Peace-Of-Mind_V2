@@ -40,6 +40,7 @@
 
   #landingTitle {
     font-size: 5rem;
+    text-shadow: rgb(19, 19, 19) 0.4rem .6rem;
   }
 
   .peaceHead {
@@ -52,6 +53,14 @@
   #landingTitle {
     font-size: 4rem;
     text-shadow: rgb(19, 19, 19) 0.3rem .5rem;
+  }
+
+  #loginBtn,
+  #aboutBtn {
+    width: 180px;
+    height: auto;
+    padding: .5rem;
+    font-size: 1.3rem;
   }
 
   .peaceHead {
@@ -109,6 +118,10 @@
 @media (max-width: 479px) {
   #landingTitle {
     font-size: 4rem;
+  }
+
+  .landBtn {
+    margin-bottom: 1rem;
   }
 }
 
