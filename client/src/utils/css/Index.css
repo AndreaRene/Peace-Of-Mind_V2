@@ -19,7 +19,7 @@ body {
     width: 75%;
     background-color: #EFDEB3;
     border-radius: 30px;
-
+    box-shadow: 2px 5px #888;
 }
 
 .Box-Top-Row {
@@ -31,16 +31,21 @@ body {
 }
 
 .Box-Top-Row Button {
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     background-color: transparent;
     border: none;
-    font-size: 50px;
+    font-size: 5em;
     color: lightgray;
+}
+
+.Box-Top-Row button:hover {
+    scale: 1.15;
 }
 
 .D-Content {
     display: flex;
+    height: 90vh;
     width: fill;
     flex-direction: column;
     justify-content: center;
@@ -55,7 +60,7 @@ body {
     padding: 20px 20px;
     margin: 20px 20px;
     border-radius: 25px;
-    box-shadow: 5px 10px #888;
+    box-shadow: 2px 5px #888;
 }
 
 .D-Content-Row-Post {

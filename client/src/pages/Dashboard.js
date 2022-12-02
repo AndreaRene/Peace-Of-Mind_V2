@@ -1,29 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 //import { useQuery } from '@apollo/client';
 //import { QUERY_MATCHUPS } from '../utils/js/queries';
-import { Col, Divider, Row, Button } from 'antd';
+import { Col, Row, Button } from 'antd';
 import { PlusCircleFilled, EditFilled, DeleteFilled } from '@ant-design/icons';
 import { Layout } from 'antd';
 import '../utils/css/Index.css';
+import CreateModal from '../components/dashboard/NewPost';
+import EditModal from '../components/dashboard/EditPost';
 
 const { Sider, Content } = Layout;
 
-const Dashboard = () => {
+const Dashboard = ({ open, onOK, onCancel}) => {
+
+    const [createPost, setCreatePost] = useState(false);
+    const [editPost, setEditPost] = useState(false);
+
     // const { loading, data} = useQuery(QUERY_MATCHUPS, {
     //     fetchPolicy: 'no-cache'
     // });
 
     // const matchupList = data?.matchups || [];
 
+    const newPostClick = () => {
+        setCreatePost(!createPost);
+    }
+
+    const editPostClick = () => {
+        setEditPost(!editPost);
+    }
+
     return (
-        <>
+        <main className="mainContent">
+            {createPost && ( <CreateModal />)}
+            {editPost && ( <EditModal />)}
             <Layout>
                 <Sider>
                     <Col className='D-Col'>
                         <Col className='Sider-Row-Box'>
                             <Row className='Box-Top-Row'>
-                                <Button><PlusCircleFilled /></Button>
+                                <Button onClick={newPostClick}>
+                                    <PlusCircleFilled />
+                                </Button>
                             </Row>
                         </Col>
                     </Col>
@@ -37,7 +55,7 @@ const Dashboard = () => {
                                         <h3>Qu'est-ce que le Lorem Ipsum?</h3>
                                     </Col>
                                     <Col className="D-Post-Edit">
-                                        <p className="D-Post-Edit-E"><EditFilled /></p>
+                                        <p className="D-Post-Edit-E"><EditFilled onClick={editPostClick}/></p>
                                         <p className="D-Post-Edit-D"><DeleteFilled /></p>
                                     </Col>
                                 </Row>
@@ -52,7 +70,7 @@ const Dashboard = () => {
                     </Content>
                 </Layout>
             </Layout>
-        </>
+        </main>
     )
 }
 
