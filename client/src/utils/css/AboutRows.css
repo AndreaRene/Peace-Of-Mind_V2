@@ -14,7 +14,8 @@
   text-align: center;
 }
 
-.section2 {
+.section2,
+.section4 {
   flex-direction: row-reverse;
 }
 
