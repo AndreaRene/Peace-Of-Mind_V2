@@ -1,27 +1,38 @@
-.ant-layout-content {
+/* .ant-layout-content {
   height: 100vh;
+} */
+
+#dashboardMain {
+  margin-top: 0;
+  padding-top: 10rem;
+  padding-bottom: 0;
 }
 
-.D-Col {
+/* .D-Col {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #43ada1;
-}
+} */
 
 .Sider-Row-Box {
-  height: 50%;
-  width: 75%;
-  background-color: #efdeb3;
+  height: 25rem;
+  width: 5%;
+  background-color: var(--darkGray);
   border-radius: 30px;
-  box-shadow: 2px 5px #888;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  position: fixed;
+  left: 1rem;
+  top: 10rem;
+
 }
 
 .Box-Top-Row {
-  height: 25%;
+  height: 15%;
   border-radius: 30px 30px 0 0;
   background-color: #167323;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -31,8 +42,8 @@
   height: 100%;
   background-color: transparent;
   border: none;
-  font-size: 5em;
-  color: lightgray;
+  font-size: 2em;
+  color: var(--midOrange);
 }
 
 .Box-Top-Row button:hover {
@@ -41,22 +52,23 @@
 
 .D-Content {
   display: flex;
-  height: 90vh;
   width: fill;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background-color: #43ada1;
 }
 
 .D-Content-Row {
-  width: 50vw;
+  width: 75vw;
   height: auto;
   background-color: #efdeb3;
   padding: 20px 20px;
-  margin: 20px 20px;
+  /* margin-left: 18%; */
   border-radius: 25px;
   box-shadow: 2px 5px #888;
+  /* margin-bottom: 2rem; */
+  margin: 2rem auto;
 }
 
 .D-Content-Row-Post {
