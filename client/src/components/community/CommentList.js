@@ -2,11 +2,12 @@ import React, { useMutation } from 'react';
 import Icon from '@ant-design/icons';
 import { HugSvg, ThankSvg } from '../../assets/icons/community-svgs';
 import Thank from '../../assets/icons/svg/thank-1.svg';
+import { Link } from 'react-router-dom';
 import { Col, Row } from 'antd';
 // import { ADD_COMMENT_HUG, ADD_COMMENT_THANK } from '../../utils/js/mutations';
 // import '../../utils/css/CommentList.css';
 
-const CommentList = ({ comments }) => {
+const CommentList = ({ comments, user }) => {
   const commentData = comments.map(comment => ({
     commentId: comment._id,
     commentText: comment.commentText,
@@ -14,6 +15,8 @@ const CommentList = ({ comments }) => {
     hugCount: comment.hugCount,
     thankCount: comment.thankCount,
     dateTime: comment.dateTime,
+    hugUsers: comment.hugUsers,
+    thankUsers: comment.thankUsers,
   }));
 
   // const [addComHug, { error }] = useMutation(ADD_COMMENT_HUG);
