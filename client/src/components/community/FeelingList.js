@@ -1,7 +1,6 @@
 import React, { useMutation } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '@ant-design/icons';
-import '../../assets/icons/svg/hug-heart-1.svg';
 import {
   HugSvg,
   ThankSvg,
