@@ -69,6 +69,11 @@
 }
 
 @media (max-width: 767px) {
+
+  .logoPeaceHead {
+    margin: 0 1rem;
+  }
+
   .linkText {
     display: none;
   }
@@ -86,6 +91,14 @@
 
 @media (max-width: 559px) {}
 
-@media (max-width: 479px) {}
+@media (max-width: 479px) {
+  .logoPeaceHead {
+    display: none;
+  }
+
+  #navBar {
+    justify-content: center;
+  }
+}
 
 @media (max-width: 379px) {}
