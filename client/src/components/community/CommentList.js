@@ -58,7 +58,7 @@ const CommentList = ({ comments, user }) => {
   return (
     <div className="commentWrapper">
       {commentData.map(comment => (
-        <div className="eachCommentDiv" key={comment.commentdId}>
+        <div className="eachCommentDiv" key={comment.commentId}>
           <div className="commentHeading">
             <Col>
               <Row>
