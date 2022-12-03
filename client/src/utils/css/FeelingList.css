@@ -1,0 +1,90 @@
+* {
+  font-family: 'Fredoka One', sans-serif;
+}
+
+.eachFeelingDiv {
+  margin: 1rem;
+  background-color: var(--paleYellow);
+  padding: 0.2rem 1.5rem 1.5rem 1.5rem;
+  border-radius: 25px;
+  box-shadow: 2px 5px #888;
+  min-width: 100%;
+}
+
+.feelingHeading {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.feelingTitle {
+  font-size: 2rem;
+  color: var(--darkGreen);
+}
+
+.timeFeeling {
+  font-size: 1.25rem;
+  color: var(--lightGreen);
+  font-weight: bold;
+  margin-top: 0.25rem;
+}
+
+.hugsThanksDiv {
+  display: inline;
+}
+
+.feelingTextWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feelingText {
+  width: 90%;
+
+  font-size: 1rem;
+}
+
+#startingParagraph {
+  color: var(--darkGreen);
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.feelingWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+
+.communityWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.thankyouIcon {
+  width: 35px;
+}
+
+.iconWrapper {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5rem;
+}
+
+.feelingicon {
+  margin-right: 0.3rem;
+}
+
+.thankyouDiv {
+  margin-top: -0.32rem;
+  margin-left: 0.1rem;
+}
