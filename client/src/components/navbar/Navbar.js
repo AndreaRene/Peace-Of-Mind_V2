@@ -16,12 +16,12 @@ import '../../utils/css/Navbar.css';
 
 const GenerateNavbar = () => {
   return (
-    <nav className="flexBox layout">
-      <div className="flexAlignStart">
+    <nav id="navBar">
+      <div id="navBrand">
         <Link
           style={{ textDecoration: 'none' }}
           to="/about"
-          className="flex link"
+          className=" "
         >
           <img
             className="logoPeaceHead"
@@ -30,19 +30,19 @@ const GenerateNavbar = () => {
           ></img>
         </Link>
 
-        <p className="navTitle">PEACE OF MIND</p>
+        <h1 id="navTitle">PEACE OF MIND</h1>
       </div>
 
-      <ul className="menuSettings flexJustifyStart">
+      <ul className="navLinks">
         <li>
           <NavLink
             style={{ textDecoration: 'none' }}
             to="/about"
             className={({ isActive }) =>
-              `flex link ${isActive ? 'active' : ''}`
+              `navCLick  ${isActive ? 'active' : ''}`
             }
           >
-            <QuestionCircleOutlined className="navIconSettings" />
+            <QuestionCircleOutlined className="navIcon" />
             About
           </NavLink>
         </li>
@@ -52,10 +52,10 @@ const GenerateNavbar = () => {
             style={{ textDecoration: 'none' }}
             to="/community"
             className={({ isActive }) =>
-              `flex link ${isActive ? 'active' : ''}`
+              `navCLick  ${isActive ? 'active' : ''}`
             }
           >
-            <TeamOutlined className="navIconSettings" />
+            <TeamOutlined className="navIcon" />
             Community
           </NavLink>
         </li>
@@ -65,45 +65,22 @@ const GenerateNavbar = () => {
             style={{ textDecoration: 'none' }}
             to="/dashboard"
             className={({ isActive }) =>
-              `flex link ${isActive ? 'active' : ''}`
+              `navCLick  ${isActive ? 'active' : ''}`
             }
           >
-            <DashboardOutlined className="navIconSettings" />
+            <DashboardOutlined className="navIcon" />
             Dashboard
           </NavLink>
-
-          {/* {auth.loggedIn() ? (
-          <>
-            <Link as={Link} to="/saved">
-              See Your Books
-            </Link>
-            <Link
-              style={{ textDecoration: 'none' }}
-              to="/login"
-              className="flex link"
-            >
-              Logout
-            </Link>
-          </>
-        ) : (
-          <Link
-            style={{ textDecoration: 'none' }}
-            to="/login"
-            className="flex link"
-          >
-            Login/Sign Up
-          </Link>
-        )} */}
         </li>
         <li>
           <NavLink
             style={{ textDecoration: 'none' }}
             to="/login"
             className={({ isActive }) =>
-              `flex link ${isActive ? 'active' : ''}`
+              `navCLick ${isActive ? 'active' : ''}`
             }
           >
-            <LoginOutlined className="navIconSettings" />
+            <LoginOutlined className="navIcon" />
             Login/SignUp
           </NavLink>
         </li>
