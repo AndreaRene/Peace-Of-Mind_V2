@@ -43,7 +43,7 @@ const GenerateNavbar = () => {
             }
           >
             <QuestionCircleOutlined className="navIcon" />
-            About
+            <span className='linkText'>About</span>
           </NavLink>
         </li>
 
@@ -56,7 +56,7 @@ const GenerateNavbar = () => {
             }
           >
             <TeamOutlined className="navIcon" />
-            Community
+            <span className='linkText'>Community</span>
           </NavLink>
         </li>
 
@@ -69,7 +69,7 @@ const GenerateNavbar = () => {
             }
           >
             <DashboardOutlined className="navIcon" />
-            Dashboard
+            <span className='linkText'>Dashboard</span>
           </NavLink>
         </li>
         <li>
@@ -81,7 +81,7 @@ const GenerateNavbar = () => {
             }
           >
             <LoginOutlined className="navIcon" />
-            Login/SignUp
+            <span className='linkText'>Login/Signup</span>
           </NavLink>
         </li>
       </ul>

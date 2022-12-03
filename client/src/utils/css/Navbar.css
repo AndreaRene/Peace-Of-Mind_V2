@@ -50,13 +50,39 @@
   margin-left: 1.5rem;
 }
 
-@media (max-width: 1399px) {}
+@media (max-width: 1399px) {
+  .navIcon {
+    margin-left: 1rem;
+  }
+}
 
-@media (max-width: 1199px) {}
+@media (max-width: 1199px) {
+  .navLinks {
+    font-size: 1.2rem;
+  }
+}
 
-@media (max-width: 1023px) {}
+@media (max-width: 1023px) {
+  #navTitle {
+    display: none;
+  }
+}
 
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
+  .linkText {
+    display: none;
+  }
+
+
+  .navLinks {
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+
+  .navIcon {
+    margin-left: 1.5rem;
+  }
+}
 
 @media (max-width: 559px) {}
 
