@@ -39,7 +39,7 @@ const GenerateNavbar = () => {
             style={{ textDecoration: 'none' }}
             to="/about"
             className={({ isActive }) =>
-              `navCLick  ${isActive ? 'active' : ''}`
+              `navClick  ${isActive ? 'active' : ''}`
             }
           >
             <QuestionCircleOutlined className="navIcon" />
@@ -52,7 +52,7 @@ const GenerateNavbar = () => {
             style={{ textDecoration: 'none' }}
             to="/community"
             className={({ isActive }) =>
-              `navCLick  ${isActive ? 'active' : ''}`
+              `navClick  ${isActive ? 'active' : ''}`
             }
           >
             <TeamOutlined className="navIcon" />
@@ -65,7 +65,7 @@ const GenerateNavbar = () => {
             style={{ textDecoration: 'none' }}
             to="/dashboard"
             className={({ isActive }) =>
-              `navCLick  ${isActive ? 'active' : ''}`
+              `navClick  ${isActive ? 'active' : ''}`
             }
           >
             <DashboardOutlined className="navIcon" />
@@ -77,7 +77,7 @@ const GenerateNavbar = () => {
             style={{ textDecoration: 'none' }}
             to="/login"
             className={({ isActive }) =>
-              `navCLick ${isActive ? 'active' : ''}`
+              `navClick ${isActive ? 'active' : ''}`
             }
           >
             <LoginOutlined className="navIcon" />
