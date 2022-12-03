@@ -96,6 +96,7 @@ const Feeling = () => {
   //   }
   return (
     <main className="mainContent" style={{ paddingTop: 100 }}>
+      <p id="startingParagraph">Welcome, Username. It's great to see you :D</p>
       <div className="feelingWrapper">
         <div className="feelingHeading">
           <Col>
