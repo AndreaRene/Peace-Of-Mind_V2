@@ -34,6 +34,18 @@ const feelingSchema = new Schema({
             ref: 'comment',
         },
     ],
+    hugUsers: [
+        {   
+            type: Schema.Types.ObjectId,
+            ref: 'user',
+        },
+    ],
+    thankUsers: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'user',
+        },
+    ],
     dateTime: {
         type: Date,
         default: Date.now,
