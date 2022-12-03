@@ -13,7 +13,6 @@
 
 .menuSettings {
   margin-right: 1rem;
-  width: 30%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -47,4 +46,5 @@
 
 .navIconSettings {
   margin-right: 0.25rem;
+  margin-left: 1.5rem;
 }
