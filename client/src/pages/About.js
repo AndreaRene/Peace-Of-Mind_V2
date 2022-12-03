@@ -2,9 +2,16 @@ import '../utils/css/About.css';
 import heartHands from '../assets/images/heart-hands.jpg';
 import weLikeYou from '../assets/images/we-like-you.jpg';
 import loveYoue from '../assets/images/love-you.jpg';
+import mountain from '../assets/images/mountain.jpg';
 import AboutRows from '../components/about/AboutRows';
 
 const data = [
+  {
+    heading: 'Have a truely safe space.',
+    text: "A place where, everything is kept anonymous. No personal information, including usernames, will be displayed in public areas.",
+    whisper: 'Smile, you are enough',
+    image: mountain,
+  },
   {
     heading: 'Come together with the like-minded.',
     text: 'At Peace of Mind we believe in the power of community support for mental health care needs.',
@@ -23,6 +30,7 @@ const data = [
     whisper: 'Smile, you are enough',
     image: loveYoue,
   },
+
 ];
 
 const About = () => {

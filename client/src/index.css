@@ -109,6 +109,7 @@ body {
   height: 100vh;
   font-family: 'Fredoka One', sans-serif;
   background-color: var(--darkTeal);
+  overflow-x: hidden;
 }
 
 h1,
