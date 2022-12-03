@@ -1,13 +1,16 @@
 import React, { useMutation } from 'react';
 import { Link } from 'react-router-dom';
-import Icon from '@ant-design/icons';
+// import Icon from '@ant-design/icons';
 import '../../assets/icons/svg/hug-heart-1.svg';
 import {
   HugSvg,
   ThankSvg,
   CommentSvg,
 } from '../../assets/icons/community-svgs.js';
+import Thank from '../../assets/icons/svg/thank-1.svg';
+import { Col, Row } from 'antd';
 // import { ADD_FEELING_HUG, ADD_FEELING_THANK } from '../../utils/js/mutations';
+import '../../utils/css/FeelingList.css';
 
 const FeelingList = ({ feelings, user }) => {
   const feelingData = feelings.map(feeling => ({
@@ -61,40 +64,64 @@ const FeelingList = ({ feelings, user }) => {
     return <h2>No feelings to display.</h2>;
   }
 
-  const CommentIcon = props => <Icon component={CommentSvg} {...props} />;
-  const HugIcon = props => <Icon component={HugSvg} {...props} />;
-  const ThankIcon = props => <Icon component={ThankSvg} {...props} />;
+  // const CommentIcon = props => <Icon component={CommentSvg} {...props} />;
+  // const HugIcon = props => <Icon component={HugSvg} {...props} />;
+  // const ThankIcon = props => <Icon component={ThankSvg} {...props} />;
 
   return (
-    <div>
+    <div className="feelingWrapper">
       {feelingData.map(feeling => (
-        <div key={feeling.feelingId}>
-          <h3>{feeling.feelingTitle}</h3>
-          <p>
-            {feeling.randomUsername} on {feeling.dateTime}
-          </p>
-          <p>{feeling.feelingText}</p>
-          <Link className="" to={`/feeling/${feeling.feelingId}`}>
-            <CommentIcon />
-          </Link>
-          <button
-            disabled={feeling.hugUsers?.some(
-              hugUserId => hugUserId === user._id,
-            )}
-            onClick={() => handleAddHug(feeling.feelingId, feeling.hugCount)}
-          >
-            <HugIcon />
-          </button>
-          <button
-            disabled={feeling.thankUsers?.some(
-              thankUserId => thankUserId === user._id,
-            )}
-            onClick={() =>
-              handleAddThank(feeling.feelingId, feeling.thankCount)
-            }
-          >
-            <ThankIcon />
-          </button>
+        <div className="eachFeelingDiv" key={feeling.feelingId}>
+          <div className="feelingHeading">
+            <Col>
+              <Row>
+                <h3 className="feelingTitle">{feeling.feelingTitle}</h3>
+              </Row>
+              <Row>
+                <p className="timeFeeling">
+                  {feeling.randomUsername} on {feeling.dateTime}
+                </p>
+              </Row>
+            </Col>
+            <Col>
+              <div className="iconWrapper">
+                <div>
+                  <Link
+                    className="feelingicon"
+                    to={`/feeling/${feeling.feelingId}`}
+                  >
+                    <CommentSvg />
+                  </Link>
+                  <Link
+                    className="hugIcon"
+                    disabled={feeling.hugUsers?.some(
+                      hugUserId => hugUserId === user._id,
+                    )}
+                    onClick={() =>
+                      handleAddHug(feeling.feelingId, feeling.hugCount)
+                    }
+                  >
+                    <HugSvg />
+                  </Link>
+                </div>
+                <div className="thankyouDiv">
+                  <Link
+                    disabled={feeling.thankUsers?.some(
+                      thankUserId => thankUserId === user._id,
+                    )}
+                    onClick={() =>
+                      handleAddThank(feeling.feelingId, feeling.thankCount)
+                    }
+                  >
+                    <img src={Thank} alt="thankyou" className="thankyouIcon" />
+                  </Link>
+                </div>
+              </div>
+            </Col>
+          </div>
+          <div className="feelingTextWrapper">
+            <p className="feelingText">{feeling.feelingText}</p>
+          </div>
         </div>
       ))}
     </div>
