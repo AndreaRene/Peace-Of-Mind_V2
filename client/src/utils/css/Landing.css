@@ -8,14 +8,14 @@
 }
 
 .landingImage {
-    background-image: url('../../assets/images/splash-page.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  
-  .logo {
-    image: url('../../assets/pom-logo/forest.png');
-  }
+  background-image: url('../../assets/images/splash-page.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.logo {
+  image: url('../../assets/pom-logo/forest.png');
+}
 
 .peaceHead {
   margin: 0 3rem;
@@ -24,7 +24,6 @@
 }
 
 @media (max-width: 1399px) {
-
   #landingTitle {
     font-size: 6rem;
   }
@@ -37,10 +36,9 @@
 }
 
 @media (max-width: 1199px) {
-
   #landingTitle {
     font-size: 5rem;
-    text-shadow: rgb(19, 19, 19) 0.4rem .6rem;
+    text-shadow: rgb(19, 19, 19) 0.4rem 0.6rem;
   }
 
   .peaceHead {
@@ -52,14 +50,14 @@
 @media (max-width: 1023px) {
   #landingTitle {
     font-size: 4rem;
-    text-shadow: rgb(19, 19, 19) 0.3rem .5rem;
+    text-shadow: rgb(19, 19, 19) 0.3rem 0.5rem;
   }
 
   #loginBtn,
   #aboutBtn {
     width: 180px;
     height: auto;
-    padding: .5rem;
+    padding: 0.5rem;
     font-size: 1.3rem;
   }
 
@@ -95,10 +93,9 @@
   #aboutBtn {
     width: 170px;
     height: auto;
-    padding: .4rem;
+    padding: 0.4rem;
     font-size: 1.2rem;
   }
-
 }
 
 @media (max-width: 559px) {
@@ -112,7 +109,6 @@
     height: auto;
     margin-bottom: 1rem;
   }
-
 }
 
 @media (max-width: 479px) {
@@ -125,4 +121,5 @@
   }
 }
 
-@media (max-width: 379px) {}
+@media (max-width: 379px) {
+}

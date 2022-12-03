@@ -22,10 +22,10 @@
 }
 
 .mainContent {
-  padding-top: 14rem;
+  /* padding-top: 10rem; */
   padding-bottom: 8rem;
   position: relative;
-  /* min-height: 100vh; */
+  min-height: 100vh;
 }
 
 .flexJustifyStart {
@@ -148,8 +148,8 @@ ul {
 }
 
 .wrapper {
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
