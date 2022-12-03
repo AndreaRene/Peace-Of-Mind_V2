@@ -25,7 +25,7 @@
   padding-top: 14rem;
   padding-bottom: 8rem;
   position: relative;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 .flexJustifyStart {
