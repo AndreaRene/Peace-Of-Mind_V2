@@ -107,7 +107,15 @@
 
 @media (max-width: 1399px) {}
 
-@media (max-width: 1199px) {}
+@media (max-width: 1199px) {
+  .cardWrapper {
+    width: 80%;
+  }
+
+  .cardIcons {
+    margin-left: 1rem;
+  }
+}
 
 @media (max-width: 1023px) {}
 
