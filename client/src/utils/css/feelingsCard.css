@@ -152,11 +152,88 @@
   }
 }
 
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
 
+  .cardWrapper {
+    width: 95%;
+  }
 
-@media (max-width: 559px) {}
+  .cardTitleGroup {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
 
-@media (max-width: 479px) {}
+  .cardTitle {
+    margin-right: 0;
+  }
+
+  .cardIcons {
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 559px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .cardLeft,
+  .cardRight {
+    width: 100%;
+  }
+
+  .cardIcons {
+    flex-direction: row;
+    margin: 0;
+  }
+
+  .cardIconGroup {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    padding-bottom: .2rem;
+  }
+
+  .feelingIcon {
+    margin-bottom: 0;
+    margin-right: 1.4rem;
+  }
+
+  .thankyouIcon {
+    padding-top: .3rem;
+    margin-left: 1.2rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .cardHeader {
+    flex-direction: column;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .cardTitleGroup {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: .2rem;
+    width: 100%;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+  }
+
+  .cardUser {
+    font-size: .8rem;
+    text-align: right;
+  }
+
+  .cardDate {
+    font-size: .8rem;
+    margin-bottom: .4rem;
+  }
+}
 
 @media (max-width: 379px) {}

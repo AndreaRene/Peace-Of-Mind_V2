@@ -29,9 +29,20 @@
   }
 }
 
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
+  #startingParagraph {
+    display: flex;
+    flex-direction: column;
+    /* font-size: 1.5rem; */
+  }
+}
 
-@media (max-width: 559px) {}
+@media (max-width: 559px) {
+  .communityWrapper {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+}
 
 @media (max-width: 479px) {}
 

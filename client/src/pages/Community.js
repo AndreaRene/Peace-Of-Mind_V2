@@ -52,7 +52,7 @@ const Community = () => {
 
   return (
     <main className="communityWrapper">
-      <p id="startingParagraph">Welcome, Username. It's great to see you!</p>
+      <p id="startingParagraph">Welcome, Username. <span className='headingSpan'>It's great to see you!</span></p>
       {/* {loading ? (
                 <div>Loading...</div> */}
       {/* ) : (  */}
