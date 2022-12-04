@@ -14,7 +14,7 @@
   justify-content: center;
   align-items: stretch;
   background-color: var(--paleYellow);
-  padding: 1rem 1.5rem 1.5rem 1.5rem;
+  padding: 1.5rem;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
   margin: 1rem;
@@ -82,7 +82,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .cardIconGroup {
@@ -91,15 +91,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .feelingIcon {
+  margin-bottom: 0.7rem;
 }
 
 .hugIcon {
 }
 
-.thankYouIcon {
-  width: 35px;
+.thankyouIcon {
+  width: 50px;
+  margin-right: -0.35rem;
 }

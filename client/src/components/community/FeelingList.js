@@ -11,7 +11,7 @@ import Thank from '../../assets/icons/svg/thank-1.svg';
 import { Col, Row } from 'antd';
 // import { ADD_FEELING_HUG, ADD_FEELING_THANK } from '../../utils/js/mutations';
 import '../../utils/css/Card.css';
-import '../../utils/css/FeelingList.css';
+// import '../../utils/css/FeelingList.css';
 
 const FeelingList = ({ feelings, user }) => {
   const feelingData = feelings.map(feeling => ({
@@ -105,7 +105,6 @@ const FeelingList = ({ feelings, user }) => {
                 </Link>
               </div>
               <Link
-                className="thankYouIcon"
                 disabled={feeling.thankUsers?.some(
                   thankUserId => thankUserId === user._id,
                 )}
