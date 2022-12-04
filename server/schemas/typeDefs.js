@@ -31,6 +31,11 @@ const typeDefs = gql `
         hugCount: Int
         thankCount: Int
     }
+
+    type Auth {
+        token: ID!
+        user: User
+    }
     
     type Query {
         users: [User]
