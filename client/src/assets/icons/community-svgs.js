@@ -1,8 +1,8 @@
 const CommentSvg = () => {
   return (
     <svg
-      width="20pt"
-      height="20pt"
+      width="27pt"
+      height="27pt"
       version="1.1"
       viewBox="0 0 100 100"
       xmlns="http://www.w3.org/2000/svg"
@@ -19,8 +19,8 @@ const CommentSvg = () => {
 const HugSvg = () => {
   return (
     <svg
-      width="18pt"
-      height="18pt"
+      width="27pt"
+      height="27pt"
       version="1.1"
       viewBox="0 0 100 100"
       xmlns="http://www.w3.org/2000/svg"

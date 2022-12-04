@@ -9,7 +9,7 @@ const feelings = [
     _id: 234,
     feelingTitle: 'Man this stinks',
     feelingText:
-      "I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee.",
+      "I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee.",
     randomUsername: 'Celtic Butterfly',
     hugCount: 3,
     thankCount: 6,
@@ -52,7 +52,7 @@ const Community = () => {
 
   return (
     <main className="mainContent communityWrapper">
-      <p id="startingParagraph">Welcome, Username. It's great to see you :D</p>
+      <p id="startingParagraph">Welcome, Username. It's great to see you!</p>
       {/* {loading ? (
                 <div>Loading...</div> */}
       {/* ) : (  */}

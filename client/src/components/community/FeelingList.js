@@ -10,7 +10,8 @@ import {
 import Thank from '../../assets/icons/svg/thank-1.svg';
 import { Col, Row } from 'antd';
 // import { ADD_FEELING_HUG, ADD_FEELING_THANK } from '../../utils/js/mutations';
-import '../../utils/css/FeelingList.css';
+import '../../utils/css/Card.css';
+// import '../../utils/css/FeelingList.css';
 
 const FeelingList = ({ feelings, user }) => {
   const feelingData = feelings.map(feeling => ({
@@ -69,58 +70,51 @@ const FeelingList = ({ feelings, user }) => {
   // const ThankIcon = props => <Icon component={ThankSvg} {...props} />;
 
   return (
-    <div className="feelingWrapper">
+    <div className="cardWrapper">
       {feelingData.map(feeling => (
-        <div className="eachFeelingDiv" key={feeling.feelingId}>
-          <div className="feelingHeading">
-            <Col>
-              <Row>
-                <h3 className="feelingTitle">{feeling.feelingTitle}</h3>
-              </Row>
-              <Row>
-                <p className="timeFeeling">
-                  {feeling.randomUsername} on {feeling.dateTime}
-                </p>
-              </Row>
-            </Col>
-            <Col>
-              <div className="iconWrapper">
-                <div>
-                  <Link
-                    className="feelingicon"
-                    to={`/feeling/${feeling.feelingId}`}
-                  >
-                    <CommentSvg />
-                  </Link>
-                  <Link
-                    className="hugIcon"
-                    disabled={feeling.hugUsers?.some(
-                      hugUserId => hugUserId === user._id,
-                    )}
-                    onClick={() =>
-                      handleAddHug(feeling.feelingId, feeling.hugCount)
-                    }
-                  >
-                    <HugSvg />
-                  </Link>
-                </div>
-                <div className="thankyouDiv">
-                  <Link
-                    disabled={feeling.thankUsers?.some(
-                      thankUserId => thankUserId === user._id,
-                    )}
-                    onClick={() =>
-                      handleAddThank(feeling.feelingId, feeling.thankCount)
-                    }
-                  >
-                    <img src={Thank} alt="thankyou" className="thankyouIcon" />
-                  </Link>
-                </div>
+        <div className="card">
+          <div className="cardLeft">
+            <header className="cardHeader">
+              <div className="cardTitleGroup">
+                <h2 className="cardTitle">{feeling.feelingTitle}</h2>
+                <p className="cardUser">-{feeling.randomUsername}</p>
               </div>
-            </Col>
+              <p className="cardDate">{feeling.dateTime}</p>
+            </header>
+            <p className="cardText">{feeling.feelingText}</p>
           </div>
-          <div className="feelingTextWrapper">
-            <p className="feelingText">{feeling.feelingText}</p>
+          <div className="cardRight">
+            <div className="cardIcons">
+              <div className="cardIconGroup">
+                <Link
+                  className="feelingIcon"
+                  to={`/feeling/${feeling.feelingId}`}
+                >
+                  <CommentSvg />
+                </Link>
+                <Link
+                  className="hugIcon"
+                  disabled={feeling.hugUsers?.some(
+                    hugUserId => hugUserId === user._id,
+                  )}
+                  onClick={() =>
+                    handleAddHug(feeling.feelingId, feeling.hugCount)
+                  }
+                >
+                  <HugSvg />
+                </Link>
+              </div>
+              <Link
+                disabled={feeling.thankUsers?.some(
+                  thankUserId => thankUserId === user._id,
+                )}
+                onClick={() =>
+                  handleAddThank(feeling.feelingId, feeling.thankCount)
+                }
+              >
+                <img src={Thank} alt="thankyou" className="thankyouIcon" />
+              </Link>
+            </div>
           </div>
         </div>
       ))}

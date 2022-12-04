@@ -5,7 +5,7 @@ import Thank from '../../assets/icons/svg/thank-1.svg';
 import { Link } from 'react-router-dom';
 import { Col, Row } from 'antd';
 // import { ADD_COMMENT_HUG, ADD_COMMENT_THANK } from '../../utils/js/mutations';
-// import '../../utils/css/CommentList.css';
+import '../../utils/css/CommentList.css';
 
 const CommentList = ({ comments, user }) => {
   const commentData = comments.map(comment => ({
