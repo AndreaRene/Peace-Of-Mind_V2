@@ -23,7 +23,11 @@
 
 @media (max-width: 1199px) {}
 
-@media (max-width: 1023px) {}
+@media (max-width: 1023px) {
+  #startingParagraph {
+    font-size: 2rem;
+  }
+}
 
 @media (max-width: 767px) {}
 
