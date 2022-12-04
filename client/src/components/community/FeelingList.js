@@ -10,8 +10,7 @@ import {
 import Thank from '../../assets/icons/svg/thank-1.svg';
 import { Col, Row } from 'antd';
 // import { ADD_FEELING_HUG, ADD_FEELING_THANK } from '../../utils/js/mutations';
-import '../../utils/css/Card.css';
-// import '../../utils/css/FeelingList.css';
+import '../../utils/css/feelingsCard.css';
 import { generateName } from '../../utils/js/names'
 
 const FeelingList = ({ feelings, user }) => {

@@ -8,7 +8,7 @@ import Icon from '@ant-design/icons';
 import { HugSvg, ThankSvg } from '../assets/icons/community-svgs';
 import CommentList from '../components/community/CommentList';
 import { Col, Row } from 'antd';
-import '../utils/css/FeelingList.css';
+import '../utils/css/Community.css';
 // import { ADD_FEELING_HUG, ADD_FEELING_THANK } from '../utils/js/mutations';
 
 const feeling = {

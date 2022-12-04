@@ -98,10 +98,23 @@
   margin-bottom: 0.7rem;
 }
 
-.hugIcon {
-}
+.hugIcon {}
 
 .thankyouIcon {
   width: 50px;
   margin-right: -0.35rem;
 }
+
+@media (max-width: 1399px) {}
+
+@media (max-width: 1199px) {}
+
+@media (max-width: 1023px) {}
+
+@media (max-width: 767px) {}
+
+@media (max-width: 559px) {}
+
+@media (max-width: 479px) {}
+
+@media (max-width: 379px) {}
