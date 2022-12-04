@@ -5,18 +5,10 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
-    feelings: [
-    {
-        type: Schema.Types.ObjectId,
-        ref: 'feeling',
+    password: {
+        type: String,
+        required: true,
     },
-    ],
-    comments: [
-    {
-        type: Schema.Types.ObjectId,
-        ref: 'comment',
-    },
-    ],
     // "g" stands for given "r" stands for recieved
     gThankCount: {
         type: Number,
@@ -29,7 +21,19 @@ const userSchema = new Schema({
     },
     rHugCount: {
         type: Number,
-    },  
+    },
+    feelings: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'feeling',
+        },
+        ],
+        comments: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'comment',
+        },
+        ],
     },
     {
         toJSON: {

@@ -3,33 +3,33 @@ const { gql } = require("apollo-server-express");
 const typeDefs = gql `
     
     type User {
-        _id: ID!
+        _id: ID
         username: String
-        feeling: String
-        comments: String
-        gThanksCount: Int
+        password: String
+        gThankCount: Int
         gHugCount: Int
         rThankCount: Int
         rHugCount: Int
+        feelings: [Feeling]!
     }
     
     type Feeling {
-        feelingID: ID!
+        _id: ID
         feelingText: String
+        feelingAuthor: String
         dateTime: String
-        randomUsername: String
-        comment: [User]
         hugCount: Int
         thankCount: Int
+        comments: [Comment]!
     }
     
     type Comment {
-        commentID: ID!
+        _id: ID
         commentText: String
-        dateTime: String
-        randomUsername: String
+        commentAuthor: String
         hugCount: Int
         thankCount: Int
+        dateTime: String
     }
 
     type Auth {

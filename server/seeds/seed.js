@@ -1,5 +1,5 @@
 const db = require('../config/connection');
-const { User, Feeling, Comment } = require('../models');
+const { User, Feeling } = require('../models');
 const userSeeds = require('./userSeeds.json');
 const feelingSeeds = require('./feelingSeeds.json');
 
@@ -7,14 +7,13 @@ db.once('open', async () => {
     try {
         await User.deleteMany({});
         await Feeling.deleteMany({});
-        await Comment.deleteMany({});
 
         await User.create(userSeeds);
 
         for (let i = 0; i < feelingSeeds.length; i++) {
-            const { _id, randomusername } = await Feeling.create(feelingSeeds[i]);
+            const { _id, username } = await Feeling.create(feelingSeeds[i]);
             const user = await User.findOneAndUpdate(
-                { username: randomusername },
+                { feelingAuthor: username },
                 {
                     $addToSet: {
                         feeling: _id,
@@ -22,6 +21,7 @@ db.once('open', async () => {
                 }
             );
         }
+
     } catch (err) {
         console.log(err);
         process.exit(1);

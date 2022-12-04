@@ -2,21 +2,37 @@
     {
         "feelingTitle": "Jane Doe has joined!",
         "feelingText": "Hello, I'm Jane Doe, Nice to Meet You!",
-        "randomUsername": "Jane Doe"
+        "feelingAuthor": "Jane Doe",
+        "hugCount": "4",
+        "thankCount": "4",
+        "comments": [],
+        "dateTime": "December 1, 2022"
     },
     {
         "feelingTitle": "John Doe has joined!",
         "feelingText": "Hello, I'm John Doe, Nice to Meet You!",
-        "randomUsername": "John Doe"
+        "feelingAuthor": "John Doe",
+        "hugCount": "4",
+        "thankCount": "4",
+        "comments": [],
+        "dateTime": "December 2, 2022"
     },
     {
         "feelingTitle": "Chris Doe has joined!",
         "feelingText": "Hello, I'm Chris Doe, Nice to Meet You!",
-        "randomUsername": "Chris Doe"
+        "feelingAuthor": "Chris Doe",
+        "hugCount": "4",
+        "thankCount": "4",
+        "comments": [],
+        "dateTime": "December 3, 2022"
     },
     {
         "feelingTitle": "Jessica Doe, has joined!",
         "feelingText": "Hello, I'm Jessica Doe, Nice to Meet You!",
-        "randomUsername": "Jessica Doe"
+        "feelingAuthor": "Jessica Doe",
+        "hugCount": "4",
+        "thankCount": "4",
+        "comments": [],
+        "dateTime": "December 4, 2022"
     }
 ]

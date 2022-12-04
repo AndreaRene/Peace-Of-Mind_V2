@@ -12,7 +12,7 @@ const resolvers = {
         },
         feelings: async (parent, { username }) => {
             const params = username ? { username } : {};
-            return Feeling.find(params).sort({ createdAt: -1 });
+            return Feeling.find(params).sort({ dateTime: -1 });
         },
         feeling: async (parent, { feelingId }) => {
             return Feeling.findOne({ _id: feelingId });
@@ -52,7 +52,7 @@ const resolvers = {
             if (context.user) {
                 const feeling = await Feeling.create({
                     feelingText,
-                    randomUsername: context.user.username,
+                    feelingAuthor: context.user.username,
                 });
 
                 await User.findOneAndUpdate(
@@ -70,7 +70,7 @@ const resolvers = {
                     { _id: feelingId },
                     {
                         $addToSet: {
-                            comments: { commentText, randomUsername: context.user.username },
+                            comments: { commentText, commentAuthor: context.user.username },
                         },
                     },
                     {
@@ -85,7 +85,7 @@ const resolvers = {
             if (context.user) {
                 const feeling = await Feeling.findOneAndUpdate({
                     _id: feelingId,
-                    randomUsername: context.user.username,
+                    feelingAuthor: context.user.username,
                 });
 
                 await User.findOneAndUpdate(
@@ -105,7 +105,7 @@ const resolvers = {
                         $pull: {
                             comments: {
                                 _id: commentId,
-                                randomUsername: context.user.username,
+                                commentAuthor: context.user.username,
                             },
                         },
                     },

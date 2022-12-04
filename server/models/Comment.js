@@ -9,10 +9,6 @@ const commentSchema = new Schema({
         maxlength: 500,
     },
     username: {
-        type: Schema.Types.ObjectId,
-        ref: 'user',
-    },
-    randomUsername: {
         type: String,
         required: true,
     },
@@ -36,6 +32,6 @@ const commentSchema = new Schema({
     }
 );
 
-const Comment = model('comment', commentSchema);
+const Comment = model('Comment', commentSchema);
 
 module.exports = Comment;
