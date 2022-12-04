@@ -97,7 +97,7 @@ const Feeling = () => {
   //   }
   return (
     <main className="mainContent communityWrapper">
-      <p id="startingParagraph">Welcome, Username. It's great to see you :D</p>
+      <p id="startingParagraph">Welcome, Username. It's great to see you!</p>
       <div className="feelingWrapper">
         <div className="eachFeelingDiv">
           <div className="feelingHeading">

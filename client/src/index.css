@@ -21,13 +21,6 @@
   min-height: 100vh;
 }
 
-.mainContent {
-  /* padding-top: 10rem; */
-  padding-bottom: 8rem;
-  position: relative;
-  min-height: 100vh;
-}
-
 .flexJustifyStart {
   display: flex;
   align-items: center;
