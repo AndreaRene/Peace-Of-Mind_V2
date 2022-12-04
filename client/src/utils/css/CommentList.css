@@ -1,0 +1,15 @@
+.commentWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eachCommentDiv {
+  margin: 1rem;
+  background-color: var(--paleYellow);
+  padding: 0.2rem 1.5rem 1.5rem 1.5rem;
+  border-radius: 25px;
+  box-shadow: 2px 5px #888;
+  min-width: 100%;
+}

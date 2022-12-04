@@ -8,6 +8,7 @@ import Icon from '@ant-design/icons';
 import { HugSvg, ThankSvg } from '../assets/icons/community-svgs';
 import CommentList from '../components/community/CommentList';
 import { Col, Row } from 'antd';
+import '../utils/css/FeelingList.css';
 // import { ADD_FEELING_HUG, ADD_FEELING_THANK } from '../utils/js/mutations';
 
 const feeling = {
@@ -95,50 +96,52 @@ const Feeling = () => {
   // return <div>Loading...</div>;
   //   }
   return (
-    <main className="mainContent" style={{ paddingTop: 100 }}>
+    <main className="mainContent communityWrapper">
       <p id="startingParagraph">Welcome, Username. It's great to see you :D</p>
       <div className="feelingWrapper">
-        <div className="feelingHeading">
-          <Col>
-            <Row>
-              <h3 className="feelingTitle">{feeling.feelingTitle}</h3>
-            </Row>
-            <Row>
-              <p>
-                {feeling.randomUsername} on {feeling.dateTime}
-              </p>
-            </Row>
-          </Col>
-          <Col>
-            <div className="IconWrapper">
-              <Link
-                className="hugIcon"
-                disabled={feeling.hugUsers?.some(
-                  hugUserId => hugUserId === user._id,
-                )}
-                onClick={() =>
-                  handleAddHug(feeling.feelingId, feeling.hugCount)
-                }
-              >
-                <HugSvg />
-              </Link>
-              <div className="thankyouDiv">
+        <div className="eachFeelingDiv">
+          <div className="feelingHeading">
+            <Col>
+              <Row>
+                <h3 className="feelingTitle">{feeling.feelingTitle}</h3>
+              </Row>
+              <Row>
+                <p>
+                  {feeling.randomUsername} on {feeling.dateTime}
+                </p>
+              </Row>
+            </Col>
+            <Col>
+              <div className="iconWrapper">
                 <Link
-                  disabled={feeling.thankUsers?.some(
-                    thankUserId => thankUserId === user._id,
+                  className="hugIcon"
+                  disabled={feeling.hugUsers?.some(
+                    hugUserId => hugUserId === user._id,
                   )}
                   onClick={() =>
-                    handleAddThank(feeling.feelingId, feeling.thankCount)
+                    handleAddHug(feeling.feelingId, feeling.hugCount)
                   }
                 >
-                  <img src={Thank} alt="thakyou" className="thankyouIcon" />
+                  <HugSvg />
                 </Link>
+                <div className="thankyouDivComment">
+                  <Link
+                    disabled={feeling.thankUsers?.some(
+                      thankUserId => thankUserId === user._id,
+                    )}
+                    onClick={() =>
+                      handleAddThank(feeling.feelingId, feeling.thankCount)
+                    }
+                  >
+                    <img src={Thank} alt="thakyou" className="thankyouIcon" />
+                  </Link>
+                </div>
               </div>
-            </div>
-          </Col>
-        </div>
-        <div className="feelingTextWrapper">
-          <p className="feelingText">{feeling.feelingText}</p>
+            </Col>
+          </div>
+          <div className="feelingTextWrapper">
+            <p className="feelingText">{feeling.feelingText}</p>
+          </div>
         </div>
         <div id="comments-container">
           <CommentList comments={feeling.comments} user={user} />

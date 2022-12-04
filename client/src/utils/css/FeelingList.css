@@ -44,7 +44,6 @@
 
 .feelingText {
   width: 90%;
-
   font-size: 1rem;
 }
 
@@ -59,7 +58,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 90%;
+  width: 75%;
+}
+
+#comments-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
 }
 
 .communityWrapper {
@@ -86,5 +93,10 @@
 
 .thankyouDiv {
   margin-top: -0.32rem;
+  margin-left: 0.1rem;
+}
+
+.thankyouDivComment {
+  margin-top: -0.45rem;
   margin-left: 0.1rem;
 }
