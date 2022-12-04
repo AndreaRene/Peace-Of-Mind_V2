@@ -11,11 +11,6 @@ import UserFeelings from '../components/dashboard/Index';
 
 const { Sider, Content } = Layout;
 
-<<<<<<< HEAD
-const Dashboard = () => {
-    const { loading, data } = useQuery(GET_FEELINGS);
-    const [createPost, setCreatePost] = useState(false);
-=======
 const Dashboard = ({ open, onOK, onCancel }) => {
   const [createPost, setCreatePost] = useState(false);
   const [editPost, setEditPost] = useState(false);
@@ -29,43 +24,11 @@ const Dashboard = ({ open, onOK, onCancel }) => {
   const newPostClick = () => {
     setCreatePost(!createPost);
   };
->>>>>>> 8dbc550d197f56f41eae7bbb3a58bec52b6a85da
 
   const editPostClick = () => {
     setEditPost(!editPost);
   };
 
-<<<<<<< HEAD
-    return (
-        <main className="mainContent">
-            {createPost && ( <CreateModal />)}
-
-            <Layout>
-                <Sider>
-                    <Col className='D-Col'>
-                        <Col className='Sider-Row-Box'>
-                            <Row className='Box-Top-Row'>
-                                <Button onClick={newPostClick}>
-                                    <PlusCircleFilled />
-                                </Button>
-                            </Row>
-                        </Col>
-                    </Col>
-                </Sider>
-                <Layout>
-                    {loading ? (
-                        <div>Loading...</div>
-                    ) : (
-                        <UserFeelings />
-                    )}
-                </Layout>
-            </Layout>
-        </main>
-    )
-}
-
-export default Dashboard;
-=======
   return (
     <main className="mainContent" id="dashboardMain">
       {createPost && <CreateModal />}
@@ -157,4 +120,3 @@ export default Dashboard;
 };
 
 export default Dashboard;
->>>>>>> 8dbc550d197f56f41eae7bbb3a58bec52b6a85da

@@ -32,24 +32,15 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
             <Route path="/community" element={<Community />} />
-<<<<<<< HEAD
-            {/* <Route path="/comments" element={<Feeling />} /> */}
-=======
             <Route path="/feeling/:feelingId" element={<Feeling />} />
->>>>>>> 8dbc550d197f56f41eae7bbb3a58bec52b6a85da
             <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
           <Routes>
             <Route path="/about" element={<Footer />} />
             <Route path="/login" element={<Footer />} />
             <Route path="/community" element={<Footer />} />
-<<<<<<< HEAD
-            {/* <Route path='/comments' element={<Footer />} /> */}
-            <Route path='/dashboard' element={<Footer />} />
-=======
             <Route path="/feeling/:feelingId" element={<Footer />} />
             <Route path="/dashboard" element={<Footer />} />
->>>>>>> 8dbc550d197f56f41eae7bbb3a58bec52b6a85da
           </Routes>
         </Router>
       </ApolloProvider>
