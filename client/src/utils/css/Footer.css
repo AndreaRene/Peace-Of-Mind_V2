@@ -1,24 +1,23 @@
-:root {
-  --deepForest: #167323;
-  --burnt: #f9a535;
-  --sand: #efdeb3;
-}
-
 #pageFooter {
   z-index: 1;
-  background-color: var(--deepForest);
-  color: var(--sand);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--darkGreen);
+  color: var(--paleYellow);
   padding: 1rem;
   width: 100vw;
   text-align: center;
   height: 6rem;
 }
 
+
 .footerLinks {
-  color: var(--burnt);
+  color: var(--midOrange);
   margin-left: 0.5rem;
 }
 
 .footerLinks:hover {
-  color: var(--sand);
+  color: var(--paleYellow);
 }
