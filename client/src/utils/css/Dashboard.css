@@ -1,0 +1,116 @@
+#dashboardMain {
+  margin-top: 0;
+  padding-top: 10rem;
+  padding-bottom: 0;
+}
+
+.Sider-Row-Box {
+  height: 25rem;
+  width: 5%;
+  background-color: var(--darkGray);
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  position: fixed;
+  left: 1rem;
+  top: 10rem;
+
+}
+
+.Box-Top-Row {
+  height: 15%;
+  border-radius: 30px 30px 0 0;
+  background-color: #167323;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Box-Top-Row Button {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  font-size: 2em;
+  color: var(--midOrange);
+}
+
+.Box-Top-Row button:hover {
+  scale: 1.15;
+}
+
+.D-Content {
+  display: flex;
+  width: fill;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #43ada1;
+}
+
+.D-Content-Row {
+  width: 75vw;
+  height: auto;
+  background-color: #efdeb3;
+  padding: 20px 20px;
+  border-radius: 25px;
+  box-shadow: 2px 5px #888;
+  margin: 2rem auto;
+}
+
+.D-Content-Row-Post {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.D-Post-Row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.D-Post-Title h3 {
+  font-size: 22px;
+  padding: 15px;
+}
+
+.D-Post-Edit {
+  display: flex;
+  flex-direction: row;
+}
+
+.D-Post-Edit p {
+  font-size: 22px;
+  padding: 15px;
+}
+
+.D-Post-Edit-E {
+  color: green;
+}
+
+.D-Post-Edit-D {
+  color: red;
+}
+
+.D-Post-Edit-E:hover,
+.D-Post-Edit-D:hover {
+  scale: 1.5;
+  cursor: pointer;
+}
+
+.D-Post-Text p {
+  font-size: 22px;
+  line-height: 160%;
+  letter-spacing: 3px;
+  padding: 10px;
+}
+
+.D-Post-Date {
+  display: flex;
+  justify-content: end;
+  padding: 5px 20px;
+}
+
+.D-Post-Date p {
+  font-size: 22px;
+}

@@ -3,7 +3,7 @@ import '../../utils/css/Footer.css';
 
 function Footer() {
   return (
-    <footer className="flexNoWrap" id="pageFooter">
+    <footer className="" id="pageFooter">
       <h5 className=""></h5>
       <p className="">
         24/7 Suicide and Crisis Lifeline:{' '}
@@ -14,7 +14,7 @@ function Footer() {
       </p>
       <p className="">
         24/7 Suicide and Crisis Lifeline Chat:{' '}
-        <a className="footerLinks" href="https://988lifeline.org/chat/">
+        <a className="footerLinks" href="https://988lifeline.org/chat/" target={'_'}>
           {' '}
           Lifeline Chat
         </a>
