@@ -1,5 +1,5 @@
 const nouns = [
-  "ardvark",
+  "Ardvark",
   "Alpacca",
   "Albatross",
   "Ant",
@@ -43,7 +43,7 @@ const nouns = [
   "Kestral",
   "Lemur",
   "Lizzard",
-  "LLama",
+  "Llama",
   "Liger",
   "Meercat",
   "Newt",
