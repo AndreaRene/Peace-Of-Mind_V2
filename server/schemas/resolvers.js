@@ -1,32 +1,123 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { Comment, Feeling, User } = require('../models');
+const auth = require('../utils/auth');
 const { signToken } = require('../utils/auth');
-
-/*resolver argument notes
-
-(PARENT)
-The return value of the resolver for this field's parent (i.e., the previous resolver in the resolver chain).
-For resolvers of top-level fields with no parent (such as fields of Query), this value is obtained from the rootValue function passed to Apollo Server's constructor.
-
-(ARGS)	
-An object that contains all GraphQL arguments provided for this field.
-For example, when executing query{ user(id: "4") }, the args object passed to the user resolver is { "id": "4" }.
-
-(CONTEXT)
-An object shared across all resolvers that are executing for a particular operation. Use this to share per-operation state, including authentication information, dataloader instances, and anything else to track across resolvers.
-See The context argument for more information.
-
-(INFO)	
-Contains information about the operation's execution state, including the field name, the path to the field from the root, and more.
-Its core fields are listed in the GraphQL.js source code, and it is extended with additional functionality by other modules, like apollo-cache-control.
-*/
 
 const resolvers = {
     Query: {
-        user: async(parent, { username }) => {
-            return User.findOne({ username });
-        }
-    }
-}
+        users: async () => {
+            return User.find().populate('feelings');
+        },
+        user: async (parent, { username }) => {
+            return User.findOne({ username }).populate('feelings');
+        },
+        feelings: async (parent, { username }) => {
+            const params = username ? { username } : {};
+            return Feeling.find(params).sort({ createdAt: -1 });
+        },
+        feeling: async (parent, { feelingId }) => {
+            return Feeling.findOne({ _id: feelingId });
+        },
+        me: async (parent, args, context) => {
+            if (context.user) {
+                return User.findOne({ _id: context.user._id }).populate('feeling');
+            }
+            throw new AuthenticationError(`You need to be logged in`);
+        },
+    },
+
+    Mutation: {
+        addUser: async (parent, { username, password }) => {
+            const user = await User.create({ username, password });
+            const token = signToken(user);
+            return { token, user };
+        },
+        login: async (parent, { username, password }) => {
+            const user = await User.findOne({ username });
+
+            if (!user) {
+                throw new AuthenticationError('No user found with this username');
+            }
+
+            const correctPw = await user.isCorrectPassword(password);
+
+            if (!correctPw) {
+                throw new AuthenticationError('Incorrect credentials');
+            }
+
+            const token = signToken(user);
+
+            return { token, user };
+        },
+        addFeeling: async (parent, { feelingText }, context) => {
+            if (context.user) {
+                const feeling = await Feeling.create({
+                    feelingText,
+                    randomUsername: context.user.username,
+                });
+
+                await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $addToSet: { feelings: feeling._id } }
+                );
+
+                return feeling;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
+        addComment: async (parent, { feelingId, commentText }, context) => {
+            if (context.user) {
+                return Feeling.findOneAndUpdate(
+                    { _id: feelingId },
+                    {
+                        $addToSet: {
+                            comments: { commentText, randomUsername: context.user.username },
+                        },
+                    },
+                    {
+                        new: true,
+                        runValidators: true,
+                    },
+                );
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
+        removeFeeling: async (parent, { feelingId }, context) => {
+            if (context.user) {
+                const feeling = await Feeling.findOneAndUpdate({
+                    _id: feelingId,
+                    randomUsername: context.user.username,
+                });
+
+                await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $pull: { feelings: feeling._id } }
+                );
+
+                return feeling;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
+        removeComment: async (parent, { feelingId, commentId }, context) => {
+            if (context.user) {
+                return Feeling.findOneAndUpdate(
+                    { _id: feelingId },
+                    {
+                        $pull: {
+                            comments: {
+                                _id: commentId,
+                                randomUsername: context.user.username,
+                            },
+                        },
+                    },
+                    {
+                        new: true,
+                    },
+                );
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
+    },
+};
 
 module.exports = resolvers;
