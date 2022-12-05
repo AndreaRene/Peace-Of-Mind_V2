@@ -23,7 +23,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    margin-top: 11rem;
+    margin: auto 0;
 }
 
 .ant-card-head-title {
