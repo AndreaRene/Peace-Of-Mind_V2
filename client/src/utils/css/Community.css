@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 6.25rem;
+  text-align: center;
 }
 
 #startingParagraph {
@@ -21,7 +22,8 @@
   }
 }
 
-@media (max-width: 1199px) {}
+@media (max-width: 1199px) {
+}
 
 @media (max-width: 1023px) {
   #startingParagraph {
@@ -44,6 +46,8 @@
   }
 }
 
-@media (max-width: 479px) {}
+@media (max-width: 479px) {
+}
 
-@media (max-width: 379px) {}
+@media (max-width: 379px) {
+}

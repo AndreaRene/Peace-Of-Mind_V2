@@ -16,13 +16,79 @@
   width: 70%;
 }
 
-/* .commentWrapper .cardLeft {
-  width: 90%;
-}
-
-.commentWrapper .cardRight {
-  width: 10%;
-} */
 .commentWrapper .cardHeader {
   align-items: flex-start;
+}
+
+@media (max-width: 1399px) {
+  .commentWrapper .cardLeft {
+    width: 92%;
+  }
+
+  .commentWrapper .cardRight {
+    width: 8%;
+  }
+}
+
+@media (max-width: 1199px) {
+  .commentWrapper {
+    width: 80%;
+  }
+  .commentWrapper .cardIcons {
+    margin-left: 0.1rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .commentWrapper {
+    width: 85%;
+  }
+
+  .commentWrapper .card {
+    width: 80%;
+  }
+  .commentWrapper .cardLeft {
+    width: 90%;
+  }
+
+  .commentWrapper .cardRight {
+    width: 10%;
+  }
+}
+
+@media (max-width: 767px) {
+  .commentWrapper {
+    width: 95%;
+  }
+
+  .commentWrapper .card {
+    width: 85%;
+  }
+  .commentWrapper .cardLeft {
+    width: 86%;
+  }
+
+  .commentWrapper .cardRight {
+    width: 14%;
+  }
+}
+
+@media (max-width: 559px) {
+  .commentWrapper .card {
+    width: 90%;
+  }
+
+  .commentWrapper .cardLeft {
+    width: 100%;
+  }
+
+  .commentWrapper .cardRight {
+    width: 100%;
+  }
+}
+
+@media (max-width: 479px) {
+}
+
+@media (max-width: 379px) {
 }
