@@ -1,15 +1,28 @@
 .commentWrapper {
-  width: 100%;
+  width: 75%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-end;
 }
 
-.eachCommentDiv {
-  margin: 1rem;
-  background-color: var(--paleYellow);
-  padding: 0.2rem 1.5rem 1.5rem 1.5rem;
-  border-radius: 25px;
-  box-shadow: 2px 5px #888;
-  min-width: 100%;
+.commentWrapper .cardDate {
+  font-size: 1.2rem;
+}
+
+.commentWrapper .card {
+  padding: 1rem;
+  margin: 4px 0;
+  width: 70%;
+}
+
+/* .commentWrapper .cardLeft {
+  width: 90%;
+}
+
+.commentWrapper .cardRight {
+  width: 10%;
+} */
+.commentWrapper .cardHeader {
+  align-items: flex-start;
 }
