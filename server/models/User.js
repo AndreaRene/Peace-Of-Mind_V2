@@ -28,14 +28,14 @@ const userSchema = new Schema({
             type: Schema.Types.ObjectId,
             ref: 'feeling',
         },
-        ],
-        comments: [
+    ],
+    comments: [
         {
             type: Schema.Types.ObjectId,
             ref: 'comment',
         },
-        ],
-    },  
+    ],
+},
 );
 
 userSchema.pre('save', async function (next) {
