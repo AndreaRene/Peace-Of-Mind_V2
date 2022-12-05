@@ -24,31 +24,6 @@ const feelingSchema = new Schema({
     thankCount: {
         type: Number,
     },
-    comments: [
-        {
-            commentText: {
-                type: String,
-                required: true,
-                minlength: 1,
-                maxlength: 280,
-            },
-            commentAuthor: {
-                type: String,
-                required: true,
-            },
-            hugCount: {
-                type: Number,
-            },
-            thankCount: {
-                type: Number,
-            },
-            dateTime : {
-                type: Date,
-                default: Date.now,
-                get: (timestamp) => dateFormat(timestamp),
-            },
-        },
-    ],
     dateTime: {
         type: Date,
         default: Date.now,

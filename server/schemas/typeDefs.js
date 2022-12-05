@@ -15,6 +15,7 @@ const typeDefs = gql `
     
     type Feeling {
         _id: ID
+        feelingTitle: String
         feelingText: String
         feelingAuthor: String
         dateTime: String
@@ -40,7 +41,7 @@ const typeDefs = gql `
     type Query {
         users: [User]
         user(username: String!): User
-        feelings(username: String): [Feeling]
+        feelings(feelingAuthor: String): [Feeling]
         feeling(feelingId: ID!): Feeling
         me: User
     }
@@ -48,7 +49,7 @@ const typeDefs = gql `
     type Mutation {
         addUser(username: String!, password: String!): Auth
         login(username: String!, password: String!): Auth
-        addFeeling(feelingText: String!): Feeling
+        addFeeling(feelingTitle: String!, feelingText: String!): Feeling
         addComment(feelingId: ID!, commentText: String!): Feeling
         removeFeeling(feelingId: ID!): Feeling
         removeComment(feelingId: ID!, commentId: ID!): Feeling
