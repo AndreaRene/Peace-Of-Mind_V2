@@ -90,7 +90,16 @@ label {
     }
 }
 
-@media (max-width: 1023px) {}
+@media (max-width: 1023px) {
+    #loginOr {
+        margin: 1rem;
+    }
+
+    #login-card,
+    #signup-card {
+        width: 38%;
+    }
+}
 
 @media (max-width: 767px) {}
 
