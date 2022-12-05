@@ -40,6 +40,16 @@
 }
 
 @media (max-width: 1023px) {
+  .commentWrapper {
+    width: 85%;
+  }
+  .commentWrapper .cardLeft {
+    width: 90%;
+  }
+
+  .commentWrapper .cardRight {
+    width: 10%;
+  }
 }
 
 @media (max-width: 767px) {
