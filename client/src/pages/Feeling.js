@@ -117,12 +117,12 @@ const Feeling = () => {
           <div className="cardRight">
             <div className="cardIcons">
               <div className="cardIconGroup">
-                <Link
+                {/* <Link
                   className="feelingIcon"
                   to={`/feeling/${feeling.feelingId}`}
                 >
                   <CommentSvg />
-                </Link>
+                </Link> */}
                 <Link
                   className="hugIcon"
                   disabled={feeling.hugUsers?.some(
@@ -194,7 +194,7 @@ const Feeling = () => {
             <p className="feelingText">{feeling.feelingText}</p>
           </div>
         </div> */}
-      <div id="comments-container">
+      <div id="commentsCardWrapper">
         <CommentList comments={feeling.comments} user={user} />
       </div>
       {/* </div> */}
