@@ -69,9 +69,26 @@ label {
     font-size: 1.4rem;
 }
 
-@media (max-width: 1399px) {}
+@media (max-width: 1399px) {
 
-@media (max-width: 1199px) {}
+    #loginForm,
+    #signupForm {
+        width: 90%;
+    }
+
+    #login-card,
+    #signup-card {
+        width: 30%;
+    }
+}
+
+@media (max-width: 1199px) {
+
+    #loginForm,
+    #signupForm {
+        width: 100%;
+    }
+}
 
 @media (max-width: 1023px) {}
 
