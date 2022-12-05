@@ -6,42 +6,65 @@ import { useQuery } from '@apollo/client';
 import EditModal from './EditPost';
 
 const UserFeelings = () => {
-  const [editPost, setEditPost] = useState(false);
+    const [editPost, setEditPost] = useState(false);
 
-  const editPostClick = () => {
-    setEditPost(!editPost);
-}
+    const editPostClick = () => {
+        setEditPost(!editPost);
+    }
 
-  return (
-    <div>
-      {editPost && ( <EditModal />)}
-      {/* {showfeelingTitle && <h3>{feelingTitle}</h3>}
+    return (
+        <div className='cardWrapper'>
+            {editPost && (<EditModal />)}
+            {/* {showfeelingTitle && <h3>{feelingTitle}</h3>}
       {feelings &&
         feelings.map((thought) => ( */}
-            <div className="D-Content">
-                <Row className="D-Content-Row" wrap={true}>
-                    <Row className="D-Content-Row-Post">
-                        <Row className="D-Post-Row">
-                            <Col className="D-Post-Title">
-                                <h3>Qu'est-ce que le Lorem Ipsum?</h3>
-                            </Col>
-                            <Col className="D-Post-Edit">
-                                <p className="D-Post-Edit-E"><EditFilled onClick={editPostClick}/></p>
-                                <p className="D-Post-Edit-D"><DeleteFilled /></p>
-                            </Col>
-                        </Row>
-                        <Row className="D-Post-Text">
-                            <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte.</p>
-                        </Row>
-                        <Row className="D-Post-Date">
-                            <p>Nov 29th, 2022</p>
-                        </Row>
-                    </Row>
-                </Row>
+            <div className="card">
+                <div className="cardLeft">
+                    <header className="cardHeader">
+                        <div className="cardTitleGroup">
+                            <h2 className="cardTitle">{feeling.feelingTitle}</h2>
+                        </div>
+                        <p className="cardDate">{feeling.dateTime}</p>
+                    </header>
+                    <p className="cardText">{feeling.feelingText}</p>
+                </div>
+                <div className="cardRight">
+                    <div className="cardIcons">
+                        <Link
+                            className="feelingIcon"
+                            to={`/feeling/${feeling.feelingId}`}
+                        >
+                            <CommentSvg />
+                        </Link>
+                        {/* HERE */}
+                        {/* add delete and edit icons. hug and thank icons should be disabled and are only there to show counts */}
+                        <Link
+                            className="hugIcon"
+                            disabled={feeling.hugUsers?.some(
+                                hugUserId => hugUserId === user._id,
+                            )}
+                            onClick={() =>
+                                handleAddHug(feeling.feelingId, feeling.hugCount)
+                            }
+                        >
+                            <HugSvg />
+                        </Link>
+                        <Link
+                            disabled={feeling.thankUsers?.some(
+                                thankUserId => thankUserId === user._id,
+                            )}
+                            onClick={() =>
+                                handleAddThank(feeling.feelingId, feeling.thankCount)
+                            }
+                        >
+                            <img src={Thank} alt="thankyou" className="thankyouIcon" />
+                        </Link>
+                    </div>
+                </div>
             </div>
-        {/* ))} */}
-    </div>
-  );
+            {/* ))} */}
+        </div>
+    );
 };
 
 export default UserFeelings;

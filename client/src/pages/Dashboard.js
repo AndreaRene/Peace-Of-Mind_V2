@@ -31,7 +31,7 @@ const Dashboard = ({ open, onOK, onCancel }) => {
   };
 
   return (
-    <main className="mainContent" id="dashboardMain">
+    <main className="" id="dashboardMain">
       {createPost && <CreateModal />}
       {editPost && <EditModal />}
       <Col className="Sider-Row-Box">
