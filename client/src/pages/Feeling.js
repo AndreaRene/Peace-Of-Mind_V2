@@ -12,6 +12,7 @@ import { HugSvg, CommentSvg } from "../assets/icons/community-svgs.js";
 import Thank from "../assets/icons/svg/thank-1.svg";
 import { generateName } from "../utils/js/names";
 import "../utils/css/Feeling.css";
+import "../utils/css/Community.css";
 // import { ADD_FEELING_HUG, ADD_FEELING_THANK } from '../utils/js/mutations';
 
 const feeling = {
@@ -100,7 +101,10 @@ const Feeling = () => {
   //   }
   return (
     <main className="communityWrapper">
-      <p id="startingParagraph">Welcome, Username. It's great to see you!</p>
+      <p id="startingParagraph">
+        Welcome, Username.{" "}
+        <span className="headingSpan">It's great to see you!</span>
+      </p>
       {/* <div className="feelingWrapper"> */}
       <div className="cardWrapper">
         {/* {feelingData.map((feeling) => ( */}
