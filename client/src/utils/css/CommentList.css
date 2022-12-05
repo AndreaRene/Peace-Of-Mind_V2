@@ -16,21 +16,27 @@
   width: 70%;
 }
 
-/* .commentWrapper .cardLeft {
-  width: 90%;
-}
-
-.commentWrapper .cardRight {
-  width: 10%;
-} */
 .commentWrapper .cardHeader {
   align-items: flex-start;
 }
 
 @media (max-width: 1399px) {
+  .commentWrapper .cardLeft {
+    width: 92%;
+  }
+
+  .commentWrapper .cardRight {
+    width: 8%;
+  }
 }
 
 @media (max-width: 1199px) {
+  .commentWrapper {
+    width: 80%;
+  }
+  .commentWrapper .cardIcons {
+    margin-left: 0.1rem;
+  }
 }
 
 @media (max-width: 1023px) {
