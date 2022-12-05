@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "@ant-design/icons": "^4.8.0",
     "@apollo/client": "^3.7.1",
