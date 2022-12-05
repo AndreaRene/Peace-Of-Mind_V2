@@ -53,6 +53,16 @@
 }
 
 @media (max-width: 767px) {
+  .commentWrapper {
+    width: 95%;
+  }
+  .commentWrapper .cardLeft {
+    width: 86%;
+  }
+
+  .commentWrapper .cardRight {
+    width: 14%;
+  }
 }
 
 @media (max-width: 559px) {
