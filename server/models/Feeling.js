@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const dateFormat = require('../../client/src/utils/dateFormat');
+const dateFormat = require('../utils/dateFormat');
 
 const feelingSchema = new Schema({
     feelingTitle: {
@@ -14,11 +14,7 @@ const feelingSchema = new Schema({
         minlength: 1,
         maxlength: 500,
     },
-    username: {
-        type: Schema.Types.ObjectId,
-        ref: 'user',
-    },
-    randomUsername: {
+    feelingAuthor: {
         type: String,
         required: true,
     },
@@ -30,26 +26,33 @@ const feelingSchema = new Schema({
     },
     comments: [
         {
-            type: Schema.Types.ObjectId,
-            ref: 'comment',
-        },
-    ],
-    hugUsers: [
-        {   
-            type: Schema.Types.ObjectId,
-            ref: 'user',
-        },
-    ],
-    thankUsers: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'user',
+            commentText: {
+                type: String,
+                required: true,
+                minlength: 1,
+                maxlength: 280,
+            },
+            commentAuthor: {
+                type: String,
+                required: true,
+            },
+            hugCount: {
+                type: Number,
+            },
+            thankCount: {
+                type: Number,
+            },
+            dateTime : {
+                type: Date,
+                default: Date.now,
+                get: (timestamp) => dateFormat(timestamp),
+            },
         },
     ],
     dateTime: {
         type: Date,
         default: Date.now,
-        get: dateFormat,
+        get: (timestamp) => dateFormat(timestamp),
     },
     },
     {

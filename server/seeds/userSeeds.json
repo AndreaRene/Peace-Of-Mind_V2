@@ -1,0 +1,34 @@
+[
+    {
+        "username": "Jane Doe",
+        "password": "password1",
+        "gThankCount": "4",
+        "gHugCount": "4",
+        "rThankCount": "4",
+        "rHugCount": "4"
+    },
+    {
+        "username": "John Doe",
+        "password": "password2",
+        "gThankCount": "4",
+        "gHugCount": "4",
+        "rThankCount": "4",
+        "rHugCount": "4"
+    },
+    {
+        "username": "Chris Doe",
+        "password": "password3",
+        "gThankCount": "4",
+        "gHugCount": "4",
+        "rThankCount": "4",
+        "rHugCount": "4"
+    },
+    {
+        "username": "Jessica Doe",
+        "password": "password4",
+        "gThankCount": "4",
+        "gHugCount": "4",
+        "rThankCount": "4",
+        "rHugCount": "4"
+    }
+]
