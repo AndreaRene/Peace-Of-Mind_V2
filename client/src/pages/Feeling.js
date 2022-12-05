@@ -1,51 +1,52 @@
-import React from "react";
-import { useQuery, useMutation } from "@apollo/client";
-import { Link } from "react-router-dom";
-import { GET_SINGLE_FEELING } from "../utils/js/queries";
-import { useParams } from "react-router-dom";
-import Icon from "@ant-design/icons";
-import CommentList from "../components/community/CommentList";
-import { Col, Row } from "antd";
-import "../utils/css/Community.css";
-import "../utils/css/feelingsCard.css";
-import { HugSvg, CommentSvg } from "../assets/icons/community-svgs.js";
-import Thank from "../assets/icons/svg/thank-1.svg";
-import { generateName } from "../utils/js/names";
-import "../utils/css/Feeling.css";
-import "../utils/css/Community.css";
+import React from 'react';
+import { useQuery, useMutation } from '@apollo/client';
+import { Link } from 'react-router-dom';
+import { GET_SINGLE_FEELING } from '../utils/js/queries';
+import { useParams } from 'react-router-dom';
+import Icon from '@ant-design/icons';
+import CommentList from '../components/community/CommentList';
+import CommentModal from '../components/community/CommentModal';
+import { Col, Row } from 'antd';
+import '../utils/css/Community.css';
+import '../utils/css/feelingsCard.css';
+import { HugSvg, CommentSvg } from '../assets/icons/community-svgs.js';
+import Thank from '../assets/icons/svg/thank-1.svg';
+import { generateName } from '../utils/js/names';
+import '../utils/css/Feeling.css';
+import '../utils/css/Community.css';
 // import { ADD_FEELING_HUG, ADD_FEELING_THANK } from '../utils/js/mutations';
 
 const feeling = {
   _id: 234,
-  feelingTitle: "Man this stinks",
+  feelingTitle: 'Man this stinks',
   feelingText:
     "I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee.",
-  randomUsername: "Celtic Butterfly",
+  randomUsername: 'Celtic Butterfly',
   hugCount: 3,
   thankCount: 6,
-  dateTime: "11/30/22",
+  dateTime: '11/30/22',
   hugUsers: [667, 343, 565],
   thankUsers: [667, 343, 565],
   comments: [
     {
       _id: 588,
-      commentText: "Awesome work dude!",
-      randomUsername: "Pink Pufferfish",
+      commentText: 'Awesome work dude!',
+      randomUsername: 'Pink Pufferfish',
       hugCount: 6,
       thankCount: 5,
       hugUsers: [878, 667, 243],
       thankUsers: [667, 878, 243],
-      dateTime: "12/1/22",
+      dateTime: '12/1/22',
     },
     {
       _id: 344,
       commentText: "I'm sorry you're feeling that way :(..",
-      randomUsername: "Bananarama Monkey",
+      randomUsername: 'Bananarama Monkey',
       hugCount: 12,
       thankCount: 9,
       hugUsers: [667, 990, 123],
       thankUsers: [667, 435, 223],
-      dateTime: "12/3/22",
+      dateTime: '12/3/22',
     },
   ],
 };
@@ -73,7 +74,7 @@ const Feeling = () => {
       //       hugCount,
       //     },
       //   });
-      console.log("addedHug");
+      console.log('addedHug');
     } catch (err) {
       console.log(err);
     }
@@ -87,7 +88,7 @@ const Feeling = () => {
       //       thankCount,
       //     },
       //   });
-      console.log("addedThank");
+      console.log('addedThank');
     } catch (err) {
       console.log(err);
     }
@@ -102,7 +103,7 @@ const Feeling = () => {
   return (
     <main className="communityWrapper">
       <p id="startingParagraph">
-        Welcome, Username.{" "}
+        Welcome, Username.{' '}
         <span className="headingSpan">It's great to see you!</span>
       </p>
       {/* <div className="feelingWrapper"> */}
@@ -131,7 +132,7 @@ const Feeling = () => {
                 <Link
                   className="hugIcon"
                   disabled={feeling.hugUsers?.some(
-                    (hugUserId) => hugUserId === user._id
+                    hugUserId => hugUserId === user._id,
                   )}
                   onClick={() =>
                     handleAddHug(feeling.feelingId, feeling.hugCount)
@@ -142,7 +143,7 @@ const Feeling = () => {
               </div>
               <Link
                 disabled={feeling.thankUsers?.some(
-                  (thankUserId) => thankUserId === user._id
+                  thankUserId => thankUserId === user._id,
                 )}
                 onClick={() =>
                   handleAddThank(feeling.feelingId, feeling.thankCount)
@@ -154,53 +155,11 @@ const Feeling = () => {
           </div>
         </div>
       </div>
-
-      {/* <div className="eachFeelingDiv">
-          <div className="feelingHeading">
-            <Col>
-              <Row>
-                <h3 className="feelingTitle">{feeling.feelingTitle}</h3>
-              </Row>
-              <Row>
-                <p>
-                  {feeling.randomUsername} on {feeling.dateTime}
-                </p>
-              </Row>
-            </Col>
-            <Col>
-              <div className="iconWrapper">
-                <Link
-                  className="hugIcon"
-                  disabled={feeling.hugUsers?.some(
-                    (hugUserId) => hugUserId === user._id
-                  )}
-                  onClick={() =>
-                    handleAddHug(feeling.feelingId, feeling.hugCount)
-                  }
-                >
-                  <HugSvg />
-                </Link>
-                <div className="thankyouDivComment">
-                  <Link
-                    disabled={feeling.thankUsers?.some(
-                      (thankUserId) => thankUserId === user._id
-                    )}
-                    onClick={() =>
-                      handleAddThank(feeling.feelingId, feeling.thankCount)
-                    }
-                  >
-                    <img src={Thank} alt="thakyou" className="thankyouIcon" />
-                  </Link>
-                </div>
-              </div>
-            </Col>
-          </div>
-          <div className="feelingTextWrapper">
-            <p className="feelingText">{feeling.feelingText}</p>
-          </div>
-        </div> */}
       <div id="commentsCardWrapper">
         <CommentList comments={feeling.comments} user={user} />
+      </div>
+      <div id="commentModalWrapper">
+        <CommentModal />
       </div>
     </main>
   );
