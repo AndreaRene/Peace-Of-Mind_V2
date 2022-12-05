@@ -11,6 +11,7 @@ import "../utils/css/feelingsCard.css";
 import { HugSvg, CommentSvg } from "../assets/icons/community-svgs.js";
 import Thank from "../assets/icons/svg/thank-1.svg";
 import { generateName } from "../utils/js/names";
+import "../utils/css/Feeling.css";
 // import { ADD_FEELING_HUG, ADD_FEELING_THANK } from '../utils/js/mutations';
 
 const feeling = {
@@ -197,7 +198,6 @@ const Feeling = () => {
       <div id="commentsCardWrapper">
         <CommentList comments={feeling.comments} user={user} />
       </div>
-      {/* </div> */}
     </main>
   );
 };
