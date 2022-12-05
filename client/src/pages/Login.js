@@ -8,11 +8,9 @@ const Login = () => {
 
   return (
     <main className="loginWrapper" id="loginMain">
-      <div id="log-sign-holder">
-        <LoginCard />
-        <div id="loginOr">OR</div>
-        <SignupCard />
-      </div>
+      <LoginCard />
+      <div id="loginOr">OR</div>
+      <SignupCard />
     </main>
   );
 };
