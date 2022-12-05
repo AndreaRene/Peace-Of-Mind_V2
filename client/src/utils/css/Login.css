@@ -109,13 +109,30 @@ label {
     #loginButton,
     #signupButton {
         width: 100%;
-        /* padding: 1.2rem; */
         margin: .8rem auto;
         font-size: 1.4rem;
     }
 }
 
-@media (max-width: 559px) {}
+@media (max-width: 559px) {
+    .loginWrapper {
+        flex-direction: column;
+    }
+
+    #login-card,
+    #signup-card {
+        width: 75%;
+    }
+
+    #loginForm,
+    #signupForm {
+        width: 70%;
+    }
+
+    .loginWrapper {
+        margin: 8rem 0 2rem;
+    }
+}
 
 @media (max-width: 479px) {}
 
