@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_FEELINGS } from '../utils/js/queries';
 import { Col, Row, Button } from 'antd';
-import { PlusCircleFilled } from '@ant-design/icons';
+import { PlusCircleFilled, EditFilled, DeleteFilled } from '@ant-design/icons';
 import { Layout } from 'antd';
 import '../utils/css/Dashboard.css';
 import CreateModal from '../components/dashboard/NewPost';
+import EditModal from '../components/dashboard/EditPost';
 
 import UserFeelings from '../components/dashboard/Index';
 
