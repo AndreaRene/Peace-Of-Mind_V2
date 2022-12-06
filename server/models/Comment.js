@@ -1,35 +1,36 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const commentSchema = new Schema({
+const commentSchema = new Schema(
+  {
     commentText: {
-        type: String,
-        required: true,
-        minlength: 1,
-        maxlength: 500,
+      type: String,
+      required: true,
+      minlength: 1,
+      maxlength: 500,
     },
     commentAuthor: {
         type: String,
         required: true,
     },
     hugCount: {
-        type: Number,
+      type: Number,
     },
     thankCount: {
-        type: Number,
+      type: Number,
     },
     dateTime: {
-        type: Date,
-        default: Date.now,
-        get: dateFormat,
+      type: Date,
+      default: Date.now,
+      get: dateFormat,
     },
+  },
+  {
+    toJSON: {
+      getters: true,
     },
-    {
-        toJSON: {
-            getters: true,
-        },
-        id: false,
-    }
+    id: false,
+  },
 );
 
 const Comment = model('Comment', commentSchema);

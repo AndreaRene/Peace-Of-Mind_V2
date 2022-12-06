@@ -37,7 +37,7 @@ const Feeling = () => {
       //       hugCount,
       //     },
       //   });
-      console.log('addedHug');
+      console.log("addedHug");
     } catch (err) {
       console.log(err);
     }
@@ -51,7 +51,7 @@ const Feeling = () => {
       //       thankCount,
       //     },
       //   });
-      console.log('addedThank');
+      console.log("addedThank");
     } catch (err) {
       console.log(err);
     }

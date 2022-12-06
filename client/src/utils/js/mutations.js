@@ -25,23 +25,16 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_FEELING = gql`
-  mutation addFeeling($feelingTitle: String!, $feelingText: String!) {
-    addFeeling(feelingTitle: $feelingTitle, feelingText: $feelingText) {
-      _id
-      feelingTitle
-      feelingText
-      hugCount
-      thankCount
-      comments {
-        _id
-        commentText
-        hugcount
-        thankCount
-        dateTime
-      }
-      dateTime
-    }
-  }
+    mutation addFeeling($feelingTitle: String!, $feelingText: String!) {
+        addFeeling(feelingTitle: $feelingTitle, feelingText: $feelingText) {
+            _id
+            feelingTitle
+            feelingText
+            hugCount
+            thankCount
+            dateTime
+        },
+    },
 `;
 
 export const ADD_FEELING_HUG = gql`
@@ -63,50 +56,38 @@ export const ADD_FEELING_THANK = gql`
 `;
 
 export const REMOVE_FEELING = gql`
-  mutation removeFeeling(
-    $feelingTitle: String!
-    $feelingText: String!
-    $username: String!
-  ) {
-    removeFeeling(
-      feelingTitle: $feelingTitle
-      feelingText: $feelingText
-      username: $username
-    ) {
-      _id
-      feelingTitle
-      feelingText
-      hugCount
-      thankCount
-      comments {
-        _id
-        commentText
-        hugcount
-        thankCount
-        dateTime
-      }
-      dateTime
-    }
-  }
+    mutation removeFeeling($feelingTitle: String!, $feelingText: String!, $username: String!) {
+        removeFeeling(feelingTitle: $feelingTitle, feelingText: $feelingText, username: $username) {
+            _id
+            feelingTitle
+            feelingText
+            username
+            hugCount
+            thankCount
+            comments {
+                _id
+                commentText
+                username
+                hugcount
+                thankCount
+                dateTime
+            }
+            dateTime
+        },
+    },
 `;
 
 export const ADD_COMMENT = gql`
-  mutation addComment(
-    $feelingId: ID!
-    $commentText: String!
-    $commentAuthor: String!
-  ) {
-    addComment(
-      feelingId: $feelingId
-      commentText: $commentText
-      commentAuthor: $commentAuthor
-    ) {
-      _id
-      commentText
-      commentAuthor
-      dateTime
-    }
-  }
+    mutation addComment($commentText: String!, $username: String!) {
+        addComment(commentText: $commentText, username: $username) {
+            _id
+            commentText
+            username
+            hugCount
+            thankCount
+            dateTime
+        },
+    },
 `;
 
 export const ADD_COMMENT_HUG = gql`
@@ -128,13 +109,14 @@ export const ADD_COMMENT_THANK = gql`
 `;
 
 export const REMOVE_COMMENT = gql`
-  mutation removeComment($commentText: String!, $username: String!) {
-    removeComment(commentText: $commentText, username: $username) {
-      _id
-      commentText
-      hugCount
-      thankCount
-      dateTime
-    }
-  }
+    mutation removeComment($commentText: String!, $username: String!) {
+        removeComment(commentText: $commentText, username: $username) {
+            _id
+            commentText
+            username
+            hugCount
+            thankCount
+            dateTime
+        },
+    },
 `;

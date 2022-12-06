@@ -1,9 +1,9 @@
-import React, { useMutation } from 'react';
-import Icon from '@ant-design/icons';
-import { HugSvg, ThankSvg } from '../../assets/icons/community-svgs';
-import Thank from '../../assets/icons/svg/thank-1.svg';
-import { Link } from 'react-router-dom';
-import { Col, Row } from 'antd';
+import React, { useMutation } from "react";
+import Icon from "@ant-design/icons";
+import { HugSvg, ThankSvg } from "../../assets/icons/community-svgs";
+import Thank from "../../assets/icons/svg/thank-1.svg";
+import { Link } from "react-router-dom";
+import { Col, Row } from "antd";
 // import { ADD_COMMENT_HUG, ADD_COMMENT_THANK } from '../../utils/js/mutations';
 import '../../utils/css/CommentList.css';
 import { generateName } from '../../utils/js/names';
@@ -21,7 +21,7 @@ const CommentList = ({ comments }) => {
       //         hugCount
       //     }
       // })
-      console.log('addedHug');
+      console.log("addedHug");
     } catch (err) {
       console.log(err);
     }
@@ -35,7 +35,7 @@ const CommentList = ({ comments }) => {
       //     thankCount
       //   }
       // })
-      console.log('addedThank');
+      console.log("addedThank");
     } catch (err) {
       console.log(err);
     }

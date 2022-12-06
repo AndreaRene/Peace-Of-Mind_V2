@@ -1,45 +1,73 @@
 import React, { useState } from 'react';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import { Col, Row, Button } from 'antd';
 import { EditFilled, DeleteFilled } from '@ant-design/icons';
-import { useQuery } from '@apollo/client';
-//import { GET_FEELINGS } from '../utils/js/queries';
 import EditModal from './EditPost';
+import '../../utils/css/feelingsCard.css';
+import '../../utils/css/Dashboard.css';
+import {
+  CommentSvg,
+  DeleteSvg,
+  EditSvg,
+} from '../../assets/icons/community-svgs';
 
-const UserFeelings = () => {
+// import { useQuery } from '@apollo/client';
+// import { GET_USER, GET_ME, GET_FEELINGS } from '../../utils/js/queries';
+
+import Auth from '../../utils/js/auth';
+
+const UserFeelings = ({ feelings }) => {
   const [editPost, setEditPost] = useState(false);
 
   const editPostClick = () => {
     setEditPost(!editPost);
-}
+  };
+
+  console.log(`this is feelings:  ${feelings}`);
+
+  if (!feelings) {
+    return (
+      <Row className="D-Content-Row">
+        <h1>
+          "{Auth.getProfile().data.username}" has not posted feelings yet...
+        </h1>
+      </Row>
+    );
+  }
 
   return (
-    <div>
-      {editPost && ( <EditModal />)}
-      {/* {showfeelingTitle && <h3>{feelingTitle}</h3>}
+    <div className="cardWrapper" id="reverseCards">
+      {editPost && <EditModal />}
+      {/* {showfeelingTitle && <h3>{feelingTitle}</h3>} */}
       {feelings &&
-        feelings.map((thought) => ( */}
-            <div className="D-Content">
-                <Row className="D-Content-Row" wrap={true}>
-                    <Row className="D-Content-Row-Post">
-                        <Row className="D-Post-Row">
-                            <Col className="D-Post-Title">
-                                <h3>Qu'est-ce que le Lorem Ipsum?</h3>
-                            </Col>
-                            <Col className="D-Post-Edit">
-                                <p className="D-Post-Edit-E"><EditFilled onClick={editPostClick}/></p>
-                                <p className="D-Post-Edit-D"><DeleteFilled /></p>
-                            </Col>
-                        </Row>
-                        <Row className="D-Post-Text">
-                            <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte.</p>
-                        </Row>
-                        <Row className="D-Post-Date">
-                            <p>Nov 29th, 2022</p>
-                        </Row>
-                    </Row>
-                </Row>
+        feelings.map(feeling => (
+          <div className="card">
+            <div className="cardLeft">
+              <header className="cardHeader">
+                <div className="cardTitleGroup">
+                  <h2 className="cardTitle">{feeling.feelingTitle}</h2>
+                </div>
+                <p className="cardDate">{feeling.dateTime}</p>
+              </header>
+              <p className="cardText">{feeling.feelingText}</p>
             </div>
-        {/* ))} */}
+            <div className="cardRight">
+              <div className="cardIcons">
+                <Link className="feelingIcon" to={`/feeling/${feeling._id}`}>
+                  <CommentSvg />
+                </Link>
+                {/* HERE */}
+                {/* add delete and edit icons. hug and thank icons should be disabled and are only there to show counts */}
+                <Link>
+                  <EditSvg />
+                </Link>
+                <Link>
+                  <DeleteSvg />
+                </Link>
+              </div>
+            </div>
+          </div>
+        ))}
     </div>
   );
 };
