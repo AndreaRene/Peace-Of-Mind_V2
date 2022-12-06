@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Input } from 'antd';
 import '../../utils/css/CommentModal.css';
-import { SaveSvg } from '../../assets/icons/community-svgs';
+import { SaveSvg, ExitSvg } from '../../assets/icons/community-svgs';
 
 const showModal = () => {
   console.log('hi');
@@ -30,6 +30,9 @@ const CommentModal = () => {
             </Form.Item>
           </Form>
         </div>
+        <Link className="exitIcon" onClick={() => hideModal()}>
+          <ExitSvg />
+        </Link>
       </div>
     </>
   );
