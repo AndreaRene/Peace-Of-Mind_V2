@@ -3,8 +3,14 @@ import { Link } from 'react-router-dom';
 import { Form, Input } from 'antd';
 import '../../utils/css/CommentModal.css';
 import { SaveSvg, ExitSvg } from '../../assets/icons/community-svgs';
+import { ADD_COMMENT } from '../../utils/js/mutations';
+
+import Auth from '../../utils/js/auth';
 
 const showModal = () => {
+  const [commentText, setCommentText] = useState('');
+  const [characterCount, setCharacterCount] = useState(0);
+
   console.log('hi');
 };
 
@@ -19,14 +25,14 @@ const CommentModal = () => {
         <div className="modal-content">
           <div className="modal-header">
             <Link className="openModal" onClick={() => showModal()}></Link>
-            Share your thoughts:
+            <p className="shareTitle">Share your thoughts:</p>
             <Link className="saveIcon" onClick={() => hideModal()}>
               <SaveSvg />
             </Link>
           </div>
           <Form className="comment-form">
             <Form.Item name="commentText">
-              <Input.TextArea rows={3} />
+              <Input.TextArea className="formInput" rows={3} />
             </Form.Item>
           </Form>
         </div>
