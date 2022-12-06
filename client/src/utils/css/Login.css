@@ -23,7 +23,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    margin-top: 11rem;
+    margin: auto 0;
 }
 
 .ant-card-head-title {
@@ -68,3 +68,72 @@ label {
     padding: 1.2rem;
     font-size: 1.4rem;
 }
+
+@media (max-width: 1399px) {
+
+    #loginForm,
+    #signupForm {
+        width: 90%;
+    }
+
+    #login-card,
+    #signup-card {
+        width: 30%;
+    }
+}
+
+@media (max-width: 1199px) {
+
+    #loginForm,
+    #signupForm {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1023px) {
+    #loginOr {
+        margin: 1rem;
+    }
+
+    #login-card,
+    #signup-card {
+        width: 38%;
+    }
+}
+
+@media (max-width: 767px) {
+    #loginOr {
+        padding: .5rem;
+    }
+
+    #loginButton,
+    #signupButton {
+        width: 100%;
+        margin: .8rem auto;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 559px) {
+    .loginWrapper {
+        flex-direction: column;
+    }
+
+    #login-card,
+    #signup-card {
+        width: 75%;
+    }
+
+    #loginForm,
+    #signupForm {
+        width: 70%;
+    }
+
+    .loginWrapper {
+        margin: 8rem 0 2rem;
+    }
+}
+
+@media (max-width: 479px) {}
+
+@media (max-width: 379px) {}

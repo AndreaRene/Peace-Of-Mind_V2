@@ -1,6 +1,5 @@
 import React, { useMutation } from 'react';
 import { Link } from 'react-router-dom';
-// import Icon from '@ant-design/icons';
 import '../../assets/icons/svg/hug-heart-1.svg';
 import {
   HugSvg,
@@ -11,27 +10,10 @@ import Thank from '../../assets/icons/svg/thank-1.svg';
 import { Col, Row } from 'antd';
 // import { ADD_FEELING_HUG, ADD_FEELING_THANK } from '../../utils/js/mutations';
 import '../../utils/css/feelingsCard.css';
-import { generateName } from '../../utils/js/names'
+import { generateName } from '../../utils/js/names';
 
-const FeelingList = ({ feelings, user }) => {
-  const feelingData = feelings.map(feeling => ({
-    feelingId: feeling._id,
-    feelingTitle: feeling.feelingTitle,
-    feelingText: feeling.feelingText,
-    randomUsername: feeling.randomUsername,
-    hugCount: feeling.hugCount,
-    thankCount: feeling.thankCount,
-    dateTime: feeling.dateTime,
-    hugUsers: feeling.hugUsers,
-    thankUsers: feeling.thankUsers,
-  }));
-
+const FeelingList = ({ feelings }) => {
   // const [addFeelingHug, { error }] = useMutation(ADD_FEELING_HUG);
-
-  console.log(user);
-  console.log(feelingData);
-  console.log(user.userId);
-  console.log(feelingData[0].hugUsers);
 
   const handleAddHug = async (feelingId, hugCount) => {
     try {
@@ -61,17 +43,13 @@ const FeelingList = ({ feelings, user }) => {
     }
   };
 
-  if (feelings.length === 0) {
+  if (!feelings.length) {
     return <h2>No feelings to display.</h2>;
   }
 
-  // const CommentIcon = props => <Icon component={CommentSvg} {...props} />;
-  // const HugIcon = props => <Icon component={HugSvg} {...props} />;
-  // const ThankIcon = props => <Icon component={ThankSvg} {...props} />;
-
   return (
     <div className="cardWrapper">
-      {feelingData.map(feeling => (
+      {feelings.map(feeling => (
         <div className="card">
           <div className="cardLeft">
             <header className="cardHeader">
@@ -86,31 +64,24 @@ const FeelingList = ({ feelings, user }) => {
           <div className="cardRight">
             <div className="cardIcons">
               <div className="cardIconGroup">
-                <Link
-                  className="feelingIcon"
-                  to={`/feeling/${feeling.feelingId}`}
-                >
+                <Link className="feelingIcon" to={`/feeling/${feeling._id}`}>
                   <CommentSvg />
                 </Link>
                 <Link
                   className="hugIcon"
-                  disabled={feeling.hugUsers?.some(
-                    hugUserId => hugUserId === user._id,
-                  )}
-                  onClick={() =>
-                    handleAddHug(feeling.feelingId, feeling.hugCount)
-                  }
+                  // disabled={feeling.hugUsers?.some(
+                  //   hugUserId => hugUserId === user._id,
+                  // )}
+                  onClick={() => handleAddHug(feeling._id, feeling.hugCount)}
                 >
                   <HugSvg />
                 </Link>
               </div>
               <Link
-                disabled={feeling.thankUsers?.some(
-                  thankUserId => thankUserId === user._id,
-                )}
-                onClick={() =>
-                  handleAddThank(feeling.feelingId, feeling.thankCount)
-                }
+                // disabled={feeling.thankUsers?.some(
+                //   thankUserId => thankUserId === user._id,
+                // )}
+                onClick={() => handleAddThank(feeling._id, feeling.thankCount)}
               >
                 <img src={Thank} alt="thankyou" className="thankyouIcon" />
               </Link>

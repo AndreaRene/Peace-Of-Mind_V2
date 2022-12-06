@@ -5,21 +5,10 @@ import Thank from "../../assets/icons/svg/thank-1.svg";
 import { Link } from "react-router-dom";
 import { Col, Row } from "antd";
 // import { ADD_COMMENT_HUG, ADD_COMMENT_THANK } from '../../utils/js/mutations';
-import "../../utils/css/CommentList.css";
-import { generateName } from "../../utils/js/names";
+import '../../utils/css/CommentList.css';
+import { generateName } from '../../utils/js/names';
 
-const CommentList = ({ comments, user }) => {
-  const commentData = comments.map((comment) => ({
-    commentId: comment._id,
-    commentText: comment.commentText,
-    randomUsername: comment.randomUsername,
-    hugCount: comment.hugCount,
-    thankCount: comment.thankCount,
-    dateTime: comment.dateTime,
-    hugUsers: comment.hugUsers,
-    thankUsers: comment.thankUsers,
-  }));
-
+const CommentList = ({ comments }) => {
   // const [addComHug, { error }] = useMutation(ADD_COMMENT_HUG);
 
   // const [addComThank, { error }] = useMutation(ADD_COMMENT_THANK);
@@ -52,51 +41,50 @@ const CommentList = ({ comments, user }) => {
     }
   };
 
-  if (comments.length === 0) {
+  if (!comments) {
     return <h2>No comments to display.</h2>;
   }
-
+  console.log(comments);
   return (
     <div className="commentWrapper">
-      {commentData.map((comment) => (
-        <div className="card" key={comment.commentId}>
-          <div className="cardLeft">
-            <header className="cardHeader">
-              <p className="cardUser">{generateName()}</p>
-              <p className="cardDate"> {comment.dateTime}</p>
-            </header>
-            <p className="cardText">{comment.commentText}</p>
-          </div>
-          <div className="cardRight">
-            <div className="cardIcons">
-              <div className="cardIconGroup">
+      {comments &&
+        comments.map(comment => (
+          <div className="card" key={comment._id}>
+            <div className="cardLeft">
+              <header className="cardHeader">
+                <p className="cardUser">{generateName()}</p>
+                <p className="cardDate"> {comment.dateTime}</p>
+              </header>
+              <p className="cardText">{comment.commentText}</p>
+            </div>
+            <div className="cardRight">
+              <div className="cardIcons">
+                <div className="cardIconGroup">
+                  <Link
+                    className="hugIcon"
+                    // disabled={comment.hugUsers?.some(
+                    //   hugUserId => hugUserId === user._id,
+                    // )}
+                    onClick={() => handleAddHug(comment._id, comment.hugCount)}
+                  >
+                    <HugSvg />
+                  </Link>
+                </div>
+
                 <Link
-                  className="hugIcon"
-                  disabled={comment.hugUsers?.some(
-                    (hugUserId) => hugUserId === user._id
-                  )}
+                  // disabled={comment.thankUsers?.some(
+                  //   thankUserId => thankUserId === user._id,
+                  // )}
                   onClick={() =>
-                    handleAddHug(comment.commentId, comment.hugCount)
+                    handleAddThank(comment._id, comment.thankCount)
                   }
                 >
-                  <HugSvg />
+                  <img src={Thank} alt="thankyou" className="thankyouIcon" />
                 </Link>
               </div>
-
-              <Link
-                disabled={comment.thankUsers?.some(
-                  (thankUserId) => thankUserId === user._id
-                )}
-                onClick={() =>
-                  handleAddThank(comment.commentId, comment.thankCount)
-                }
-              >
-                <img src={Thank} alt="thankyou" className="thankyouIcon" />
-              </Link>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
     </div>
   );
 };

@@ -13,13 +13,11 @@ export const GET_ME = gql`
         _id
         feelingTitle
         feelingText
-        feelingAuthor
         hugCount
         thankCount
         dateTime
         comments {
           commentText
-          commentAuthor
           hugCount
           thankCount
           dateTime
@@ -35,13 +33,11 @@ export const GET_SINGLE_FEELING = gql`
       _id
       feelingTitle
       feelingText
-      feelingAuthor
       hugCount
       thankCount
       dateTime
       comments {
         commentText
-        commentAuthor
         hugCount
         thankCount
         dateTime
@@ -56,10 +52,15 @@ export const GET_FEELINGS = gql`
       _id
       feelingTitle
       feelingText
-      feelingAuthor
       hugCount
       thankCount
       dateTime
+      comments {
+        commentText
+        hugCount
+        thankCount
+        dateTime
+      }
     }
   }
 `;
