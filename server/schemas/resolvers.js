@@ -84,7 +84,7 @@ const resolvers = {
     },
     removeFeeling: async (parent, { feelingId }, context) => {
       if (context.user) {
-        const feeling = await Feeling.findOneAndUpdate({
+        const feeling = await Feeling.findOneAndDelete({
           _id: feelingId,
           feelingAuthor: context.user.username,
         });
@@ -98,25 +98,25 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    removeComment: async (parent, { feelingId, commentId }, context) => {
-      if (context.user) {
-        return Feeling.findOneAndUpdate(
-          { _id: feelingId },
-          {
-            $pull: {
-              comments: {
-                _id: commentId,
-                commentAuthor: context.user.username,
-              },
-            },
-          },
-          {
-            new: true,
-          },
-        );
-      }
-      throw new AuthenticationError('You need to be logged in!');
-    },
+    // removeComment: async (parent, { feelingId, commentId }, context) => {
+    //   if (context.user) {
+    //     return Feeling.findOneAndUpdate(
+    //       { _id: feelingId },
+    //       {
+    //         $pull: {
+    //           comments: {
+    //             _id: commentId,
+    //             commentAuthor: context.user.username,
+    //           },
+    //         },
+    //       },
+    //       {
+    //         new: true,
+    //       },
+    //     );
+    //   }
+    //   throw new AuthenticationError('You need to be logged in!');
+    // },
   },
 };
 

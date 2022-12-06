@@ -10,26 +10,38 @@ import {
   DeleteSvg,
   EditSvg,
 } from '../../assets/icons/community-svgs';
-
-// import { useQuery } from '@apollo/client';
-// import { GET_USER, GET_ME, GET_FEELINGS } from '../../utils/js/queries';
+import { useMutation } from '@apollo/client';
+import { REMOVE_FEELING } from '../../utils/js/mutations';
 
 import Auth from '../../utils/js/auth';
 
 const UserFeelings = ({ feelings }) => {
   const [editPost, setEditPost] = useState(false);
 
+  const [removeFeeling] = useMutation(REMOVE_FEELING);
+
   const editPostClick = () => {
     setEditPost(!editPost);
   };
 
-  console.log(`this is feelings:  ${feelings}`);
+  const handleDeleteFeeling = async feelingId => {
+    try {
+      const { data } = await removeFeeling({
+        variables: {
+          feelingId,
+        },
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   if (!feelings) {
     return (
       <Row className="D-Content-Row">
         <h1>
-          Hello, "{Auth.getProfile().data.username}" click on the + to get started with a new post!
+          Hello, "{Auth.getProfile().data.username}" click on the + to get
+          started with a new post!
         </h1>
       </Row>
     );
@@ -56,12 +68,13 @@ const UserFeelings = ({ feelings }) => {
                 <Link className="feelingIcon" to={`/feeling/${feeling._id}`}>
                   <CommentSvg />
                 </Link>
-                {/* HERE */}
-                {/* add delete and edit icons. hug and thank icons should be disabled and are only there to show counts */}
                 <Link>
                   <EditSvg />
                 </Link>
-                <Link>
+                <Link
+                  className="deleteIcon"
+                  onClick={() => handleDeleteFeeling(feeling._id)}
+                >
                   <DeleteSvg />
                 </Link>
               </div>

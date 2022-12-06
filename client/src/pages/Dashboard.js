@@ -11,7 +11,7 @@ import UserFeelings from '../components/dashboard/Index';
 import { useQuery } from '@apollo/client';
 import { GET_ME, GET_USER, GET_FEELINGS } from '../utils/js/queries';
 import { useParams } from 'react-router-dom';
-import Welcome from '../components/welcome'
+import Welcome from '../components/welcome';
 
 import Auth from '../utils/js/auth';
 
@@ -37,12 +37,12 @@ const Dashboard = () => {
       {createPost && <CreateModal />}
 
       <Welcome />
-      <Button className='button' id='newPostBtn' onClick={newPostClick}>
+      <Button className="button" id="newPostBtn" onClick={newPostClick}>
         New Feeling <PlusCircleFilled />
       </Button>
 
       <UserFeelings feelings={me.feelings} />
-    </main >
+    </main>
   );
 };
 
