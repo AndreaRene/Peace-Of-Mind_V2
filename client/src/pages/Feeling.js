@@ -153,7 +153,7 @@ const Feeling = () => {
         <CommentList comments={feeling.comments} />
       </div>
       <div id="commentModalWrapper">
-        <CommentModal />
+        <CommentModal feelingId={feelingId} />
       </div>
     </main>
   );
