@@ -48,7 +48,7 @@ const resolvers = {
 
             return { token, user };
         },
-        addFeeling: async (parent, { feelingTitle, feelingText }, context) => {
+        addFeeling: async (parent, { feelingText, feelingTitle }, context) => {
             if (context.user) {
                 const feeling = await Feeling.create({
                     feelingTitle,

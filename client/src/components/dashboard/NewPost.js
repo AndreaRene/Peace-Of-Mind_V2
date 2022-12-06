@@ -27,7 +27,8 @@ function CreateModal() {
         console.log(e);
       }
 
-      //const { me } = cache.readQuery({ query: GET_ME });
+      const { me } = cache.readQuery({ query: GET_ME });
+      console.log(me);
       // cache.writeQuery({
       //   query: GET_ME,
       //   data: { me: { ...me, feelings: [ ...me.feelings, addFeeling ] } },
@@ -46,7 +47,6 @@ function CreateModal() {
           feelingAuthor: Auth.getProfile().data.username,
         },
       });
-      console.log(data);
 
       setFeelingTitle('');
       setFeelingText('');

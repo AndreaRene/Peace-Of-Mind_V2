@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { Modal, Form, Input, Button, Layout } from 'antd';
-import { stringify } from 'rc-field-form/es/useWatch';
-import { formatCountdown } from 'antd/es/statistic/utils';
 
 function Modals() {
   const [isModalOpen, setIsModalOpen] = useState(true);
