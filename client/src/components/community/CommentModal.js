@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { Form, Input } from 'antd';
 import '../../utils/css/CommentModal.css';
-import { SaveSvg, ExitSvg } from '../../assets/icons/community-svgs';
+import { SaveSvg } from '../../assets/icons/community-svgs';
 import { ADD_COMMENT } from '../../utils/js/mutations';
 
 import Auth from '../../utils/js/auth';
@@ -39,45 +39,41 @@ const CommentModal = ({ feelingId }) => {
     }
   };
 
-  // return (
-  //   <>
-  //     <div className="modal-content-wrapper">
-  //       <div className="modal-content">
-  //         <div className="modal-header">
-  //           <Link className="openModal" onClick={() => showModal()}></Link>
-  //           <p className="shareTitle">Share your thoughts:</p>
-  //           <Link
-  //             className="saveIcon"
-  //             onClick={() => handleAddComment(feelingId, commentText)}
-  //           >
-  //             <SaveSvg />
-  //           </Link>
-  //         </div>
-  //         <p
-  //           className={`${
-  //             characterCount === 500 || error ? 'text-danger' : ''
-  //           }`}
-  //         >
-  //           Character Count: {characterCount}/500
-  //         </p>
-  //         <Form className="comment-form">
-  //           <Form.Item name="commentText">
-  //             <Input.TextArea
-  //               name="commentText"
-  //               className="formInput"
-  //               value={commentText}
-  //               rows={3}
-  //               onChange={handleChange}
-  //             />
-  //           </Form.Item>
-  //         </Form>
-  //       </div>
-  //       <Link className="exitIcon" onClick={() => hideModal()}>
-  //         <ExitSvg />
-  //       </Link>
-  //     </div>
-  //   </>
-  // );
+  return (
+    <>
+      <div className="modal-content-wrapper">
+        <div className="modal-content">
+          <div className="modal-header">
+            <p className="shareTitle">Share your thoughts:</p>
+            <Link
+              className="saveIcon"
+              onClick={() => handleAddComment(feelingId, commentText)}
+            >
+              <SaveSvg />
+            </Link>
+          </div>
+          <p
+            className={`${
+              characterCount === 500 || error ? 'text-danger' : ''
+            }`}
+          >
+            Character Count: {characterCount}/500
+          </p>
+          <Form className="comment-form">
+            <Form.Item name="commentText">
+              <Input.TextArea
+                name="commentText"
+                className="formInput"
+                value={commentText}
+                rows={3}
+                onChange={handleChange}
+              />
+            </Form.Item>
+          </Form>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default CommentModal;

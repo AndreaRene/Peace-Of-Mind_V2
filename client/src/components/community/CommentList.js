@@ -49,7 +49,7 @@ const CommentList = ({ comments }) => {
     <div className="commentWrapper">
       {comments &&
         comments.map(comment => (
-          <div className="card" key={comment._id}>
+          <div key={comment._id} className="card">
             <div className="cardLeft">
               <header className="cardHeader">
                 <p className="cardUser">{generateName()}</p>
