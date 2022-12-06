@@ -109,14 +109,13 @@ export const ADD_COMMENT_THANK = gql`
 `;
 
 export const REMOVE_COMMENT = gql`
-    mutation removeComment($commentText: String!, $username: String!) {
-        removeComment(commentText: $commentText, username: $username) {
-            _id
-            commentText
-            username
-            hugCount
-            thankCount
-            dateTime
-        },
-    },
+  mutation removeComment($commentText: String!, $username: String!) {
+    removeComment(commentText: $commentText, username: $username) {
+      _id
+      commentText
+      hugCount
+      thankCount
+      dateTime
+    }
+  }
 `;

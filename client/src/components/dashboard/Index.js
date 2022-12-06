@@ -29,7 +29,7 @@ const UserFeelings = ({ feelings }) => {
     return (
       <Row className="D-Content-Row">
         <h1>
-          "{Auth.getProfile().data.username}" has not posted feelings yet...
+          Hello, "{Auth.getProfile().data.username}" click on the + to get started with a new post!
         </h1>
       </Row>
     );
@@ -41,7 +41,7 @@ const UserFeelings = ({ feelings }) => {
       {/* {showfeelingTitle && <h3>{feelingTitle}</h3>} */}
       {feelings &&
         feelings.map(feeling => (
-          <div className="card">
+          <div className="card" key={feeling._id}>
             <div className="cardLeft">
               <header className="cardHeader">
                 <div className="cardTitleGroup">
