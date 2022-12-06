@@ -5,6 +5,7 @@ import { GET_SINGLE_FEELING } from '../utils/js/queries';
 import { useParams } from 'react-router-dom';
 import Icon from '@ant-design/icons';
 import CommentList from '../components/community/CommentList';
+import CommentModal from '../components/community/CommentModal';
 import { Col, Row } from 'antd';
 import '../utils/css/Community.css';
 import '../utils/css/feelingsCard.css';
@@ -14,45 +15,6 @@ import { generateName } from '../utils/js/names';
 import '../utils/css/Feeling.css';
 import '../utils/css/Community.css';
 // import { ADD_FEELING_HUG, ADD_FEELING_THANK } from '../utils/js/mutations';
-
-// const feeling = {
-//   _id: 234,
-//   feelingTitle: 'Man this stinks',
-//   feelingText:
-//     "I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee. I'm all stressed out and it really stinks i hate it man it sucks gosh dangit golly gee.",
-//   randomUsername: 'Celtic Butterfly',
-//   hugCount: 3,
-//   thankCount: 6,
-//   dateTime: '11/30/22',
-//   hugUsers: [667, 343, 565],
-//   thankUsers: [667, 343, 565],
-//   comments: [
-//     {
-//       _id: 588,
-//       commentText: 'Awesome work dude!',
-//       randomUsername: 'Pink Pufferfish',
-//       hugCount: 6,
-//       thankCount: 5,
-//       hugUsers: [878, 667, 243],
-//       thankUsers: [667, 878, 243],
-//       dateTime: '12/1/22',
-//     },
-//     {
-//       _id: 344,
-//       commentText: "I'm sorry you're feeling that way :(..",
-//       randomUsername: 'Bananarama Monkey',
-//       hugCount: 12,
-//       thankCount: 9,
-//       hugUsers: [667, 990, 123],
-//       thankUsers: [667, 435, 223],
-//       dateTime: '12/3/22',
-//     },
-//   ],
-// };
-
-// const user = {
-//   _id: 667,
-// };
 
 const Feeling = () => {
   //   const [addFeelingHug, { error }] = useMutation(ADD_FEELING_HUG);
@@ -150,6 +112,9 @@ const Feeling = () => {
 
       <div id="commentsCardWrapper">
         <CommentList comments={feeling.comments} />
+      </div>
+      <div id="commentModalWrapper">
+        <CommentModal feelingId={feelingId} />
       </div>
     </main>
   );
