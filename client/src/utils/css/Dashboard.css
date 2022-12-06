@@ -14,7 +14,19 @@
   flex-direction: column-reverse;
 }
 
-.Sider-Row-Box {
+#newPostBtn {
+  margin-top: 1rem;
+  background-color: var(--midOrange);
+  color: var(--darkGreen);
+}
+
+/* #newPostButton {
+  position: fixed;
+  left: 1rem;
+  top: 10rem;
+} */
+
+/* .Sider-Row-Box {
   height: 25rem;
   width: 5%;
   background-color: var(--darkGray);
@@ -126,4 +138,4 @@
 
 .D-Post-Date p {
   font-size: 22px;
-}
+} */

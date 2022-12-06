@@ -5,6 +5,8 @@ import { EditFilled, DeleteFilled } from '@ant-design/icons';
 import EditModal from './EditPost';
 import '../../utils/css/feelingsCard.css';
 import '../../utils/css/Dashboard.css';
+import { HugSvg, CommentSvg } from '../../assets/icons/community-svgs';
+
 
 // import { useQuery } from '@apollo/client';
 // import { GET_USER, GET_ME, GET_FEELINGS } from '../../utils/js/queries';
@@ -24,7 +26,7 @@ const UserFeelings = ({ feelings }) => {
     return (
       <Row className="D-Content-Row">
         <h1>
-          "{Auth.getProfile().data.username}" has not posted feelings yet...
+          Hello, "{Auth.getProfile().data.username}" click on the + to get started with a new post!
         </h1>
       </Row>
     );
@@ -49,7 +51,7 @@ const UserFeelings = ({ feelings }) => {
             <div className="cardRight">
               <div className="cardIcons">
                 <Link className="feelingIcon" to={`/feeling/${feeling._id}`}>
-                  {/* <CommentSvg /> */}
+                  <CommentSvg />
                 </Link>
                 {/* HERE */}
                 {/* add delete and edit icons. hug and thank icons should be disabled and are only there to show counts */}
