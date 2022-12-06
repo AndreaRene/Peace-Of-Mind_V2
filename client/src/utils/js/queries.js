@@ -9,6 +9,7 @@ export const GET_USER = gql`
         _id
         feelingTitle
         feelingText
+        dateTime
       }
     }
   }
@@ -23,6 +24,7 @@ export const GET_ME = gql`
         _id
         feelingTitle
         feelingText
+        dateTime
       }
     }
   }

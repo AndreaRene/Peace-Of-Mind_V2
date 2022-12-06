@@ -11,18 +11,19 @@ import {
   DashboardOutlined,
   LoginOutlined,
 } from '@ant-design/icons'; // import auth from '../utils/auth';
+import { useQuery } from '@apollo/client';
+import { GET_USER } from '../../utils/js/queries';
 
 import '../../utils/css/Navbar.css';
 
 const GenerateNavbar = () => {
+  const { loading, data } = useQuery(GET_USER);
+  const user = data?.user || [];
+  console.log('Here: ', GET_USER);
   return (
     <nav id="navBar">
       <div id="navBrand">
-        <Link
-          style={{ textDecoration: 'none' }}
-          to="/about"
-          className=" "
-        >
+        <Link style={{ textDecoration: 'none' }} to="/about" className=" ">
           <img
             className="logoPeaceHead"
             src={forest}
@@ -43,7 +44,7 @@ const GenerateNavbar = () => {
             }
           >
             <QuestionCircleOutlined className="navIcon" />
-            <span className='linkText'>About</span>
+            <span className="linkText">About</span>
           </NavLink>
         </li>
 
@@ -56,7 +57,7 @@ const GenerateNavbar = () => {
             }
           >
             <TeamOutlined className="navIcon" />
-            <span className='linkText'>Community</span>
+            <span className="linkText">Community</span>
           </NavLink>
         </li>
 
@@ -69,19 +70,17 @@ const GenerateNavbar = () => {
             }
           >
             <DashboardOutlined className="navIcon" />
-            <span className='linkText'>Dashboard</span>
+            <span className="linkText">Dashboard</span>
           </NavLink>
         </li>
         <li>
           <NavLink
             style={{ textDecoration: 'none' }}
             to="/login"
-            className={({ isActive }) =>
-              `navClick ${isActive ? 'active' : ''}`
-            }
+            className={({ isActive }) => `navClick ${isActive ? 'active' : ''}`}
           >
             <LoginOutlined className="navIcon" />
-            <span className='linkText'>Login/Signup</span>
+            <span className="linkText">Login/Signup</span>
           </NavLink>
         </li>
       </ul>

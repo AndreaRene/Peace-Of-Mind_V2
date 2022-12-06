@@ -1,30 +1,31 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { Col, Row, Button } from "antd";
-import { PlusCircleFilled, EditFilled, DeleteFilled } from "@ant-design/icons";
-import { Layout } from "antd";
-import "../utils/css/Dashboard.css";
+import { Col, Row, Button } from 'antd';
+import { PlusCircleFilled, EditFilled, DeleteFilled } from '@ant-design/icons';
+import { Layout } from 'antd';
+import '../utils/css/Dashboard.css';
 
-import CreateModal from "../components/dashboard/NewPost";
-import EditModal from "../components/dashboard/EditPost";
-import UserFeelings from "../components/dashboard/Index";
-import { useQuery } from "@apollo/client";
-import { GET_ME, GET_USER } from "../utils/js/queries";
-import { useParams } from "react-router-dom";
+import CreateModal from '../components/dashboard/NewPost';
+import EditModal from '../components/dashboard/EditPost';
+import UserFeelings from '../components/dashboard/Index';
+import { useQuery } from '@apollo/client';
+import { GET_ME, GET_USER, GET_FEELINGS } from '../utils/js/queries';
+import { useParams } from 'react-router-dom';
 
 import Auth from '../utils/js/auth';
 
 const { Sider, Content } = Layout;
 
-const Dashboard = ({ open, onOK, onCancel }) => {
+const Dashboard = () => {
   const [createPost, setCreatePost] = useState(false);
 
-  const { username } = useParams();
-  const { loading, data } = useQuery(username ? GET_USER : GET_ME, {
-    variables: { username: username },
-  });
+  // const { loading, data } = useQuery(GET_USER);
+  // const user = data?.user || [];
 
-  const user = data?.me || data?.user || {};
+  const { loading, data } = useQuery(GET_ME);
+  const me = data?.me || [];
+
+  // console.log(`THis is user: ${data}`);
 
   const newPostClick = () => {
     setCreatePost(!createPost);
@@ -40,13 +41,7 @@ const Dashboard = ({ open, onOK, onCancel }) => {
           </Button>
         </Row>
       </Col>
-      <UserFeelings
-        feelings={user.feelings}
-        title={`${user.username}'s feelings...`}
-        showTitle={false}
-        showUsername={false}
-      />
-     
+      <UserFeelings feelings={me.feelings} />
     </main>
   );
 };
