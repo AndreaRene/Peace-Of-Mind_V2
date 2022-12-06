@@ -38,6 +38,7 @@ export const GET_SINGLE_FEELING = gql`
       dateTime
       comments {
         commentText
+        commentAuthor
         hugCount
         thankCount
         dateTime
@@ -55,12 +56,6 @@ export const GET_FEELINGS = gql`
       hugCount
       thankCount
       dateTime
-      comments {
-        commentText
-        hugCount
-        thankCount
-        dateTime
-      }
     }
   }
 `;

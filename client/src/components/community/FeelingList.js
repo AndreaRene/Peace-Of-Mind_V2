@@ -50,7 +50,7 @@ const FeelingList = ({ feelings }) => {
   return (
     <div className="cardWrapper">
       {feelings.map(feeling => (
-        <div className="card">
+        <div key={feeling._id} className="card">
           <div className="cardLeft">
             <header className="cardHeader">
               <div className="cardTitleGroup">

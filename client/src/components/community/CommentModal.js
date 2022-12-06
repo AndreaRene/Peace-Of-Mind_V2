@@ -8,26 +8,19 @@ import { ADD_COMMENT } from '../../utils/js/mutations';
 
 import Auth from '../../utils/js/auth';
 
-const showModal = () => {
-  console.log('hi');
-};
-
-const hideModal = () => {
-  console.log('yo');
-};
-
 const CommentModal = ({ feelingId }) => {
   const [commentText, setCommentText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addComment] = useMutation(ADD_COMMENT);
+  const [addComment, { error }] = useMutation(ADD_COMMENT);
 
-  const handleAddComment = async () => {
+  const handleAddComment = async (feelingId, commentText) => {
     try {
       const { data } = await addComment({
         variables: {
           feelingId,
           commentText,
+          commentAuthor: Auth.getProfile().data.username,
         },
       });
 
@@ -39,8 +32,6 @@ const CommentModal = ({ feelingId }) => {
 
   const handleChange = event => {
     const { name, value } = event.target;
-    console.log('hi');
-    console.log(commentText);
 
     if (name === 'commentText' && value.length <= 500) {
       setCommentText(value);
@@ -48,33 +39,45 @@ const CommentModal = ({ feelingId }) => {
     }
   };
 
-  return (
-    <>
-      <div className="modal-content-wrapper">
-        <div className="modal-content">
-          <div className="modal-header">
-            <Link className="openModal" onClick={() => showModal()}></Link>
-            <p className="shareTitle">Share your thoughts:</p>
-            <Link className="saveIcon" onClick={() => handleAddComment()}>
-              <SaveSvg />
-            </Link>
-          </div>
-          <Form className="comment-form">
-            <Form.Item name="commentText">
-              <Input.TextArea
-                onChange={handleChange}
-                className="formInput"
-                rows={3}
-              />
-            </Form.Item>
-          </Form>
-        </div>
-        <Link className="exitIcon" onClick={() => hideModal()}>
-          <ExitSvg />
-        </Link>
-      </div>
-    </>
-  );
+  // return (
+  //   <>
+  //     <div className="modal-content-wrapper">
+  //       <div className="modal-content">
+  //         <div className="modal-header">
+  //           <Link className="openModal" onClick={() => showModal()}></Link>
+  //           <p className="shareTitle">Share your thoughts:</p>
+  //           <Link
+  //             className="saveIcon"
+  //             onClick={() => handleAddComment(feelingId, commentText)}
+  //           >
+  //             <SaveSvg />
+  //           </Link>
+  //         </div>
+  //         <p
+  //           className={`${
+  //             characterCount === 500 || error ? 'text-danger' : ''
+  //           }`}
+  //         >
+  //           Character Count: {characterCount}/500
+  //         </p>
+  //         <Form className="comment-form">
+  //           <Form.Item name="commentText">
+  //             <Input.TextArea
+  //               name="commentText"
+  //               className="formInput"
+  //               value={commentText}
+  //               rows={3}
+  //               onChange={handleChange}
+  //             />
+  //           </Form.Item>
+  //         </Form>
+  //       </div>
+  //       <Link className="exitIcon" onClick={() => hideModal()}>
+  //         <ExitSvg />
+  //       </Link>
+  //     </div>
+  //   </>
+  // );
 };
 
 export default CommentModal;
