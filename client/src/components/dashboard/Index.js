@@ -36,7 +36,7 @@ const UserFeelings = ({ feelings }) => {
       {/* {showfeelingTitle && <h3>{feelingTitle}</h3>} */}
       {feelings &&
         feelings.map(feeling => (
-          <div className="card">
+          <div className="card" key={feeling._id}>
             <div className="cardLeft">
               <header className="cardHeader">
                 <div className="cardTitleGroup">
@@ -55,9 +55,9 @@ const UserFeelings = ({ feelings }) => {
                 {/* add delete and edit icons. hug and thank icons should be disabled and are only there to show counts */}
                 <Link
                   className="hugIcon"
-                  //   disabled={feelings.hugUsers?.some(
-                  //     hugUserId => hugUserId === user._id,
-                  //   )}
+                //   disabled={feelings.hugUsers?.some(
+                //     hugUserId => hugUserId === user._id,
+                //   )}
                 >
                   {/* <HugSvg /> */}
                 </Link>
