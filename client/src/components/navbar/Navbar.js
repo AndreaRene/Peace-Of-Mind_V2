@@ -18,9 +18,6 @@ import { GET_USER } from '../../utils/js/queries';
 import '../../utils/css/Navbar.css';
 
 const GenerateNavbar = () => {
-  const { loading, data } = useQuery(GET_USER);
-  const user = data?.user || [];
-  console.log('Here: ', GET_USER);
   return (
     <nav id="navBar">
       <div id="navBrand">
@@ -92,16 +89,15 @@ const GenerateNavbar = () => {
             <NavLink
               style={{ textDecoration: 'none' }}
               to="/login"
-              className={({ isActive }) => `navClick ${isActive ? 'active' : ''}`}
+              className={({ isActive }) =>
+                `navClick ${isActive ? 'active' : ''}`
+              }
             >
               <LoginOutlined className="navIcon" />
               <span className="linkText">Login/Signup</span>
             </NavLink>
           </li>
         )}
-
-
-
       </ul>
     </nav>
   );

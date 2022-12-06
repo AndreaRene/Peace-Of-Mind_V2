@@ -44,23 +44,9 @@
   background-color: transparent;
 }
 
-.exitIcon {
-  transition: 0.3s;
-  opacity: 0.8;
-  position: fixed;
-  top: 8rem;
-  right: 1.5rem;
-}
-
-.exitIcon:hover {
-  transform: rotate(30deg);
-  opacity: 1;
-}
-
 .saveIcon {
   transition: 0.3s;
   opacity: 0.8;
-  position: fixed;
   top: 12.3rem;
   right: 5.4rem;
   transform: scale(1.1);

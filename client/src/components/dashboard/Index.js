@@ -5,26 +5,43 @@ import { EditFilled, DeleteFilled } from '@ant-design/icons';
 import EditModal from './EditPost';
 import '../../utils/css/feelingsCard.css';
 import '../../utils/css/Dashboard.css';
-
-// import { useQuery } from '@apollo/client';
-// import { GET_USER, GET_ME, GET_FEELINGS } from '../../utils/js/queries';
+import {
+  CommentSvg,
+  DeleteSvg,
+  EditSvg,
+} from '../../assets/icons/community-svgs';
+import { useMutation } from '@apollo/client';
+import { REMOVE_FEELING } from '../../utils/js/mutations';
 
 import Auth from '../../utils/js/auth';
 
 const UserFeelings = ({ feelings }) => {
   const [editPost, setEditPost] = useState(false);
 
+  const [removeFeeling] = useMutation(REMOVE_FEELING);
+
   const editPostClick = () => {
     setEditPost(!editPost);
   };
 
-  console.log(`this is feelings:  ${feelings}`);
+  const handleDeleteFeeling = async feelingId => {
+    try {
+      const { data } = await removeFeeling({
+        variables: {
+          feelingId,
+        },
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   if (!feelings) {
     return (
       <Row className="D-Content-Row">
         <h1>
-          "{Auth.getProfile().data.username}" has not posted feelings yet...
+          Hello, "{Auth.getProfile().data.username}" click on the + to get
+          started with a new post!
         </h1>
       </Row>
     );
@@ -49,24 +66,16 @@ const UserFeelings = ({ feelings }) => {
             <div className="cardRight">
               <div className="cardIcons">
                 <Link className="feelingIcon" to={`/feeling/${feeling._id}`}>
-                  {/* <CommentSvg /> */}
+                  <CommentSvg />
                 </Link>
-                {/* HERE */}
-                {/* add delete and edit icons. hug and thank icons should be disabled and are only there to show counts */}
-                <Link
-                  className="hugIcon"
-                //   disabled={feelings.hugUsers?.some(
-                //     hugUserId => hugUserId === user._id,
-                //   )}
-                >
-                  {/* <HugSvg /> */}
+                <Link>
+                  <EditSvg />
                 </Link>
                 <Link
-                //   disabled={feelings.thankUsers?.some(
-                //     thankUserId => thankUserId === user._id,
-                //   )}
+                  className="deleteIcon"
+                  onClick={() => handleDeleteFeeling(feeling._id)}
                 >
-                  {/* <img src={Thank} alt="thankyou" className="thankyouIcon" /> */}
+                  <DeleteSvg />
                 </Link>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { GET_SINGLE_FEELING } from '../utils/js/queries';
@@ -9,7 +9,7 @@ import CommentModal from '../components/community/CommentModal';
 import { Col, Row } from 'antd';
 import '../utils/css/Community.css';
 import '../utils/css/feelingsCard.css';
-import { HugSvg, CommentSvg } from '../assets/icons/community-svgs.js';
+import { HugSvg, CommentSvg, ExitSvg } from '../assets/icons/community-svgs.js';
 import Thank from '../assets/icons/svg/thank-1.svg';
 import { generateName } from '../utils/js/names';
 import '../utils/css/Feeling.css';
@@ -19,6 +19,8 @@ import '../utils/css/Community.css';
 const Feeling = () => {
   //   const [addFeelingHug, { error }] = useMutation(ADD_FEELING_HUG);
   //   const [addFeelingThank, { error }] = useMutation(ADD_FEELING_THANK);
+
+  const [modalState, setModalState] = useState('hidden');
 
   const { feelingId } = useParams();
 
@@ -55,9 +57,17 @@ const Feeling = () => {
     }
   };
 
-  //   if (loading) {
-  // return <div>Loading...</div>;
-  //   }
+  const showModal = () => {
+    setModalState('shown');
+  };
+
+  const hideModal = () => {
+    setModalState('hidden');
+  };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
   return (
     <main className="communityWrapper">
       <p id="startingParagraph">
@@ -113,9 +123,21 @@ const Feeling = () => {
       <div id="commentsCardWrapper">
         <CommentList comments={feeling.comments} />
       </div>
-      <div id="commentModalWrapper">
+      <div
+        id="commentModalWrapper"
+        className={`${modalState === 'hidden' ? 'hidden' : 'shown'}`}
+      >
         <CommentModal feelingId={feelingId} />
       </div>
+      <button className="openModal" onClick={() => showModal()}>
+        Show
+      </button>
+      <button
+        className={`exitIcon ${modalState === 'hidden' ? 'hide' : 'show'}`}
+        onClick={() => hideModal()}
+      >
+        <ExitSvg />
+      </button>
     </main>
   );
 };

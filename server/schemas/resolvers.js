@@ -48,9 +48,10 @@ const resolvers = {
 
       return { token, user };
     },
-    addFeeling: async (parent, { feelingText }, context) => {
+    addFeeling: async (parent, { feelingText, feelingTitle }, context) => {
       if (context.user) {
         const feeling = await Feeling.create({
+          feelingTitle,
           feelingText,
           feelingAuthor: context.user.username,
         });
@@ -83,7 +84,7 @@ const resolvers = {
     },
     removeFeeling: async (parent, { feelingId }, context) => {
       if (context.user) {
-        const feeling = await Feeling.findOneAndUpdate({
+        const feeling = await Feeling.findOneAndDelete({
           _id: feelingId,
           feelingAuthor: context.user.username,
         });
@@ -97,25 +98,25 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    removeComment: async (parent, { feelingId, commentId }, context) => {
-      if (context.user) {
-        return Feeling.findOneAndUpdate(
-          { _id: feelingId },
-          {
-            $pull: {
-              comments: {
-                _id: commentId,
-                commentAuthor: context.user.username,
-              },
-            },
-          },
-          {
-            new: true,
-          },
-        );
-      }
-      throw new AuthenticationError('You need to be logged in!');
-    },
+    // removeComment: async (parent, { feelingId, commentId }, context) => {
+    //   if (context.user) {
+    //     return Feeling.findOneAndUpdate(
+    //       { _id: feelingId },
+    //       {
+    //         $pull: {
+    //           comments: {
+    //             _id: commentId,
+    //             commentAuthor: context.user.username,
+    //           },
+    //         },
+    //       },
+    //       {
+    //         new: true,
+    //       },
+    //     );
+    //   }
+    //   throw new AuthenticationError('You need to be logged in!');
+    // },
   },
 };
 

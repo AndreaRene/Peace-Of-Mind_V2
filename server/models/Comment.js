@@ -10,8 +10,8 @@ const commentSchema = new Schema(
       maxlength: 500,
     },
     commentAuthor: {
-      type: String,
-      required: true,
+        type: String,
+        required: true,
     },
     hugCount: {
       type: Number,
