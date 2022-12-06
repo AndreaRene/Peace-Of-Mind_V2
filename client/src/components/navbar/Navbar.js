@@ -10,7 +10,8 @@ import {
   TeamOutlined,
   DashboardOutlined,
   LoginOutlined,
-} from '@ant-design/icons'; // import auth from '../utils/auth';
+} from '@ant-design/icons';
+import auth from '../../utils/js/auth';
 import { useQuery } from '@apollo/client';
 import { GET_USER } from '../../utils/js/queries';
 
@@ -47,42 +48,60 @@ const GenerateNavbar = () => {
             <span className="linkText">About</span>
           </NavLink>
         </li>
+        {auth.loggedIn() ? (
+          <>
+            <li>
+              <NavLink
+                style={{ textDecoration: 'none' }}
+                to="/community"
+                className={({ isActive }) =>
+                  `navClick  ${isActive ? 'active' : ''}`
+                }
+              >
+                <TeamOutlined className="navIcon" />
+                <span className="linkText">Community</span>
+              </NavLink>
+            </li>
 
-        <li>
-          <NavLink
-            style={{ textDecoration: 'none' }}
-            to="/community"
-            className={({ isActive }) =>
-              `navClick  ${isActive ? 'active' : ''}`
-            }
-          >
-            <TeamOutlined className="navIcon" />
-            <span className="linkText">Community</span>
-          </NavLink>
-        </li>
+            <li>
+              <NavLink
+                style={{ textDecoration: 'none' }}
+                to="/dashboard"
+                className={({ isActive }) =>
+                  `navClick  ${isActive ? 'active' : ''}`
+                }
+              >
+                <DashboardOutlined className="navIcon" />
+                <span className="linkText">Dashboard</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                style={{ textDecoration: 'none' }}
+                to="/login"
+                className="navClick"
+                onClick={auth.logout}
+              >
+                <LoginOutlined className="navIcon" />
+                <span className="linkText">Logout</span>
+              </NavLink>
+            </li>
+          </>
+        ) : (
+          <li>
+            <NavLink
+              style={{ textDecoration: 'none' }}
+              to="/login"
+              className={({ isActive }) => `navClick ${isActive ? 'active' : ''}`}
+            >
+              <LoginOutlined className="navIcon" />
+              <span className="linkText">Login/Signup</span>
+            </NavLink>
+          </li>
+        )}
 
-        <li>
-          <NavLink
-            style={{ textDecoration: 'none' }}
-            to="/dashboard"
-            className={({ isActive }) =>
-              `navClick  ${isActive ? 'active' : ''}`
-            }
-          >
-            <DashboardOutlined className="navIcon" />
-            <span className="linkText">Dashboard</span>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            style={{ textDecoration: 'none' }}
-            to="/login"
-            className={({ isActive }) => `navClick ${isActive ? 'active' : ''}`}
-          >
-            <LoginOutlined className="navIcon" />
-            <span className="linkText">Login/Signup</span>
-          </NavLink>
-        </li>
+
+
       </ul>
     </nav>
   );
