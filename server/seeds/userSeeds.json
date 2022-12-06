@@ -5,7 +5,8 @@
         "gThankCount": "4",
         "gHugCount": "4",
         "rThankCount": "4",
-        "rHugCount": "4"
+        "rHugCount": "4",
+        "feelings": []
     },
     {
         "username": "John Doe",
@@ -13,7 +14,8 @@
         "gThankCount": "4",
         "gHugCount": "4",
         "rThankCount": "4",
-        "rHugCount": "4"
+        "rHugCount": "4",
+        "feelings": []
     },
     {
         "username": "Chris Doe",
@@ -21,7 +23,8 @@
         "gThankCount": "4",
         "gHugCount": "4",
         "rThankCount": "4",
-        "rHugCount": "4"
+        "rHugCount": "4",
+        "feelings": []
     },
     {
         "username": "Jessica Doe",
@@ -29,6 +32,7 @@
         "gThankCount": "4",
         "gHugCount": "4",
         "rThankCount": "4",
-        "rHugCount": "4"
+        "rHugCount": "4",
+        "feelings": []
     }
 ]
