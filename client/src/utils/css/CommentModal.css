@@ -1,0 +1,23 @@
+:root {
+  --midOrange: #f9a535;
+  --darkGreen: #167323;
+  --lightGreen: #249255;
+  --paleYellow: #efdeb3;
+  --darkTeal: #43ada1;
+  --lightTeal: #5dcec1;
+  --pink: #ffa59e;
+  --darkGray: #343740;
+  --white: #f5f5f5;
+}
+
+.modal-content-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: var(--darkTeal);
+  width: 100%;
+  border-top: solid 6px #fac032;
+}
+
+.comment-form {
+  width: 80%;
+}

@@ -4,6 +4,12 @@
   width: 100%;
 }
 
+#commentModalWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 @media (max-width: 1399px) {
 }
 

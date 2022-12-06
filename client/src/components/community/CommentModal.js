@@ -13,9 +13,9 @@ const CommentModal = () => {
       <div className="modal-content-wrapper">
         <div className="modal-content">
           <Link className="openModal" onClick={() => showModal()}>
-            Add comment
+            Share your thoughts:
           </Link>
-          <Form>
+          <Form class="comment-form">
             <Form.Item name="commentText">
               <Input.TextArea rows={3} />
             </Form.Item>
