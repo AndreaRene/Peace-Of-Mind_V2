@@ -29,14 +29,14 @@ function CreateModal() {
 
       const { me } = cache.readQuery({ query: GET_ME });
       console.log(me);
-      // cache.writeQuery({
-      //   query: GET_ME,
-      //   data: { me: { ...me, feelings: [ ...me.feelings, addFeeling ] } },
-      // });
+      cache.writeQuery({
+        query: GET_ME,
+        data: { me: { ...me, feelings: [...me.feelings, addFeeling] } },
+      });
     },
   });
 
-  const handleFormSubmit = async (event) => {
+  const handleFormSubmit = async event => {
     event.preventDefault();
 
     try {
@@ -58,16 +58,16 @@ function CreateModal() {
     setIsModalOpen(false);
   };
 
-  const handleChangeTitle = (event) => {
+  const handleChangeTitle = event => {
     const { name, value } = event.target;
 
     if (name === 'feelingTitle' && value.length <= 50) {
       setFeelingTitle(value);
       setCharacterCountTitle(value.length);
     }
-  }
+  };
 
-  const handleChangeText = (event) => {
+  const handleChangeText = event => {
     const { name, value } = event.target;
 
     if (name === 'feelingText' && value.length <= 500) {
@@ -76,11 +76,10 @@ function CreateModal() {
     }
   };
 
-
   // Modal calls and functions
   const [isModalOpen, setIsModalOpen] = useState(true);
 
-  const showModal = ({openPost}) => {
+  const showModal = ({ openPost }) => {
     setIsModalOpen(true);
   };
 
@@ -92,51 +91,52 @@ function CreateModal() {
     setIsModalOpen(false);
   };
 
-  
-
   return (
-      <Modal 
-        title="New Feeling"
-        okText="Create"
-        open={isModalOpen} 
-        onOk={handleFormSubmit}
-        onCancel={handleCancel}
-        width={1000}
+    <Modal
+      title="New Feeling"
+      okText="Create"
+      open={isModalOpen}
+      onOk={handleFormSubmit}
+      onCancel={handleCancel}
+      width={1000}
+    >
+      <Form
+        layout="vertical"
+        name="post-form"
+        initialValues={{ modifier: 'public' }}
       >
-        <Form 
-          layout='vertical'
-          name='post-form'
-          initialValues={{ modifier: 'public'}}
+        <Form.Item
+          label="Title"
+          rules={[
+            { required: true, message: 'Please enter a title for this post!' },
+          ]}
         >
-          <Form.Item
-            label="Title"
-            rules={[{ required: true, message: 'Please enter a title for this post!'}]}
-          >
-            <Input
-              name="feelingTitle"
-              placeholder='Enter a title for your feeling...'
-              value={feelingTitle}
-              onChange={handleChangeTitle}
-            />
-            <p>Character Count: {characterCountTitle} / 50</p>
-          </Form.Item>
-          
-          <Form.Item
-            label='Feeling Body Text'
-            rules={[{ required: true, message: 'Please enter what you are feeling!'}]}
-          >
-            <Input.TextArea
-              name="feelingText"
-              placeholder='How are you feeling today?'
-              value={feelingText}
-              onChange={handleChangeText}
-            />
-            <p>Character Count: {characterCountText} / 500</p>
-          </Form.Item>
-        </Form>
-      </Modal>
-  );
-};
+          <Input
+            name="feelingTitle"
+            placeholder="Enter a title for your feeling..."
+            value={feelingTitle}
+            onChange={handleChangeTitle}
+          />
+          <p>Character Count: {characterCountTitle} / 50</p>
+        </Form.Item>
 
+        <Form.Item
+          label="Feeling Body Text"
+          rules={[
+            { required: true, message: 'Please enter what you are feeling!' },
+          ]}
+        >
+          <Input.TextArea
+            name="feelingText"
+            placeholder="How are you feeling today?"
+            value={feelingText}
+            onChange={handleChangeText}
+          />
+          <p>Character Count: {characterCountText} / 500</p>
+        </Form.Item>
+      </Form>
+    </Modal>
+  );
+}
 
 export default CreateModal;

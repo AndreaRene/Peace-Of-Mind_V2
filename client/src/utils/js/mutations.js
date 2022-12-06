@@ -32,13 +32,6 @@ export const ADD_FEELING = gql`
       feelingText
       hugCount
       thankCount
-      comments {
-        _id
-        commentText
-        hugcount
-        thankCount
-        dateTime
-      }
       dateTime
     }
   }

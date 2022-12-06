@@ -14,6 +14,7 @@ import Thank from '../assets/icons/svg/thank-1.svg';
 import { generateName } from '../utils/js/names';
 import '../utils/css/Feeling.css';
 import '../utils/css/Community.css';
+import Welcome from '../components/welcome'
 // import { ADD_FEELING_HUG, ADD_FEELING_THANK } from '../utils/js/mutations';
 
 const Feeling = () => {
@@ -70,10 +71,8 @@ const Feeling = () => {
   }
   return (
     <main className="communityWrapper">
-      <p id="startingParagraph">
-        Welcome, Username.{' '}
-        <span className="headingSpan">It's great to see you!</span>
-      </p>
+      <Welcome />
+
       {/* <div className="feelingWrapper"> */}
       <div className="cardWrapper">
         {/* {feelingData.map((feeling) => ( */}
