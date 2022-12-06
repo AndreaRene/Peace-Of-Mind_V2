@@ -16,8 +16,20 @@
   background-color: var(--darkTeal);
   width: 100%;
   border-top: solid 6px #fac032;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: var(--paleYellow);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--darkGreen);
 }
 
 .comment-form {
   width: 80%;
+  border-radius: 25px;
+  padding-top: 20%;
 }
