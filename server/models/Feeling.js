@@ -42,18 +42,19 @@ const feelingSchema = new Schema({
             thankCount: {
                 type: Number,
             },
-            dateTime : {
+            dateTime: {
                 type: Date,
                 default: Date.now,
                 get: (timestamp) => dateFormat(timestamp),
             },
-        },
+        }
     ],
     dateTime: {
         type: Date,
         default: Date.now,
         get: (timestamp) => dateFormat(timestamp),
     },
+
     },
     {
         toJSON: {
