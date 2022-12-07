@@ -6,7 +6,7 @@
 
 <p style="color:green;background:orange;font-weight:bold">Peace of Mind is a website that will allow anyone with a need to connect to others regarding mental health and support. We provide a safe space for everyone to discuss their feelings without fear of retaliation.</p>
 
-Join us today: https://andrearene.github.io/Andrea_Rene_Portfolio_v2/ 
+Join us today: https://peace-of-mind-app-v2.herokuapp.com/
 
 ## Table of Contents
 
