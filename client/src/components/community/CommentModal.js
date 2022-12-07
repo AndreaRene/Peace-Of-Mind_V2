@@ -25,6 +25,7 @@ const CommentModal = ({ feelingId }) => {
       });
 
       setCommentText('');
+      window.location.reload(false);
     } catch (err) {
       console.error(err);
     }
