@@ -59,22 +59,18 @@ export const REMOVE_FEELING = gql`
   mutation removeFeeling($feelingId: ID!) {
     removeFeeling(feelingId: $feelingId) {
       _id
-      username
-      feelings {
-        feelingId
-        feelingTitle
-        feelingText
-        feelingAuthor
+      feelingTitle
+      feelingText
+      feelingAuthor
+      hugCount
+      thankCount
+      dateTime
+      comments {
+        commentText
+        commentAuthor
         hugCount
         thankCount
         dateTime
-        comments {
-          commentText
-          commentAuthor
-          hugCount
-          thankCount
-          dateTime
-        }
       }
     }
   }
