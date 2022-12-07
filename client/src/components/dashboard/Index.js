@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { Col, Row, Button } from 'antd';
 import { EditFilled, DeleteFilled } from '@ant-design/icons';
@@ -10,8 +10,9 @@ import {
   DeleteSvg,
   EditSvg,
 } from '../../assets/icons/community-svgs';
-import { useMutation } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import { REMOVE_FEELING } from '../../utils/js/mutations';
+import { GET_FEELINGS, GET_ME } from '../../utils/js/queries';
 
 import Auth from '../../utils/js/auth';
 
@@ -31,6 +32,7 @@ const UserFeelings = ({ feelings }) => {
           feelingId,
         },
       });
+      window.location.reload(false);
     } catch (err) {
       console.log(err);
     }
