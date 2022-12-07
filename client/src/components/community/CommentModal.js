@@ -25,6 +25,7 @@ const CommentModal = ({ feelingId }) => {
       });
 
       setCommentText('');
+      window.location.reload(false);
     } catch (err) {
       console.error(err);
     }
@@ -53,17 +54,17 @@ const CommentModal = ({ feelingId }) => {
             </Link>
           </div>
           <p
-            className={`${
-              characterCount === 500 || error ? 'text-danger' : ''
-            }`}
+            className={`${characterCount === 500 || error ? 'text-danger' : ''
+              }`}
           >
             Character Count: {characterCount}/500
           </p>
-          <Form className="comment-form">
+          <Form className="comment-form" id='commentForm'>
             <Form.Item name="commentText">
               <Input.TextArea
                 name="commentText"
                 className="formInput"
+                id='commentTextArea'
                 value={commentText}
                 rows={3}
                 onChange={handleChange}

@@ -36,17 +36,6 @@ const UserFeelings = ({ feelings }) => {
     }
   };
 
-  if (!feelings) {
-    return (
-      <Row className="D-Content-Row">
-        <h1>
-          Hello, "{Auth.getProfile().data.username}" click on the + to get
-          started with a new post!
-        </h1>
-      </Row>
-    );
-  }
-
   return (
     <div className="cardWrapper" id="reverseCards">
       {editPost && <EditModal />}

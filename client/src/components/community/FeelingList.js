@@ -43,10 +43,6 @@ const FeelingList = ({ feelings }) => {
     }
   };
 
-  if (!feelings.length) {
-    return <h2>No feelings to display.</h2>;
-  }
-
   return (
     <div className="cardWrapper">
       {feelings.map(feeling => (

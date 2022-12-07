@@ -39,30 +39,41 @@
 .show {
   transition: 1.5s;
   position: fixed;
-  bottom: 56rem;
-  right: 2rem;
+  bottom: 48rem;
+  right: 4rem;
   z-index: 2;
   background-color: transparent;
   border: none;
 }
 
-@media (max-width: 1399px) {
+#commentBtn {
+  background-color: var(--midOrange);
+  color: var(--darkGreen);
+  font-size: 1rem;
+  border-radius: .5rem;
+  width: 12rem;
+  height: 4rem;
 }
 
-@media (max-width: 1199px) {
+#commentForm {
+  padding-top: 1rem;
 }
 
-@media (max-width: 1023px) {
+#commentTextArea {
+  height: 30rem;
+  resize: none;
 }
 
-@media (max-width: 767px) {
-}
+@media (max-width: 1399px) {}
 
-@media (max-width: 559px) {
-}
+@media (max-width: 1199px) {}
 
-@media (max-width: 479px) {
-}
+@media (max-width: 1023px) {}
 
-@media (max-width: 379px) {
-}
+@media (max-width: 767px) {}
+
+@media (max-width: 559px) {}
+
+@media (max-width: 479px) {}
+
+@media (max-width: 379px) {}
