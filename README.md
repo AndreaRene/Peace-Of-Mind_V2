@@ -6,6 +6,8 @@
 
 <p style="color:green;background:orange;font-weight:bold">Peace of Mind is a website that will allow anyone with a need to connect to others regarding mental health and support. We provide a safe space for everyone to discuss their feelings without fear of retaliation.</p>
 
+Join us today: https://andrearene.github.io/Andrea_Rene_Portfolio_v2/ 
+
 ## Table of Contents
 
 1. [Peace of Mind Purpose](#sign-up-for-peace-of-mind-so-you-can)
@@ -102,3 +104,5 @@ Proprietary and confidential.
 Written by those listed in the [Collaborators](#collaborators) section of this README file, December 2022.
 
 [Back to Top](#peace-of-mind)
+
+![peace of mind app](/assets/images/pom_app_screenshot.PNG 'peace of mind app') 
