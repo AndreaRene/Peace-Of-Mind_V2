@@ -99,6 +99,7 @@ function CreateModal() {
       onOk={handleFormSubmit}
       onCancel={handleCancel}
       width={1000}
+      id="newPostModal"
     >
       <Form
         layout="vertical"
