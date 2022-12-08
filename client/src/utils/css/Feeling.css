@@ -11,7 +11,7 @@
   height: 91vh;
   position: fixed;
   bottom: -100rem;
-  transition: 1.5s;
+  transition: 0.9s;
   z-index: 2;
 }
 
@@ -22,12 +22,12 @@
   height: 91vh;
   position: fixed;
   bottom: 0rem;
-  transition: 1.5s;
+  transition: 0.9s;
   z-index: 2;
 }
 
 .hide {
-  transition: 1.5s;
+  transition: 0.9s;
   position: fixed;
   bottom: -100rem;
   right: 2rem;
@@ -37,7 +37,7 @@
 }
 
 .show {
-  transition: 1.5s;
+  transition: 0.9s;
   position: fixed;
   bottom: 48rem;
   right: 4rem;
@@ -50,7 +50,7 @@
   background-color: var(--midOrange);
   color: var(--darkGreen);
   font-size: 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   width: 12rem;
   height: 4rem;
 }
@@ -64,16 +64,23 @@
   resize: none;
 }
 
-@media (max-width: 1399px) {}
+@media (max-width: 1399px) {
+}
 
-@media (max-width: 1199px) {}
+@media (max-width: 1199px) {
+}
 
-@media (max-width: 1023px) {}
+@media (max-width: 1023px) {
+}
 
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
+}
 
-@media (max-width: 559px) {}
+@media (max-width: 559px) {
+}
 
-@media (max-width: 479px) {}
+@media (max-width: 479px) {
+}
 
-@media (max-width: 379px) {}
+@media (max-width: 379px) {
+}
