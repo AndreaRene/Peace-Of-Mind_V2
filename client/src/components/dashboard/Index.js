@@ -1,24 +1,51 @@
-import React, { useState } from 'react';
-import { Link, Navigate, useParams } from 'react-router-dom';
-import { Col, Row, Button } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Row, Button } from 'antd';
 import { EditFilled, DeleteFilled } from '@ant-design/icons';
 import EditModal from './EditPost';
 import '../../utils/css/feelingsCard.css';
 import '../../utils/css/Dashboard.css';
 
-// import { useQuery } from '@apollo/client';
-// import { GET_USER, GET_ME, GET_FEELINGS } from '../../utils/js/queries';
+import { useLazyQuery, useQuery } from '@apollo/client';
+
+import { ADD_FEELING } from '../../utils/js/mutations';
+import { GET_SINGLE_FEELING, GET_ME } from '../../utils/js/queries';
 
 import Auth from '../../utils/js/auth';
 
 const UserFeelings = ({ feelings }) => {
   const [editPost, setEditPost] = useState(false);
+  const [getSingleFeeling, {data}] = useLazyQuery(GET_SINGLE_FEELING);
+  // const [data, setData] = useState(' ');
 
-  const editPostClick = () => {
-    setEditPost(!editPost);
+  React.useEffect(() => {
+    if (!_id) return
+    if (data) {
+      console.log(data);
+    }
+  },[])
+  
+
+
+  const editPostClick = (_id) => {
+    // getSingleFeeling({variables: {feelingId: _id}});
+    // const textTitle = data || {};
+
+
+    // setData(textTitle);
+    // setEditPost(!editPost);
   };
 
-  console.log(`this is feelings:  ${feelings}`);
+
+  // const { loading, feelingdata } = useLazyQuery(GET_SINGLE_FEELING, {
+  //   variables: { feelingId: _id },
+  // });
+
+  // 
+
+
+
+
 
   if (!feelings) {
     return (
@@ -36,7 +63,7 @@ const UserFeelings = ({ feelings }) => {
       {/* {showfeelingTitle && <h3>{feelingTitle}</h3>} */}
       {feelings &&
         feelings.map(feeling => (
-          <div className="card">
+          <div className="card" key={feeling._id}>
             <div className="cardLeft">
               <header className="cardHeader">
                 <div className="cardTitleGroup">
@@ -53,8 +80,13 @@ const UserFeelings = ({ feelings }) => {
                 </Link>
                 {/* HERE */}
                 {/* add delete and edit icons. hug and thank icons should be disabled and are only there to show counts */}
+                <Button 
+                  onClick={() => editPostClick(feeling._id)}
+                  >
+                  <EditFilled />
+                </Button>
                 <Link
-                  className="hugIcon"
+                  // className="hugIcon"
                   //   disabled={feelings.hugUsers?.some(
                   //     hugUserId => hugUserId === user._id,
                   //   )}

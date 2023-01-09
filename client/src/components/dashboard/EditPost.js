@@ -1,9 +1,35 @@
-import React, { useState } from 'react';
-import { Modal, Form, Input, Button, Layout } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Modal, Form, Input } from 'antd';
+import { useMutation } from '@apollo/client';
 
-function Modals() {
+import { useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+
+import { ADD_FEELING } from '../../utils/js/mutations';
+import { GET_SINGLE_FEELING, GET_ME } from '../../utils/js/queries';
+
+import Auth from '../../utils/js/auth';
+
+
+function EditModal(props) {
+  const [formState, setFormState] = useState({});
+
+
+  // const { loading, data } = useQuery(GET_SINGLE_FEELING, {
+  //   variables: { feelingId: _id },
+  // });
+
+  // useEffect(() => {
+  //   console.log(data);
+  //   if(data){
+  //     setFormState({text: data.feelingText, title: data.feelingTitle});
+  //   }
+  // }, [data]);
+
+  // const feeling = data?.feeling || {};
+
   const [isModalOpen, setIsModalOpen] = useState(true);
-
+ 
   const showModal = ({openPost}) => {
     setIsModalOpen(true);
   };
@@ -14,6 +40,10 @@ function Modals() {
 
   const handleCancel = () => {
     setIsModalOpen(false);
+  };
+
+  const handleChange = e => {
+      setFormState(e.target.value)
   };
 
   
@@ -27,25 +57,30 @@ function Modals() {
         onCancel={handleCancel}
         width={1000}
       >
-        <Form 
+        <Form
           layout='vertical'
-          name='post-form'
           initialValues={{ modifier: 'public'}}
         >
           <Form.Item 
-            name="Feeling Title"
             label="Feeling Title"
             rules={[{ required: true, message: 'Please enter a title for this post!'}]}
           >
-            <Input />
+            <Input
+              name='title'
+              value={formState.title}
+              onChange={handleChange}
+            />
           </Form.Item>
           
           <Form.Item 
-            name={['post', 'textbody']} 
             label='Feeling Body Text'
             rules={[{ required: true, message: 'Please enter what you are feeling!'}]}
           >
-            <Input.TextArea />
+            <Input.TextArea
+              name='text'
+              value={formState.text}
+              onChange={handleChange}
+            />
           </Form.Item>
         </Form>
       </Modal>
@@ -53,4 +88,4 @@ function Modals() {
 };
 
 
-export default Modals;
+export default EditModal;

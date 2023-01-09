@@ -16,12 +16,13 @@ function CreateModal() {
 
   const [addFeeling, { error }] = useMutation(ADD_FEELING, {
     update(cache, { data: { addFeeling } }) {
+
       try {
-        const { feelings } = cache.readQuery({ query: GET_FEELINGS });
+        const {data} = cache.readQuery({ query: GET_FEELINGS });
 
         cache.writeQuery({
           query: GET_FEELINGS,
-          data: { feelings: [addFeeling, ...feelings] },
+          data: { data: [addFeeling, ...data] },
         });
       } catch (e) {
         console.log(e);
@@ -29,10 +30,10 @@ function CreateModal() {
 
       const { me } = cache.readQuery({ query: GET_ME });
       console.log(me);
-      // cache.writeQuery({
-      //   query: GET_ME,
-      //   data: { me: { ...me, feelings: [ ...me.feelings, addFeeling ] } },
-      // });
+      cache.writeQuery({
+        query: GET_ME,
+        data: { me: { ...me, feelings: [...me.feelings, addFeeling] } },
+      });
     },
   });
 

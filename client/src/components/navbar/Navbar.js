@@ -17,9 +17,6 @@ import { GET_USER } from '../../utils/js/queries';
 import '../../utils/css/Navbar.css';
 
 const GenerateNavbar = () => {
-  const { loading, data } = useQuery(GET_USER);
-  const user = data?.user || [];
-  console.log('Here: ', GET_USER);
   return (
     <nav id="navBar">
       <div id="navBrand">

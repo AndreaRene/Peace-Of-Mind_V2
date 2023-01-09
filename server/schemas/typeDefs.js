@@ -42,7 +42,7 @@ const typeDefs = gql`
     user(username: String!): User
     feelings(username: String): [Feeling]
     feeling(feelingId: ID!): Feeling
-    comments(feelingId: ID!): Feeling
+    comments(feelingId: ID!): [Feeling]
     me: User
   }
 
@@ -51,6 +51,7 @@ const typeDefs = gql`
     login(username: String!, password: String!): Auth
     addFeeling(feelingText: String!, feelingTitle: String!): Feeling
     addComment(feelingId: ID!, commentText: String!): Feeling
+    updateFeeling(feelingId: ID!): Feeling
     removeFeeling(feelingId: ID!): Feeling
     removeComment(feelingId: ID!, commentId: ID!): Feeling
   }
